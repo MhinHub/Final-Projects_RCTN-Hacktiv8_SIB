@@ -19,41 +19,40 @@ export const apiUrl = {
 
 //* Fetch data API base on topic
 
-async function axiosGet(topic) {
-    const {data} = await axios.get(apiUrl[topic]).catch((error) => console.error("Error :" + error));
-    return data;
+async function fetchOf(topic) {
+    const data = await fetch(apiUrl[topic]);
+    return data.json();
 }
 
 function fetchNewsIndonesia() {
-    return axiosGet('indonesia');
+    return fetchOf('indonesia');
 }
 
 function fetchNewsProgramming() {
-    return axiosGet('programming');
+    return fetchOf('programming');
 }
 
 function fetchNewsCovid19() {
-    return axiosGet('covid19');
+    return fetchOf('covid19');
 }
 
 function fetchNewsEntertainment() {
-    return axiosGet('entertainment');
+    return fetchOf('entertainment');
 }
 
 function fetchNewsSports() {
-    return axiosGet('sports');
+    return fetchOf('sports');
 }
 
 function fetchNewsTechnology() {
-    return axiosGet('technology');
+    return fetchOf('technology');
 }
 
 function fetchNewsByKeyword(keyword) {
-    return axiosGet('byKeyword').concat(`&q=${keyword}`);
+    return fetchOf('byKeyword').concat(`&q=${keyword}`);
 }
 
 
-//FIX: date format
 function formatDate(value) {
     const date = value === undefined ? null : new Date(value);
     return new Intl.DateTimeFormat("en-GB", { dateStyle: "medium" }).format(date);
