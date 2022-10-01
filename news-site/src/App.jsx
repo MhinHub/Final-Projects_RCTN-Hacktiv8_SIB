@@ -1,16 +1,24 @@
-import Navbar from './components/Navbar'
-import Tab from './components/Tab'
-import CardItem from './components/CardItem'
-// import { fetchNewsProgramming } from './utils/index'
-// import { useEffect, useState } from 'react'
-// import A from './utils/index'
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
 
 import Indonesia from './pages/indonesia/indonesia'
+import Programming from './pages/programming/programming'
+import Covid19 from './pages/covid19/covid19'
+import Sports from './pages/sports/sports'
+import Technology from './pages/technology/technology'
+import Entertainment from './pages/entertainment/entertainment'
+
 
 export default () => {
   return (
-    <>
-      <Indonesia />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Indonesia />} />  {/* Untuk Sementara */}
+        <Route path="/programming" element={<Programming />} />
+        <Route path="/covid19" element={<Covid19 />} />
+        <Route path="/sports" element={<Sports />} />
+        <Route path="/technology" element={<Technology />} />
+        <Route path="/entertainment" element={<Entertainment />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
