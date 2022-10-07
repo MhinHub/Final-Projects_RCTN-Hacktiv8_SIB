@@ -16,13 +16,13 @@ export default () => {
     }
 
     return (
-        <div className="tabs justify-center mt-4">
-            <Link className={`tab tab-bordered ${isActive} tab-active`} to="/">Indonesia</Link>
-            <Link className={`tab tab-bordered ${isActive}`} to="/programming">Programming</Link>
-            <Link className={`tab tab-bordered ${isActive}`} to="/covid19">Covid-19</Link>
-            <Link className={`tab tab-bordered ${isActive}`} to="/sports">Sports</Link>
-            <Link className={`tab tab-bordered ${isActive}`} to="/technology">Technology</Link>
-            <Link className={`tab tab-bordered ${isActive}`} to="/entertainment">Entertainment</Link>
+        <div className="tabs justify-center mt-4 gap-x-2">
+            <Link className={`inline-block py-1 px-5 text-white bg-gray-900 border border-gray-900 rounded-full active`} to="/">Indonesia</Link>
+            <Link className={`inline-block py-1 px-5 text-gray-900 border border-gray-900 rounded-full`} to="/programming">Programming</Link>
+            <Link className={`inline-block py-1 px-5 text-gray-900 border border-gray-900 rounded-full`} to="/covid19">Covid-19</Link>
+            <Link className={`inline-block py-1 px-5 text-gray-900 border border-gray-900 rounded-full`} to="/sports">Sports</Link>
+            <Link className={`inline-block py-1 px-5 text-gray-900 border border-gray-900 rounded-full`} to="/technology">Technology</Link>
+            <Link className={`inline-block py-1 px-5 text-gray-900 border border-gray-900 rounded-full`} to="/entertainment">Entertainment</Link>
         </div>
     )
 };

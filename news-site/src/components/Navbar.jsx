@@ -4,8 +4,8 @@ export default () => {
     return (
         <Navbar className='nav' dataTheme='light'>
             <div className="flex-1">
-                <Button className="text-2xl normal-case" color="ghost">
-                    Novita
+                <Button className="text-2xl" color='ghost'>
+                    <b>Novita</b>
                 </Button>
             </div>
             <div className="flex-none gap-2">
