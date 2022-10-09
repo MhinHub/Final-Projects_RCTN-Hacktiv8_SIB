@@ -1,6 +1,18 @@
 import { Button, Dropdown, Form, Navbar, Input } from 'react-daisyui'
+import { useState } from 'react'
 
 export default () => {
+    // const [keyword, setKeyword] = useState("");
+
+    // function handleSubmit(event) {
+    //     event.preventDefault();
+    //     if (!keyword) {
+    //         return alert("Keyword cannot empty!");
+    //     }
+    //     path(`/search?keyword=${keyword}`);
+    //     setKeyword("");
+    // }
+
     return (
         <Navbar className='nav' dataTheme='light'>
             <div className="flex-1">
