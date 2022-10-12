@@ -21,9 +21,9 @@ export default () => {
                 <h6 className="text-lg font-bold"><b>Theme</b></h6>
                 <ul className="pl-4 list-inside">
                     <li className="flex flex-row gap-2">
-                        <input type="radio" name="radio-1" className="radio" checked/>
-                        <input type="radio" name="radio-1" className="radio radio-primary" />
-                        <input type="radio" name="radio-1" className="radio radio-secondary" />
+                        <input type="radio" name="radio-1" className="radio"/>
+                        <input type="radio" name="radio-1" className="radio radio-primary"/>
+                        <input type="radio" name="radio-1" className="radio radio-secondary"/>
                     </li>
                 </ul>
             </div>

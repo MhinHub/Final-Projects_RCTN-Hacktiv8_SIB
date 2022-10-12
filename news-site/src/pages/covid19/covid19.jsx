@@ -5,7 +5,7 @@ import { fetchNewsCovid19 } from "../../utils/index";
 
 export default () => {
     return (
-        <Layout title="Topic | Programming">
+        <Layout title="Topic | Covid">
             <MainContent fetchItem={fetchNewsCovid19()} />
         </Layout>
     );

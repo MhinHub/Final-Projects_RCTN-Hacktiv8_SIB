@@ -5,7 +5,7 @@ import { fetchNewsSports } from "../../utils/index";
 
 export default () => {
     return (
-        <Layout title="Topic | Programming">
+        <Layout title="Topic | Sports">
             <MainContent fetchItem={fetchNewsSports()} />
         </Layout>
     );
