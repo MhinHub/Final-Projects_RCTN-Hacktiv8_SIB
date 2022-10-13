@@ -14,11 +14,11 @@ export default () => {
     // }
 
     return (
-        <Navbar className='nav' dataTheme='light'>
+        <Navbar className='nav'>
             <div className="flex-1">
-                <Button className="text-2xl" color='ghost'>
-                    <b>Novita</b>
-                </Button>
+                <p className="text-4xl text-primary">
+                    <b>NewsUp</b>
+                </p>
             </div>
             <div className="flex-none gap-2">
                 <Form>

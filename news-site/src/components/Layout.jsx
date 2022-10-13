@@ -13,7 +13,7 @@ export default ({ children, title }) => {
     <React.Fragment>
       <Navbar />
       <Tab />
-      <Sidebar />
+      {/* <Sidebar /> */}{/* karena list menunya sudah sedikit jadi tidak perlu dipakai */}
       <main>
       <SideNews />
         {children}

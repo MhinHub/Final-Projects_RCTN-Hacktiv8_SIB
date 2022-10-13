@@ -18,11 +18,11 @@ a, a::before, a::after, a:hover, a:focus, a:active, a:visited, a:link, a::marker
 }
 
 .tab-active{
-  @apply inline-block py-1 px-5 text-base-100 bg-primary border border-gray-900 rounded-full;
+  @apply inline-block py-1 px-5 text-base-100 bg-primary border border-primary rounded-full;
 }
 
 .tab-inactive{
-  @apply inline-block py-1 px-5 text-gray-900 border border-gray-900 rounded-full;
+  @apply inline-block py-1 px-5 text-neutral border border-primary rounded-full;
 }
 
 article {

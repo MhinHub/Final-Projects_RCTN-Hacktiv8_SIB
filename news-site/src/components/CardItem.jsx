@@ -3,7 +3,7 @@ import LazyLoad from 'react-lazy-load';
 
 export default ({ news }) => {
     return (
-        <article className="flex flex-col py-8 px-4 bg-white rounded-md border border-black w-fit h-auto">
+        <article className="flex flex-col py-8 px-4 bg-transparent rounded-md border border-primary w-fit h-auto">
             <a href={news.url} target="_blank" rel="noreferrer">
                 <LazyLoad>
                     <img
