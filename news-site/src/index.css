@@ -30,7 +30,11 @@ a, a::before, a::after, a:hover, a:focus, a:active, a:visited, a:link, a::marker
 }
 
 hr {
-  @apply h-px w-full border-t border-primary my-4;
+  @apply h-px w-full border-t border-primary mt-4 mb-1;
+}
+
+.cardItem {
+  @apply flex flex-col pt-8 pb-2 px-4 bg-transparent rounded-md border border-primary w-fit h-auto;
 }
 
 article {
