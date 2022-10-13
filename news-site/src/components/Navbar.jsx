@@ -14,7 +14,7 @@ export default () => {
     // }
 
     return (
-        <Navbar className='nav'>
+        <Navbar className='navbar'>
             <div className="flex-1">
                 <p className="text-4xl text-primary">
                     <b>NewsUp</b>

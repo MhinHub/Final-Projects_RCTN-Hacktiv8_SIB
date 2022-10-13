@@ -1,6 +1,6 @@
 export default () => {
     return (
-        <aside className="float-right px-4 m-2 w-[16%] border-x border-gray-900">
+        <aside className="float-right px-4 m-1 w-[16%] h-fit border-x border-gray-900 overflow-y-auto">
             <div className="flex flex-col">
                 <h3 className="text-xl font-bold">Top News</h3>
                 <div className="relative w-full h-40 mb-4 rounded-sm overflow-hidden">

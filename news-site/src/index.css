@@ -25,6 +25,14 @@ a, a::before, a::after, a:hover, a:focus, a:active, a:visited, a:link, a::marker
   @apply inline-block py-1 px-5 text-neutral border border-primary rounded-full;
 }
 
+.navbar {
+  @apply w-screen bg-white border-y-slate-800 border flex align-middle mt-px px-16;
+}
+
+hr {
+  @apply h-px w-full border-t border-primary my-4;
+}
+
 article {
   background-color: #fff;
   border-radius: .5rem;
@@ -37,14 +45,6 @@ article:hover {
   box-shadow: .35rem .35rem #303030;
   transition: all .14s ease-out;  
   cursor: pointer;
-}
-
-.nav {
-  @apply w-screen bg-white border-y-slate-800 border sticky flex align-middle mt-px px-16;
-}
-
-hr {
-  @apply h-px w-full border-t border-gray-900 my-4;
 }
 
 :root {
