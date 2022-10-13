@@ -9,7 +9,7 @@ let API_KEY = '3feb0320ace04af285fa9c8e2a7add08'
 export const apiUrl = {
     indonesia: `${BASE_URL}/top-headlines?country=id&apiKey=${API_KEY}`,
     programming: `${BASE_URL}/everything?q=programming&apiKey=${API_KEY}`,
-    covid19: `${BASE_URL}/everything?q=covid19&apiKey=${API_KEY}`,
+    covid19: `${BASE_URL}/everything?q=covid&apiKey=${API_KEY}`,
     entertainment: `${BASE_URL}/top-headlines?country=id&category=entertainment&apiKey=${API_KEY}`,
     sports: `${BASE_URL}/top-headlines?country=id&category=sports&apiKey=${API_KEY}`,
     technology: `${BASE_URL}/top-headlines?country=id&category=technology&apiKey=${API_KEY}`,
@@ -55,7 +55,7 @@ function fetchNewsByKeyword(keyword) {
 
 function formatDate(value) {
     const date = value === undefined ? null : new Date(value);
-    return new Intl.DateTimeFormat("en-GB", { dateStyle: "medium" }).format(date);
+    return new Intl.DateTimeFormat("id", { dateStyle: "long" }).format(date);
 }
 
 
