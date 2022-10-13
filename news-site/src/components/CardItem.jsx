@@ -39,10 +39,10 @@ export default ({ news }) => {
                 <hr />
                 <div className="flex flex-row justify-between">
                     <button onClick={handleLike}>
-                        {isLiked ? <BsHeartFill /> : <BsHeart />}
+                        {isLiked ? <BsHeartFill size={25} /> : <BsHeart size={25} />}
                     </button>
                     <button onClick={handleBookmark}>
-                        {isBookmarked ? <BsBookmarkFill /> : <BsBookmark />}
+                        {isBookmarked ? <BsBookmarkFill size={25} /> : <BsBookmark size={25}/>}
                     </button>
                 </div>
             </footer>
