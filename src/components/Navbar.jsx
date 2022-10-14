@@ -2,6 +2,7 @@ import { Button, Dropdown, Form, Navbar, Input } from 'react-daisyui'
 import { useState } from 'react'
 import { BsBookmarksFill } from 'react-icons/bs'
 import { Link } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 export default () => {
     // const [keyword, setKeyword] = useState("");
@@ -15,6 +16,7 @@ export default () => {
     //     setKeyword("");
     // }
 
+    const savedNews = useSelector((state) => state.news.data.saved);
 
     return (
         <Navbar className='navbar'>
@@ -27,7 +29,10 @@ export default () => {
                 <Form>
                     <Input type="text" placeholder="Search" />
                 </Form>
-                <Link className='mx-4' to="/saved">
+                <Link className='mx-4 p-2 rounded-full active:bg-gray-300' to="/saved">
+                    <span className="flex h-[22px] w-[22px] text-[14px] justify-center align-middle content-center absolute font-semibold text-white duration-300">
+                        {savedNews.length}
+                    </span>
                     <BsBookmarksFill size={25}/>
                 </Link>
                 <Dropdown vertical="end">
