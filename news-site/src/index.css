@@ -17,6 +17,10 @@ a, a::before, a::after, a:hover, a:focus, a:active, a:visited, a:link, a::marker
   text-decoration: none;
 }
 
+.tabs-content {
+  @apply tabs sticky justify-center mt-4 gap-x-2 mx-auto inset-x-0;
+}
+
 .tab-active{
   @apply inline-block py-1 px-5 text-base-100 bg-primary border border-primary rounded-full;
 }

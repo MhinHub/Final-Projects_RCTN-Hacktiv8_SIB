@@ -7,6 +7,8 @@ import Sports from './pages/sports/sports'
 import Technology from './pages/technology/technology'
 import Entertainment from './pages/entertainment/entertainment'
 
+import Saved from './pages/Saved';
+
 
 export default () => {
   return (
@@ -18,6 +20,7 @@ export default () => {
         <Route path="/sports" element={<Sports />} />
         <Route path="/technology" element={<Technology />} />
         <Route path="/entertainment" element={<Entertainment />} />
+        <Route path="/saved" element={<Saved />} />
       </Routes>
     </BrowserRouter>
   )

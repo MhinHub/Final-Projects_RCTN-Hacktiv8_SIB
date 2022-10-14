@@ -1,6 +1,5 @@
 // import axios from 'axios';
 
-
 // Get data API
 
 let BASE_URL = 'https://newsapi.org/v2'
@@ -52,13 +51,10 @@ function fetchNewsByKeyword(keyword) {
     return fetchOf('byKeyword').concat(`&q=${keyword}`);
 }
 
-
 function formatDate(value) {
     const date = value === undefined ? null : new Date(value);
     return new Intl.DateTimeFormat("id", { dateStyle: "long" }).format(date);
 }
-
-
 
 export {
     fetchNewsIndonesia,

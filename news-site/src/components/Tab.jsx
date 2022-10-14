@@ -6,7 +6,7 @@ export default () => {
     }
 
     return (
-        <div className="tabs justify-center mt-4 gap-x-2">
+        <div className="tabs-content">
             <NavLink className={isActive} to="/" end>Indonesia</NavLink>
             <NavLink className={isActive} to="/programming">Programming</NavLink>
             <NavLink className={isActive} to="/covid19">Covid-19</NavLink>

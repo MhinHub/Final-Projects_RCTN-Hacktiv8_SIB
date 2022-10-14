@@ -1,5 +1,7 @@
 import { Button, Dropdown, Form, Navbar, Input } from 'react-daisyui'
 import { useState } from 'react'
+import { BsBookmarksFill } from 'react-icons/bs'
+import { Link } from 'react-router-dom'
 
 export default () => {
     // const [keyword, setKeyword] = useState("");
@@ -13,6 +15,7 @@ export default () => {
     //     setKeyword("");
     // }
 
+
     return (
         <Navbar className='navbar'>
             <div className="flex-1">
@@ -24,6 +27,9 @@ export default () => {
                 <Form>
                     <Input type="text" placeholder="Search" />
                 </Form>
+                <Link className='mx-4' to="/saved">
+                    <BsBookmarksFill size={25}/>
+                </Link>
                 <Dropdown vertical="end">
                     <Button color="ghost" className="avatar" shape="circle">
                         <div className="w-10 rounded-full">

@@ -1,18 +1,24 @@
 import { formatDate } from "../utils/index"
 import LazyLoad from 'react-lazy-load';
 import { BsBookmark, BsBookmarkFill, BsHeart, BsHeartFill } from 'react-icons/bs'
-import { useState } from 'react'
+import { useState } from 'react';
+import { useDispatch } from "react-redux";
+import { saveThisNews } from "../features/news-slice";
 
 export default ({ news }) => {
     const [isBookmarked, setIsBookmarked] = useState(false);
     const [isLiked, setIsLiked] = useState(false);
 
+    const dispatch = useDispatch();
+
     function handleBookmark() {
         setIsBookmarked(!isBookmarked);
+        dispatch(saveThisNews(news));
     }
 
     function handleLike() {
         setIsLiked(!isLiked);
+        dispatch(saveThisNews(news));
     }
 
     return (
@@ -42,7 +48,7 @@ export default ({ news }) => {
                         {isLiked ? <BsHeartFill size={25} /> : <BsHeart size={25} />}
                     </button>
                     <button onClick={handleBookmark}>
-                        {isBookmarked ? <BsBookmarkFill size={25} /> : <BsBookmark size={25}/>}
+                        {isBookmarked ? <BsBookmarkFill size={25} /> : <BsBookmark size={25} />}
                     </button>
                 </div>
             </footer>

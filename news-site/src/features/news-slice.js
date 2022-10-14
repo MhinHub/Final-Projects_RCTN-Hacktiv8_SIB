@@ -20,19 +20,7 @@ export const newsSlice = createSlice({
   initialState,
   reducers: {
     saveThisNews: (state, action) => {
-      const findSavedNews = state.data.saved.find((item) => item.title === action.payload.title);
-      if (findSavedNews) {
-        const filtered = state.data.saved.filter((item) => item.title !== findSavedNews.title);
-        state.data.saved = filtered;
-      } else {
-        state.data.saved.push(action.payload);
-      }
-    },
-    removeLastNewsData: (state) => {
-      state.data.searchResult = {};
-    },
-    addDetailNews: (state, action) => {
-      state.data.detailNews = action.payload;
+      state.data.saved.push(action.payload);
     },
     addNewsIndonesia: (state, action) => {
       state.data.indonesia = action.payload;
@@ -60,9 +48,6 @@ export const newsSlice = createSlice({
 
 export const {
   saveThisNews,
-  isNewsSaved,
-  removeLastNewsData,
-  addDetailNews,
   addNewsIndonesia,
   addNewsProgramming,
   addNewsCovid19,
