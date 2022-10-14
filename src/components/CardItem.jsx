@@ -18,7 +18,7 @@ export default ({ news }) => {
 
     function handleLike() {
         setIsLiked(!isLiked);
-        dispatch(saveThisNews(news));
+        // dispatch(saveThisLike(news));
     }
 
     return (
