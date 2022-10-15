@@ -23,6 +23,7 @@ export default ({ news }) => {
 
     return (
         <article className="cardItem">
+            <div>
             <a href={news.url} target="_blank" rel="noreferrer">
                 <LazyLoad>
                     <img
@@ -40,7 +41,8 @@ export default ({ news }) => {
                     <h3 className="text-2xl leading-7"><strong>{news?.title}</strong></h3>
                     <p className="text-sm mt-2">{news?.description} </p>
                 </div>
-            </a>
+                </a>
+            </div>
             <footer className="align-bottom bottom-4">
                 <hr />
                 <div className="flex flex-row justify-between">
