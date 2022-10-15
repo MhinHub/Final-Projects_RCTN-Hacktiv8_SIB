@@ -11,7 +11,6 @@ const initialState = {
     technology: {},
     saved: [],
     searchResult: {},
-    detailNews: {},
   },
 };
 
