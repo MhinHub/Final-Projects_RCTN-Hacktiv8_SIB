@@ -19,7 +19,13 @@ export const newsSlice = createSlice({
   initialState,
   reducers: {
     saveThisNews: (state, action) => {
-      state.data.saved.push(action.payload);
+      const filterSavedNews = state.data.saved.find((item) => item.title === action.payload.title);
+      if (filterSavedNews) {
+        const filtered = state.data.saved.filter((item) => item.title !== filterSavedNews.title);
+        state.data.saved = filtered;
+      } else {
+        state.data.saved.push(action.payload);
+      }
     },
     addNewsIndonesia: (state, action) => {
       state.data.indonesia = action.payload;
