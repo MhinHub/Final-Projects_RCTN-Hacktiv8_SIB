@@ -3,7 +3,7 @@
 // Get data API
 
 let BASE_URL = 'https://newsapi.org/v2'
-let API_KEY = '3feb0320ace04af285fa9c8e2a7add08'
+let API_KEY = '8e6c8f98a4f24114a4aed5c04c7c0b07'
 
 export const apiUrl = {
     indonesia: `${BASE_URL}/top-headlines?country=id&apiKey=${API_KEY}`,
