@@ -20,11 +20,11 @@ export default () => {
 
     return (
         <Navbar className='navbar'>
-            <div className="flex-1">
+            <Link to="/" className="flex-1">
                 <p className="text-4xl text-primary">
                     <b>NewsUp</b>
                 </p>
-            </div>
+            </Link>
             <div className="flex-none gap-2">
                 <Form>
                     <Input type="text" placeholder="Search" />
