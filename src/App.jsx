@@ -1,7 +1,7 @@
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 
 import Indonesia from './pages/indonesia/indonesia'
-import Programming from './pages/programming'
+import Programming from './pages/programming/programming'
 import Covid19 from './pages/covid19/covid19'
 import Sports from './pages/sports/sports'
 import Technology from './pages/technology/technology'
