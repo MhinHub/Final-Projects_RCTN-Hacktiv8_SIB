@@ -1,7 +1,7 @@
 import { Button, Dropdown, Form, Navbar, Input } from 'react-daisyui'
 import { useState } from 'react'
 import { BsBookmarksFill } from 'react-icons/bs'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
 export default () => {
@@ -29,12 +29,12 @@ export default () => {
                 <Form>
                     <Input type="text" placeholder="Search" />
                 </Form>
-                <Link className='mx-4 p-2 rounded-full active:bg-gray-300' to="/saved">
+                <NavLink className={({isActive}) => isActive ? 'mx-4 p-2 rounded-full bg-gray-300' : 'mx-4 p-2 rounded-full'} to="/saved">
                     <span className="flex h-[22px] w-[22px] text-[14px] justify-center align-middle content-center absolute font-semibold text-white duration-300">
                         {savedNews.length}
                     </span>
                     <BsBookmarksFill size={25}/>
-                </Link>
+                </NavLink>
                 <Dropdown vertical="end">
                     <Button color="ghost" className="avatar" shape="circle">
                         <div className="w-10 rounded-full">
