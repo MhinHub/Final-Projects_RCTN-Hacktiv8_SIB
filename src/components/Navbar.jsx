@@ -3,6 +3,7 @@ import { Button, Dropdown, Form, Input, Navbar } from "react-daisyui";
 import { BsBookmarksFill } from "react-icons/bs";
 import { useSelector } from "react-redux";
 import { Link, NavLink, useNavigate } from "react-router-dom";
+import { IoSearchOutline } from "react-icons/io5";
 
 export default () => {
   // const keywordContext = createContext();
@@ -17,26 +18,33 @@ export default () => {
     } else {
       navigate(`/search?q=${keyword}`);
     }
+    setKeyword("");
   };
 
   const savedNews = useSelector((state) => state.news.data.saved);
 
   return (
     <Navbar className="navbar">
-      <Link to="/" className="flex-1">
+      <Link to="/" className="flex">
         <p className="text-4xl text-primary">
           <b>NewsUp</b>
         </p>
       </Link>
-      <div className="flex-none gap-2">
+      <div className="flex gap-2">
         <Form onSubmit={handleSearch}>
           <Input
-            className="w-96"
+            className="w-80 h-10 rounded-full border border-primary self-center"
             placeholder="Search news..."
+            value={keyword}
             onChange={(e) => setKeyword(e.target.value)}
           />
+          <button
+            type="submit"
+            className="h-10 absolute rounded-full self-end hover:bg-primary hover:text-white border-none"
+          >
+            <IoSearchOutline size={20} />
+          </button>
         </Form>
-
         <NavLink
           className={({ isActive }) =>
             isActive

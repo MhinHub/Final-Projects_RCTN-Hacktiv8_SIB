@@ -30,7 +30,7 @@ a, a::before, a::after, a:hover, a:focus, a:active, a:visited, a:link, a::marker
 }
 
 .navbar {
-  @apply w-screen bg-white border-y-slate-800 border flex align-middle mt-px px-16;
+  @apply w-screen bg-white border-y-slate-800 border flex align-middle mt-px px-16 justify-between;
 }
 
 hr {
