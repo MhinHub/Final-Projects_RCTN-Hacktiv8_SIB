@@ -89,7 +89,7 @@ a, a::before, a::after, a:hover, a:focus, a:active, a:visited, a:link, a::marker
 
 
 button {
-  @apply rounded-full p-4 text-primary;
+  @apply rounded-full p-3 text-primary;
 }
 
 
