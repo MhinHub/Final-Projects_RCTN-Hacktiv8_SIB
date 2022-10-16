@@ -21,6 +21,13 @@ module.exports = {
           'primary-content': '#ffffff',
           'base-100': '#ffffff',
         }
+      },
+      {
+        'dark': {
+          'primary': '#ffffff',
+          'primary-content': '#1f1f1f',
+          'base-100': '#1f1f1f',
+        }
       }
     ]
   }

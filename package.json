@@ -19,7 +19,8 @@
     "react-lazy-load-image-component": "^1.5.5",
     "react-redux": "^8.0.4",
     "react-router-dom": "^6.4.1",
-    "redux-persist": "^6.0.0"
+    "redux-persist": "^6.0.0",
+    "theme-change": "^2.2.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.17",

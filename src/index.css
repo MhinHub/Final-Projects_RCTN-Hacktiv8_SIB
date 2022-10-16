@@ -28,12 +28,7 @@ body {
   }
 
   .scrollbar::-webkit-scrollbar-thumb {
-    @apply bg-base-200 rounded-full;
-    border: 3px solid #f6f7ed;
-  }
-
-  .scrollbar::-webkit-scrollbar-thumb:hover {
-    @apply bg-primary;
+    @apply bg-base-300 rounded-full border-2 border-solid border-base-100 hover:bg-primary;
   }
 }
 
@@ -52,7 +47,7 @@ body {
 
 
 .navbar {
-  @apply w-screen bg-primary-content border-y-primary border flex align-middle mt-px px-16 justify-between;
+  @apply w-screen bg-transparent border border-y-primary flex align-middle mt-px px-16 justify-between;
 }
 
 
@@ -66,15 +61,15 @@ hr {
 }
 
 article {
-  background-color: #fff;
-  border-radius: .5rem;
-  box-shadow: .6rem .6rem #1f1f1f;
+  @apply rounded-lg shadow-primary;
+  box-shadow: .6rem .6rem;
   transition: all .14s ease-out;
 }
 
 article:hover {
+  @apply shadow-primary;
   transform: translate(-.5rem, -.5rem);
-  box-shadow: .35rem .35rem #303030;
+  box-shadow: .35rem .35rem;
   transition: all .14s ease-out;  
 }
 
