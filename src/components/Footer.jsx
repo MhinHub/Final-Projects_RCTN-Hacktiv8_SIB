@@ -20,7 +20,7 @@ export default () => {
   }
 
   return (
-    <footer className="footer mb-1 border border-y-primary p-10 bg-white text-primary">
+    <footer className="footer-content">
       <div>
         <Link to="/" className="flex-1">
           <p className="text-4xl text-primary mb-5">

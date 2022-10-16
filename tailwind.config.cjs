@@ -7,6 +7,9 @@ module.exports = {
     "node_modules/react-daisyui/dist/**/*.js",
   ],
   theme: {
+    fontFamily: {
+      'serif': ['Lora', 'serif']
+    },
     extend: {},
   },
   plugins: [require('daisyui')],
@@ -15,8 +18,10 @@ module.exports = {
       {
         'light': {
           'primary': '#1f1f1f',
+          'primary-content': '#ffffff',
+          'base-100': '#ffffff',
         }
       }
-    ],
+    ]
   }
 }
