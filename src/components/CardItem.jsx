@@ -51,10 +51,10 @@ export default ({ news }) => {
             <footer className="align-bottom bottom-4">
                 <hr />
                 <div className="flex flex-row justify-between">
-                    <button onClick={handleLike}>
+                    <button className="rounded-full !border-none" onClick={handleLike}>
                         {isLiked ? <BsHeartFill size={25} /> : <BsHeart size={25} />}
                     </button>
-                    <button onClick={handleBookmark}>
+                    <button className="rounded-full !border-none" onClick={handleBookmark}>
                         {isNewsSaved(news) ? <BsBookmarkFill size={25} /> : <BsBookmark size={25} />}
                     </button>
                 </div>
