@@ -15,7 +15,26 @@
 
 
 body {
-  @apply font-serif min-h-screen w-auto overflow-x-hidden m-0 bg-base-100;
+  @apply font-serif min-h-screen w-auto overflow-x-hidden m-0 bg-base-100 scrollbar;
+}
+
+@layer utilities {
+  .scrollbar::-webkit-scrollbar {
+    @apply w-4 h-4;
+  }
+
+  .scrollbar::-webkit-scrollbar-track {
+    @apply bg-base-100 rounded-full;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-base-200 rounded-full;
+    border: 3px solid #f6f7ed;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary;
+  }
 }
 
 
