@@ -1,9 +1,9 @@
 // import axios from 'axios';
 
-// Get data API
-
+//* Get data API
 let BASE_URL = 'https://newsapi.org/v2'
-let API_KEY = '8e6c8f98a4f24114a4aed5c04c7c0b07'
+// let API_KEY = '8e6c8f98a4f24114a4aed5c04c7c0b07'
+let API_KEY = '3feb0320ace04af285fa9c8e2a7add08'
 
 export const apiUrl = {
     indonesia: `${BASE_URL}/top-headlines?country=id&apiKey=${API_KEY}`,
@@ -19,9 +19,18 @@ export const apiUrl = {
 //* Fetch data API base on topic
 
 async function fetchOf(topic) {
-    const data = await fetch(apiUrl[topic]);
-    return data.json();
+    const data = await fetch(apiUrl[topic])
+        .then(res => res.json())
+        .catch(err => console.error('Fetch Error: ' + err))
+    return data;
 }
+
+//* or use axios
+// async function fetchOf(topic) {
+//     const { data } = await axios.get(apiUrl[topic]);
+//     return data;
+// }
+
 
 function fetchNewsIndonesia() {
     return fetchOf('indonesia');
@@ -47,8 +56,11 @@ function fetchNewsTechnology() {
     return fetchOf('technology');
 }
 
-function fetchNewsByKeyword(keyword) {
-    return fetchOf('byKeyword').concat(`&q=${keyword}`);
+async function fetchNewsByKeyword(keyword) {
+    const data = await fetch(`${apiUrl.byKeyword}&q=${keyword}`)
+        .then(res => res.json())
+        .catch(err => console.error('Fetch Error: ' + err))
+    return data;
 }
 
 function formatDate(value) {
