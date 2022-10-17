@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Lora';
+  src: url("./assets/fonts/Lora.ttf");
+}
+
+@font-face {
+  font-family: 'Lora';
+  font-weight: bold;
+  src: url("./assets/fonts/Lora-Bold.ttf");
+}
+
+
+body {
+  @apply font-serif min-h-screen w-auto overflow-x-hidden m-0 bg-base-100 scrollbar;
+}
+
+@layer utilities {
+  .scrollbar::-webkit-scrollbar {
+    @apply w-4 h-4;
+  }
+
+  .scrollbar::-webkit-scrollbar-track {
+    @apply bg-base-100 rounded-full;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-base-300 rounded-full border-2 border-solid border-base-100 hover:bg-primary;
+  }
+}
+
+
+.tabs-content {
+  @apply tabs justify-center mt-4 gap-x-2 mx-auto inset-x-0;
+}
+
+.tab-active{
+  @apply inline-block py-1 px-5 text-base-100 bg-primary border border-primary rounded-full;
+}
+
+.tab-inactive{
+  @apply inline-block py-1 px-5 border border-primary rounded-full text-primary;
+}
+
+
+.navbar {
+  @apply w-screen bg-transparent border border-y-primary flex align-middle mt-px px-16 justify-between;
+}
+
+
+hr {
+  @apply h-px w-full border-t border-primary mt-4 mb-1;
+}
+
+
+.cardItem {
+  @apply grid pt-8 pb-2 px-4 content-between bg-transparent rounded-md border border-primary w-fit h-auto;
+}
+
+article {
+  @apply rounded-lg shadow-primary;
+  box-shadow: .6rem .6rem;
+  transition: all .14s ease-out;
+}
+
+article:hover {
+  @apply shadow-primary;
+  transform: translate(-.5rem, -.5rem);
+  box-shadow: .35rem .35rem;
+  transition: all .14s ease-out;  
+}
+
+
+a{
+  @apply text-primary decoration-inherit;
+}
+
+a, a::before, a::after, a:hover, a:focus, a:active, a:visited, a:link, a::marker {
+  text-decoration: none;
+}
+
+
+button {
+  @apply rounded-full p-3 text-primary;
+}
+
+
+.footer-content {
+  @apply footer mb-1 mt-10 border border-y-primary p-10 bg-base-100 w-screen text-primary;
+}
