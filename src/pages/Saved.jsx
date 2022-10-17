@@ -22,7 +22,7 @@ export default () => {
             </thead>
             <tbody>
               {savedNews.map((news, index) => (
-                <tr key={index} className="odd:bg-gray-100">
+                <tr key={index} className="odd:bg-base-300">
                   <td className="p-3 w-[14rem]">
                     <div>
                       {news.source?.name} - {news?.author}

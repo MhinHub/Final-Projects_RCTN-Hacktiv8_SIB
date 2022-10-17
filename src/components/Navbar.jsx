@@ -7,9 +7,7 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import { IoSearchOutline } from "react-icons/io5";
 
 export default () => {
-  // const keywordContext = createContext();
   const [keyword, setKeyword] = useState("");
-  // const dispatch = useDispatch();
 
   const navigate = useNavigate();
   const handleSearch = (e) => {
@@ -72,7 +70,7 @@ export default () => {
         <NavLink
           className={({ isActive }) =>
             isActive
-              ? "mx-4 p-2 rounded-full bg-gray-300"
+              ? "mx-4 p-2 rounded-full bg-base-300 border border-spacing-1 border-primary"
               : "mx-4 p-2 rounded-full"
           }
           to="/saved"
