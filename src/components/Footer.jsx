@@ -57,7 +57,7 @@ export default () => {
       </div>
       <div>
 
-        <span className="text-primary font-bold">Information</span>
+        <span className="text-primary font-bold">Build Journey</span>
         <a
           className="link link-hover"
           href="https://www.notion.so/invite/238e658294af400a8e27633d2b7d47f3c7b803e4"
@@ -79,12 +79,6 @@ export default () => {
         >
           Github
         </a>
-
-        <span className="text-primary font-bold">Build Journey</span>
-        <a className="link link-hover">Nation</a>
-        <a className="link link-hover">Figma</a>
-        <a className="link link-hover">Github</a>
-
       </div>
       <div>
         <span className="text-primary font-bold">Contact Us</span>
