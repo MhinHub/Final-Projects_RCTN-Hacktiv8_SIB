@@ -7,9 +7,7 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import { IoSearchOutline } from "react-icons/io5";
 
 export default () => {
-  // const keywordContext = createContext();
   const [keyword, setKeyword] = useState("");
-  // const dispatch = useDispatch();
 
   const navigate = useNavigate();
   const handleSearch = (e) => {
