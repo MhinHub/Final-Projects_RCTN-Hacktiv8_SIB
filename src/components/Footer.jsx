@@ -2,32 +2,6 @@ import { Link } from "react-router-dom";
 import { AiOutlineLinkedin, AiOutlineInstagram } from "react-icons/ai";
 
 export default () => {
-  function Contact({name, linkIG, linkLI}) {
-    return (
-      <div className="flex justify-between w-56 align-middle">
-        <p>{name}</p>
-        <div className="flex">
-          <a
-            href={linkIG}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="link link-hover"
-          >
-            <AiOutlineInstagram className="ml-3" size={20} />
-          </a>
-          <a
-            href={linkLI}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="link link-hover"
-          >
-            <AiOutlineLinkedin className="ml-2" size={20} />
-          </a>
-        </div>
-      </div>
-    );
-  }
-
   return (
     <footer className="footer-content">
       <div>
@@ -101,3 +75,31 @@ export default () => {
     </footer>
   );
 };
+
+//* Component local
+
+function Contact({ name, linkIG, linkLI }) {
+  return (
+    <div className="flex justify-between w-56 align-middle">
+      <p>{name}</p>
+      <div className="flex">
+        <a
+          href={linkIG}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="link link-hover"
+        >
+          <AiOutlineInstagram className="ml-3" size={20} />
+        </a>
+        <a
+          href={linkLI}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="link link-hover"
+        >
+          <AiOutlineLinkedin className="ml-2" size={20} />
+        </a>
+      </div>
+    </div>
+  );
+}
