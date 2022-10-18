@@ -48,7 +48,7 @@ export default () => {
             <IoSearchOutline size={20} />
           </button>
         </Form>
-        <label className="swap swap-rotate">
+        <label className="swap swap-rotate ml-6">
           <input type="checkbox" />
           <svg
             className="swap-on fill-current w-7 "
