@@ -100,8 +100,7 @@ export default () => {
 
         <a href="#my-modal" className="!underline">More</a>
 
-        <input type="checkbox" id="my-modal-4" className="modal-toggle" />
-        <label htmlFor="my-modal" className="modal cursor-pointer">
+        <label id="my-modal" className="modal cursor-pointer">
           <label className="modal-box w-11/12 max-w-6xl">
             <center><b><h2 className="text-lg font-bold">About</h2></b></center>
 
@@ -145,9 +144,7 @@ export default () => {
             </div>
           </label>
         </label>
-
-
       </div>
-    </footer>
+    </footer >
   );
 };
