@@ -1,0 +1,153 @@
+import { Link } from "react-router-dom";
+import { AiOutlineLinkedin, AiOutlineInstagram } from "react-icons/ai";
+
+export default () => {
+  function Contact(name, linkIG, linkLI) {
+    return (
+      <div className="flex justify-between w-56 align-middle">
+        <p>{name}</p>
+        <div className="flex">
+          <a
+            href={linkIG}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="link link-hover"
+          >
+            <AiOutlineInstagram className="ml-3" size={20} />
+          </a>
+          <a
+            href={linkLI}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="link link-hover"
+          >
+            <AiOutlineLinkedin className="ml-2" size={20} />
+          </a>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <footer className="footer-content">
+      <div>
+        <Link to="/" className="flex-1">
+          <p className="text-4xl text-primary mb-5">
+            <b>NewsUp</b>
+          </p>
+        </Link>
+        <p>Jelajahi berita terupdate dengan kami</p>
+      </div>
+      <div>
+        <span className="text-primary font-bold">Partner</span>
+        <a
+          className="link link-hover"
+          href="https://www.hacktiv8.com/"
+          target="_blank"
+        >
+          Hacktiv8
+        </a>
+        <a
+          className="link link-hover"
+          href="https://kampusmerdeka.kemdikbud.go.id/"
+          target="_blank"
+        >
+          Kampus Merdeka
+        </a>
+      </div>
+      <div>
+
+        <span className="text-primary font-bold">Build Journey</span>
+        <a
+          className="link link-hover"
+          href="https://www.notion.so/invite/238e658294af400a8e27633d2b7d47f3c7b803e4"
+          target="_blank"
+        >
+          Notion
+        </a>
+        <a
+          className="link link-hover"
+          href="https://www.figma.com/file/YXFvVL1S9bUR2VTLV4oo1B/FP1---NewsUp---Kelompok-1?node-id=0%3A1"
+          target="_blank"
+        >
+          Figma
+        </a>
+        <a
+          className="link link-hover"
+          href="https://github.com/MhinHub/Final-Projects_RCTN-Hacktiv8_SIB/tree/sib_react_005_fp1"
+          target="_blank"
+        >
+          Github
+        </a>
+      </div>
+      <div>
+        <span className="text-primary font-bold">Contact Us</span>
+        {Contact(
+          "Muhammad Irfan Zidni",
+          "https://www.instagram.com/irfanzidni11/",
+          "https://www.linkedin.com/in/irfanzidni/"
+        )}
+        {Contact(
+          "Muhaemin Iskandar",
+          "https://www.instagram.com/muhis.me/",
+          "https://www.linkedin.com/in/muhaemin-iskandar/"
+        )}
+        {Contact(
+          "Vika Alpina",
+          "http://instagram.com/vikaalpiana",
+          "https://www.linkedin.com/in/vika-alpiana-84084820a"
+        )}
+      
+        <label htmlFor="my-modal-4" className="btn modal-button">More Info</label>
+
+        <input type="checkbox" id="my-modal-4" className="modal-toggle" />
+        <label htmlFor="my-modal-4" className="modal cursor-pointer">
+          <label className="modal-box relative" for="">
+            <center><b><h2 className="text-lg font-bold">About</h2></b></center>
+
+            <div className="flex justify-center gap-6 lg:grid-cols-3 sm:grid-cols-2 w-30 m-4">
+                <div className="flex flex-col text-center py-2 px-6 rounded-md border border-black bg-blue-300">
+                    <p className="py-4">Ketua</p>
+                    <img
+                        src="src/assets/foto/"
+                        className="px-4 aspect-[1/1] rounded-2xl"
+                    />
+                    <h1 className="text-lg px-6 py-5">Muhammad Irfan Zidni</h1>
+                    <p className="text-center px-4 ">RCTN-KS05-003</p>
+                    
+                    <div className="flex flex-row mt-4 px-4 py-1">
+                    </div>
+                </div>
+
+                <div className="flex flex-col text-center py-2 px-6 rounded-md border border-black bg-blue-300">
+                    <p className="py-4">Anggota</p>
+                    <img
+                        src="src/assets/foto/"
+                        className="px-4 aspect-[1/1] rounded-2xl"
+                    />
+                    <h1 className="text-lg px-4 py-5">Muhaemin Iskandar</h1>
+                    <p className="text-center px-4 ">RCTN-KS05-001</p>
+                    <div className="flex flex-row mt-4 px-4 py-1">
+                    </div>
+                </div>
+
+                <div className="flex flex-col text-center py-2 px-6 rounded-md border border-black bg-blue-300">
+                    <p className="py-2">Anggota</p>
+                    <img
+                        src="src/assets/foto/vika.jpg"
+                        className="px-2 aspect-[2/2] rounded-2xl"
+                    />
+                    <h1 className="text-lg px-3 py-3">Vika Alpiana</h1>
+                    <p className="text-center px-4 ">RCTN-KS05-004</p>
+                    <div className="flex flex-row mt-4 px-4 py-1">
+                    </div>
+                </div>
+                </div>
+          </label>
+        </label>
+
+
+      </div>
+    </footer>
+  );
+};
