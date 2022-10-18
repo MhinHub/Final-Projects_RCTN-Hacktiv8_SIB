@@ -97,6 +97,56 @@ export default () => {
           "http://instagram.com/vikaalpiana",
           "https://www.linkedin.com/in/vika-alpiana-84084820a"
         )}
+      
+        <label htmlFor="my-modal-4" className="btn modal-button">More Info</label>
+
+        <input type="checkbox" id="my-modal-4" className="modal-toggle" />
+        <label htmlFor="my-modal-4" className="modal cursor-pointer">
+          <label className="modal-box relative" for="">
+            <center><b><h2 className="text-lg font-bold">About</h2></b></center>
+
+            <div className="flex justify-center gap-6 lg:grid-cols-3 sm:grid-cols-2 w-30 m-4">
+                <div className="flex flex-col text-center py-2 px-6 rounded-md border border-black bg-blue-300">
+                    <p className="py-4">Ketua</p>
+                    <img
+                        src="src/assets/foto/"
+                        className="px-4 aspect-[1/1] rounded-2xl"
+                    />
+                    <h1 className="text-lg px-6 py-5">Muhammad Irfan Zidni</h1>
+                    <p className="text-center px-4 ">RCTN-KS05-003</p>
+                    
+                    <div className="flex flex-row mt-4 px-4 py-1">
+                    </div>
+                </div>
+
+                <div className="flex flex-col text-center py-2 px-6 rounded-md border border-black bg-blue-300">
+                    <p className="py-4">Anggota</p>
+                    <img
+                        src="src/assets/foto/"
+                        className="px-4 aspect-[1/1] rounded-2xl"
+                    />
+                    <h1 className="text-lg px-4 py-5">Muhaemin Iskandar</h1>
+                    <p className="text-center px-4 ">RCTN-KS05-001</p>
+                    <div className="flex flex-row mt-4 px-4 py-1">
+                    </div>
+                </div>
+
+                <div className="flex flex-col text-center py-2 px-6 rounded-md border border-black bg-blue-300">
+                    <p className="py-2">Anggota</p>
+                    <img
+                        src="src/assets/foto/vika.jpg"
+                        className="px-2 aspect-[2/2] rounded-2xl"
+                    />
+                    <h1 className="text-lg px-3 py-3">Vika Alpiana</h1>
+                    <p className="text-center px-4 ">RCTN-KS05-004</p>
+                    <div className="flex flex-row mt-4 px-4 py-1">
+                    </div>
+                </div>
+                </div>
+          </label>
+        </label>
+
+
       </div>
     </footer>
   );
