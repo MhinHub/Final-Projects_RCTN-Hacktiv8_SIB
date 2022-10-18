@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { AiOutlineLinkedin, AiOutlineInstagram } from "react-icons/ai";
 
 export default () => {
-  function Contact(name, linkIG, linkLI) {
+  function Contact({name, linkIG, linkLI}) {
     return (
       <div className="flex justify-between w-56 align-middle">
         <p>{name}</p>
@@ -82,21 +82,21 @@ export default () => {
       </div>
       <div>
         <span className="text-primary font-bold">Contact Us</span>
-        {Contact(
-          "Muhammad Irfan Zidni",
-          "https://www.instagram.com/irfanzidni11/",
-          "https://www.linkedin.com/in/irfanzidni/"
-        )}
-        {Contact(
-          "Muhaemin Iskandar",
-          "https://www.instagram.com/muhis.me/",
-          "https://www.linkedin.com/in/muhaemin-iskandar/"
-        )}
-        {Contact(
-          "Vika Alpina",
-          "http://instagram.com/vikaalpiana",
-          "https://www.linkedin.com/in/vika-alpiana-84084820a"
-        )}
+        <Contact
+          name="Muhammad Irfan Zidni"
+          linkIG="https://www.instagram.com/irfanzidni11/"
+          linkLI="https://www.linkedin.com/in/irfanzidni/"
+        />
+        <Contact
+          name="Muhaemin Iskandar"
+          linkIG="https://www.instagram.com/muhis.me/"
+          linkLI="https://www.linkedin.com/in/muhaemin-iskandar/"
+        />
+        <Contact
+          name="Vika Alpina"
+          linkIG="http://instagram.com/vikaalpiana"
+          linkLI="https://www.linkedin.com/in/vika-alpiana-84084820a"
+        />
       </div>
     </footer>
   );
