@@ -101,7 +101,7 @@ export default () => {
         <a href="#my-modal" className="!underline">More</a>
 
         <label id="my-modal" className="modal cursor-pointer">
-          <label className="modal-box w-11/12 max-w-6xl">
+          <label className="modal-box w-11/12 max-w-6xl relative">
             <center><b><h2 className="text-lg font-bold">About</h2></b></center>
 
             <div className="flex justify-center gap-6 lg:grid-cols-3 sm:grid-cols-2 w-30 m-4">
@@ -141,6 +141,9 @@ export default () => {
                 <div className="flex flex-row mt-4 px-4 py-1">
                 </div>
               </div>
+            </div>
+            <div className="modal-action">
+              <a href="#" className="bg-primary btn">Ok</a>
             </div>
           </label>
         </label>
