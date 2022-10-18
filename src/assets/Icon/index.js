@@ -7,6 +7,9 @@ import IconPesanan from './ic-pesanan.svg';
 import IconPesananActive from './ic-pesanan-active.svg';
 import IconProfil from './ic-profil.svg';
 import IconProfileActive from './ic-profil-active.svg';
+import IconLocGrey from './ic-loc-grey.svg';
+import IconDateGrey from './ic-date-grey.svg';
+import IconPersonGrey from './ic-person-grey.svg';
 
 export {
   IconBackDark,
@@ -18,4 +21,7 @@ export {
   IconPesananActive,
   IconProfil,
   IconProfileActive,
+  IconLocGrey,
+  IconDateGrey,
+  IconPersonGrey,
 };

@@ -1,7 +1,7 @@
-import {Image, StyleSheet, Text, View} from 'react-native';
+import {Image, ScrollView, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import {colors, fonts} from '../../utils';
-import {Gap, PickBooking} from '../../components';
+import {Gap, MiniCard, PickBooking, Title} from '../../components';
 import Swiper from 'react-native-swiper';
 import {Slider1, Slider2} from '../../assets';
 
@@ -24,28 +24,42 @@ const HeaderHome = () => {
 
 const Beranda = () => {
   return (
-    <View style={styles.page}>
+    <ScrollView style={styles.page}>
       <HeaderHome />
       <Gap height={17} />
-
-      <Swiper
-        style={styles.wrapper}
-        showsButtons
-        loop={false}
-        autoplay={true}
-        buttonWrapperStyle>
-        <View testID="slide1" style={styles.slide}>
-          <Image source={Slider1} style={styles.imageSlider} />
-        </View>
-        <View testID="2" style={styles.slide}>
-          <Image source={Slider2} style={styles.imageSlider} />
-        </View>
-        <View testID="3" style={styles.slide}>
-          <Image source={Slider1} style={styles.imageSlider} />
-        </View>
+      <Swiper style={styles.wrapper} showsButtons loop={false} autoplay={true}>
+        <Image source={Slider1} style={styles.imageSlider} />
+        <Image source={Slider2} style={styles.imageSlider} />
+        <Image source={Slider1} style={styles.imageSlider} />
       </Swiper>
-      <PickBooking />
-    </View>
+      <View style={styles.containerPickBooking}>
+        <PickBooking />
+      </View>
+      <Gap height={30} />
+      <Title title="Kota Populer" />
+      <Gap height={23} />
+      <View style={styles.cityPopular}>
+        <ScrollView
+          style={styles.city}
+          horizontal={true}
+          showsHorizontalScrollIndicator={false}>
+          <MiniCard title="Jakarta" />
+          <Gap width={12} />
+          <MiniCard title="Surabaya" />
+          <Gap width={12} />
+          <MiniCard title="Bali" />
+          <Gap width={12} />
+          <MiniCard title="Medan" />
+          <Gap width={12} />
+          <MiniCard title="Bandung" />
+          <Gap width={12} />
+          <MiniCard title="Semarang" />
+        </ScrollView>
+      </View>
+      <Gap height={30} />
+      <Title title="Wisata Populer" />
+      <Gap height={23} />
+    </ScrollView>
   );
 };
 
@@ -64,7 +78,7 @@ const styles = StyleSheet.create({
   },
   containerHeader: {
     paddingTop: 40,
-    paddingHorizontal: 40,
+    paddingHorizontal: 20,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
@@ -80,8 +94,11 @@ const styles = StyleSheet.create({
     color: colors.text.secondary,
   },
   wrapper: {
-    marginTop: 17,
-    marginBottom: -37,
+    paddingTop: 10,
+
+    height: 210,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   slide: {
     justifyContent: 'center',
@@ -92,5 +109,18 @@ const styles = StyleSheet.create({
     fontSize: 30,
     fontWeight: 'bold',
   },
-  imageSlider: {},
+  imageSlider: {
+    width: 438,
+    height: 210,
+  },
+  containerPickBooking: {
+    alignItems: 'center',
+    backgroundColor: colors.white,
+  },
+  cityPopular: {
+    paddingLeft: 20,
+  },
+  city: {
+    flexDirection: 'row',
+  },
 });
