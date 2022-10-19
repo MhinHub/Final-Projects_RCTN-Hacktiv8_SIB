@@ -127,8 +127,6 @@ export default () => {
 
 };
 
-};
-
 //* Component local
 
 function Contact({ name, linkIG, linkLI }) {
