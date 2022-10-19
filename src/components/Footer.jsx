@@ -98,7 +98,7 @@ export default () => {
           "https://www.linkedin.com/in/vika-alpiana-84084820a"
         )}
 
-        <a href="#my-modal" className="!underline">More</a>
+        <a href="#my-modal" className="!underline justify-self-center">More</a>
 
         <label id="my-modal" className="modal cursor-pointer">
           <label className="modal-box w-11/12 max-w-6xl relative">
@@ -143,7 +143,7 @@ export default () => {
               </div>
             </div>
             <div className="modal-action">
-              <a href="#" className="bg-primary btn">Ok</a>
+              <a href="#" className="bg-primary btn-circle absolute btn top-2 right-2 text-base-100 font-bold">X</a>
             </div>
           </label>
         </label>
