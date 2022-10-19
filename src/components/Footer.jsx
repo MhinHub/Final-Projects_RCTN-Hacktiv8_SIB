@@ -71,9 +71,62 @@ export default () => {
           linkIG="http://instagram.com/vikaalpiana"
           linkLI="https://www.linkedin.com/in/vika-alpiana-84084820a"
         />
+
+        <a href="#my-modal" className="!underline justify-self-center">More</a>
+
+        <label id="my-modal" className="modal cursor-pointer">
+          <label className="modal-box w-11/12 max-w-6xl relative">
+            <center><b><h1 className="text-2xl font-bold">About</h1></b></center>
+
+            <div className="flex justify-center gap-6 lg:grid-cols-3 sm:grid-cols-2 w-30 m-4">
+              <div className="flex flex-col text-center py-2 px-6 rounded-md border border-black">
+                <p className="py-4">Ketua</p>
+                <img
+                  src="src/assets/foto/Irfan.jpg"
+                  className="px-4 aspect-[1/1] rounded-2xl"
+                />
+                <h1 className="text-lg px-6 py-5">Muhammad Irfan Zidni</h1>
+                <p className="text-center px-4 ">RCTN-KS05-003</p>
+
+                <div className="flex flex-row mt-4 px-4 py-1">
+                </div>
+              </div>
+
+              <div className="flex flex-col text-center py-2 px-6 rounded-md border border-black">
+                <p className="py-4">Anggota</p>
+                <img
+                  src="src/assets/foto/Muhaemin.jpg"
+                  className="px-4 aspect-[1/1] rounded-2xl"
+                />
+                <h1 className="text-lg px-4 py-5">Muhaemin Iskandar</h1>
+                <p className="text-center px-4 ">RCTN-KS05-001</p>
+                <div className="flex flex-row mt-4 px-4 py-1">
+                </div>
+              </div>
+
+              <div className="flex flex-col text-center py-2 px-6 rounded-md border border-black">
+                <p className="py-4">Anggota</p>
+                <img
+                  src="src/assets/foto/Vika.jpg"
+                  className="px-4 aspect-[1/1] rounded-2xl"
+                />
+                <h1 className="text-lg px-4 py-5">Vika Alpiana</h1>
+                <p className="text-center px-4 ">RCTN-KS05-004</p>
+                <div className="flex flex-row mt-4 px-4 py-1">
+                </div>
+              </div>
+            </div>
+            <div className="modal-action">
+              <a href="#" className="bg-primary btn-circle absolute btn top-2 right-2 text-base-100 font-bold">X</a>
+            </div>
+          </label>
+        </label>
       </div>
-    </footer>
+    </footer >
   );
+
+};
+
 };
 
 //* Component local
