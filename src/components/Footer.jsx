@@ -102,13 +102,13 @@ export default () => {
 
         <label id="my-modal" className="modal cursor-pointer">
           <label className="modal-box w-11/12 max-w-6xl relative">
-            <center><b><h2 className="text-lg font-bold">About</h2></b></center>
+            <center><b><h1 className="text-2xl font-bold">About</h1></b></center>
 
             <div className="flex justify-center gap-6 lg:grid-cols-3 sm:grid-cols-2 w-30 m-4">
-              <div className="flex flex-col text-center py-2 px-6 rounded-md border border-black bg-blue-300">
+              <div className="flex flex-col text-center py-2 px-6 rounded-md border border-black">
                 <p className="py-4">Ketua</p>
                 <img
-                  src="src/assets/foto/"
+                  src="src/assets/foto/Irfan.jpg"
                   className="px-4 aspect-[1/1] rounded-2xl"
                 />
                 <h1 className="text-lg px-6 py-5">Muhammad Irfan Zidni</h1>
@@ -118,10 +118,10 @@ export default () => {
                 </div>
               </div>
 
-              <div className="flex flex-col text-center py-2 px-6 rounded-md border border-black bg-blue-300">
+              <div className="flex flex-col text-center py-2 px-6 rounded-md border border-black">
                 <p className="py-4">Anggota</p>
                 <img
-                  src="src/assets/foto/"
+                  src="src/assets/foto/Muhaemin.jpg"
                   className="px-4 aspect-[1/1] rounded-2xl"
                 />
                 <h1 className="text-lg px-4 py-5">Muhaemin Iskandar</h1>
@@ -130,13 +130,13 @@ export default () => {
                 </div>
               </div>
 
-              <div className="flex flex-col text-center py-2 px-6 rounded-md border border-black bg-blue-300">
-                <p className="py-2">Anggota</p>
+              <div className="flex flex-col text-center py-2 px-6 rounded-md border border-black">
+                <p className="py-4">Anggota</p>
                 <img
-                  src="src/assets/foto/vika.jpg"
-                  className="px-2 aspect-[2/2] rounded-2xl"
+                  src="src/assets/foto/Vika.jpg"
+                  className="px-4 aspect-[1/1] rounded-2xl"
                 />
-                <h1 className="text-lg px-3 py-3">Vika Alpiana</h1>
+                <h1 className="text-lg px-4 py-5">Vika Alpiana</h1>
                 <p className="text-center px-4 ">RCTN-KS05-004</p>
                 <div className="flex flex-row mt-4 px-4 py-1">
                 </div>
