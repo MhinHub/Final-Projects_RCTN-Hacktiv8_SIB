@@ -2,6 +2,10 @@
 
 ### Ini adalah repositori semua file final projek yang kami buat dalam program Studi Independen Hacktiv8 kelas React.
 
+Manajemen Project => Notion : https://bit.ly/NotionKelompok1
+
+
+
 <!-- (kalau sudah publik aktifkan ini)
  ## Anggota Kelompok
 <a href="https://github.com/MhinHub/Final-Projects_RCTN-Hacktiv8_SIB/graphs/contributors">
