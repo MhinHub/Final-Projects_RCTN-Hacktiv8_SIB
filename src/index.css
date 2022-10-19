@@ -33,8 +33,12 @@ body {
 }
 
 
+.main-content {
+  @apply grid lg:grid-cols-2 sm:grid-cols-1 gap-x-12 gap-y-10 mx-44 my-6 justify-center px-20 static;
+}
+
 .tabs-content {
-  @apply tabs justify-center mt-4 gap-x-2 mx-auto inset-x-0;
+  @apply tabs justify-center mt-4 gap-x-2 mx-auto static;
 }
 
 .tab-active{
@@ -47,9 +51,12 @@ body {
 
 
 .navbar {
-  @apply w-screen bg-transparent border border-y-primary flex align-middle mt-px px-16 justify-between;
+  @apply w-screen bg-base-100 border border-y-primary flex align-middle mt-px px-16 justify-between;
 }
 
+.side-bar {
+  @apply p-4 m-2 flex flex-col w-1/6 sticky top-20;
+}
 
 hr {
   @apply h-px w-full border-t border-primary mt-4 mb-1;
@@ -89,5 +96,5 @@ button {
 
 
 .footer-content {
-  @apply footer mb-1 mt-10 border border-y-primary p-10 bg-base-100 w-screen text-primary;
+  @apply footer mb-1 mt-10 border border-y-primary p-10 bg-base-100 w-screen text-primary relative bottom-1;
 }
