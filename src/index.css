@@ -96,5 +96,5 @@ button {
 
 
 .footer-content {
-  @apply footer mb-1 mt-10 border border-y-primary p-10 bg-base-100 w-screen text-primary relative bottom-1;
+  @apply footer mb-1 mt-10 border border-y-primary p-10 bg-base-100 w-screen text-primary bottom-1;
 }

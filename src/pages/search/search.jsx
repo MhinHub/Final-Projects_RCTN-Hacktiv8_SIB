@@ -37,6 +37,7 @@ export default () => {
                     <CardItem key={index} news={news} />
                 ))}
             </div>
+            {/*TODO: Menambahkan item ketika search result tidak ada */}
         </Layout>
     );
 };
