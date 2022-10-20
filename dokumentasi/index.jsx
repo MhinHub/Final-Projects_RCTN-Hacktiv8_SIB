@@ -1,12 +1,10 @@
-// => Kelompok 1:  
+// => Kelompok 1:
 
 // Muhammad Irfan Zidni - (RCTN-KS05-002)
 // Muhaemin Iskandar    - (RCTN-KS05-001)
 // Vika Alpiana         - (RCTN-KS05-004)
 
-
 // ============================== //
-
 
 // Link Notion: https://bit.ly/NotionKelompok1
 
@@ -16,8 +14,9 @@
 
 // Link Google Slide : https://docs.google.com/document/d/1j7M-2xioHbWPDcZz2nQ3EkX0exc01ug2QQxC55giBEE/edit?usp=sharing
 
-
-
-
-
- 
+// ============================== //
+// SUDAH DIMENTORING
+// ============================== //
+// Hari 			: Kamis, 20 Oktober 2022
+// Pukul			: 13.15 - 14.30 WIB
+// Nama Instructor	: Pak Arif Setiawan
