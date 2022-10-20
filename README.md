@@ -1,7 +1,7 @@
 <div align="center">
 <img src="https://i.postimg.cc/fz2Kqddr/logo-news.png" alt="logo" width="200" height="auto" />
   <h1>NewsUp</h1>
-  <h2>Final project 1 - Kelompok 1</h2>
+  <p><b>Final project 1 - Kelompok 1</b></p>
   <p>Aplikasi yang kami buat adalah website news yang berjalan di pada browser desktop. Dalam konten website memuat konten berita yang terkini dan terbaru seputar indonesia, programming, covid-19, sport, teknologi dan entertainment dengan tetap memperhatikan sisi pengguna.
 </p>
 </div>
