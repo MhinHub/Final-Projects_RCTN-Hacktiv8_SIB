@@ -1,6 +1,6 @@
 <div align="center">
 
-  <img src="public/logo-news.png" alt="logo" width="200" height="auto" />
+  <img src="https://i.postimg.cc/fz2Kqddr/logo-news.png?dl=1" alt="logo" width="200" height="auto" />
   <h1>NewsUp</h1>
   <h2>Final project 1 - Kelompok 1</h2>
   <p>Aplikasi yang kami buat adalah website news yang berjalan di pada browser desktop. Dalam konten website memuat konten berita yang terkini dan terbaru seputar indonesia, programming, covid-19, sport, teknologi dan entertainment dengan tetap memperhatikan sisi pengguna.
@@ -64,6 +64,11 @@
     </ul>
     </details>
 6. Demo Aplikasi ✅  
+
+* [Link Nation](https://bit.ly/NotionKelompok1)
+* [Link Figma](https://bit.ly/FigmaKelompok1-Pro1)
+* [Link Docs](https://docs.google.com/presentation/d/1OuXdC9LmQb2hXWRO8KAHQcqH7hFAh2ck/edit#slide=id.g16f2329b80f_0_65)
+* [Link Slide](https://docs.google.com/document/d/1j7M-2xioHbWPDcZz2nQ3EkX0exc01ug2QQxC55giBEE/edit?usp=sharing)
 ___
 &nbsp;
 ## 📜 Instruksi Projek
