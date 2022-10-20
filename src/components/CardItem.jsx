@@ -8,7 +8,6 @@ import { saveThisNews } from "../features/news-slice";
 export default ({ news }) => {
     const [isBookmarked, setIsBookmarked] = useState(false);
     const [isLiked, setIsLiked] = useState(false);
-
     const dispatch = useDispatch();
 
     const isNewsSaved = (news) => {
