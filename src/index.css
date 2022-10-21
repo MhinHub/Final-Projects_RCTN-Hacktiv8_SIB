@@ -94,6 +94,21 @@ button {
   @apply rounded-full p-3 text-primary;
 }
 
+.pagination {
+  @apply flex justify-center items-center gap-x-4 mt-10 px-4 py-2 sticky bottom-2 bg-base-100 border border-primary rounded-full max-w-fit mx-auto;
+}
+
+.pagination__link {
+  @apply inline-block py-1 px-5 border border-primary rounded-full text-primary hover:bg-primary hover:text-base-100;
+}
+
+.pagination__link--active {
+  @apply py-1 px-4 border border-primary rounded-full font-bold;
+}
+
+.pagination__link--disabled {
+  @apply text-primary opacity-50 cursor-not-allowed;
+}
 
 .footer-content {
   @apply footer mb-1 mt-10 border border-y-primary p-10 bg-base-100 w-screen text-primary bottom-1;
