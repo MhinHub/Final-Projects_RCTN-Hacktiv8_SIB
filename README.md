@@ -28,8 +28,13 @@
 </ul>
 <li>Behavior: dark & light theme</li>
 <li>Modal: More (About Team Developer in Footer)</li>
+<li>Loading Card</li>
+<li>Pagination</li>
 </ol>
 </details>
+<br/>
+
+![GitHub watchers](https://img.shields.io/github/watchers/MhinHub/Final-Projects_RCTN-Hacktiv8_SIB?label=Watch&style=social)
 
 
 &nbsp;
