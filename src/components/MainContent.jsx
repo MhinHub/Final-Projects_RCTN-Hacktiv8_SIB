@@ -31,14 +31,7 @@ export default ({ category, fetchNews, addNews }) => {
       };
       fetchData();
     } catch (error) {
-      return (
-        <div className="flex justify-center">
-          <h1 className="text-2xl font-bold text-primary">
-            Something went wrong
-          </h1>
-          <p className="text-primary">{error}</p>
-        </div>
-      )
+      console.error(err);
     }
   }, [fetchNews]);
 
@@ -66,12 +59,19 @@ export default ({ category, fetchNews, addNews }) => {
   return (
     <>
       <main className="main-content">
-        {currentNews.map((news, index) => (
-          <CardItem
-            key={index}
-            news={news}
-          />
-        ))}
+        {isDataLoaded ? (
+          <div className="flex justify-center my-6">
+            <h1 className="text-4xl font-bold text-primary">
+              Something went wrong when fetching data
+            </h1>
+          </div>
+        ) : (
+          currentNews.map((news, index) => (
+            <CardItem
+              key={index}
+              news={news}
+            />
+          )))}
       </main>
       {/* <Pagination
           newsPerPage={newsPerPage}
