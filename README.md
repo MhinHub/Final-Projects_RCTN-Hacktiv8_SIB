@@ -30,6 +30,7 @@
 <li>Modal: More (About Team Developer in Footer)</li>
 <li>Loading Card</li>
 <li>Pagination</li>
+<li>Error message in section page if fetching data error</li>
 </ol>
 </details>
 <br/>
