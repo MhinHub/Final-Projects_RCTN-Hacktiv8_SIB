@@ -1,9 +1,10 @@
 import {Image, ScrollView, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import {colors, fonts} from '../../utils';
-import {Gap, MiniCard, PickBooking, Title} from '../../components';
+import {Gap, MiniCard, PickBooking, Title, TourCard} from '../../components';
 import Swiper from 'react-native-swiper';
 import {Slider1, Slider2} from '../../assets';
+import {Wisata1, Wisata2, Wisata3} from '../../assets/Dummy';
 
 const HeaderHome = () => {
   return (
@@ -37,7 +38,7 @@ const Beranda = () => {
       </View>
       <Gap height={30} />
       <Title title="Kota Populer" />
-      <Gap height={23} />
+      <Gap height={15} />
       <View style={styles.cityPopular}>
         <ScrollView
           style={styles.city}
@@ -57,8 +58,23 @@ const Beranda = () => {
         </ScrollView>
       </View>
       <Gap height={30} />
-      <Title title="Wisata Populer" />
-      <Gap height={23} />
+      <Title title="Wisata Trending" />
+      <Gap height={15} />
+      <View style={styles.tourTrending}>
+        <ScrollView
+          style={styles.tour}
+          horizontal={true}
+          showsHorizontalScrollIndicator={false}>
+          <TourCard title="Candi Borobudor" img={Wisata1} />
+          <Gap width={12} />
+          <TourCard title="Nusa Penida" img={Wisata2} />
+          <Gap width={12} />
+          <TourCard title="Danau Toba" img={Wisata3} />
+        </ScrollView>
+      </View>
+      <Gap height={30} />
+      <Title title="Rekomendasi Hotel" />
+      <Gap height={15} />
     </ScrollView>
   );
 };
@@ -121,6 +137,12 @@ const styles = StyleSheet.create({
     paddingLeft: 20,
   },
   city: {
+    flexDirection: 'row',
+  },
+  tourTrending: {
+    paddingLeft: 20,
+  },
+  tour: {
     flexDirection: 'row',
   },
 });

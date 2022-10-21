@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontFamily: fonts.primary[400],
-    alignSelf: 'center',
+    textAlign: 'center',
     color: colors.text.primary,
   },
 });
