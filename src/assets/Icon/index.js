@@ -10,6 +10,8 @@ import IconProfileActive from './ic-profil-active.svg';
 import IconLocGrey from './ic-loc-grey.svg';
 import IconDateGrey from './ic-date-grey.svg';
 import IconPersonGrey from './ic-person-grey.svg';
+import IconStar from './ic-star.svg';
+import IconFavoritOutline from './ic-favorit-outline.svg';
 
 export {
   IconBackDark,
@@ -24,4 +26,6 @@ export {
   IconLocGrey,
   IconDateGrey,
   IconPersonGrey,
+  IconStar,
+  IconFavoritOutline,
 };

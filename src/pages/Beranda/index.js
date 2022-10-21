@@ -1,10 +1,24 @@
 import {Image, ScrollView, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import {colors, fonts} from '../../utils';
-import {Gap, MiniCard, PickBooking, Title, TourCard} from '../../components';
+import {
+  Card,
+  Gap,
+  MiniCard,
+  PickBooking,
+  Title,
+  TourCard,
+} from '../../components';
 import Swiper from 'react-native-swiper';
 import {Slider1, Slider2} from '../../assets';
-import {Wisata1, Wisata2, Wisata3} from '../../assets/Dummy';
+import {
+  Wisata1,
+  Wisata2,
+  Wisata3,
+  Hotel1,
+  Hotel2,
+  Hotel3,
+} from '../../assets/Dummy';
 
 const HeaderHome = () => {
   return (
@@ -66,15 +80,41 @@ const Beranda = () => {
           horizontal={true}
           showsHorizontalScrollIndicator={false}>
           <TourCard title="Candi Borobudor" img={Wisata1} />
-          <Gap width={12} />
+          <Gap width={15} />
           <TourCard title="Nusa Penida" img={Wisata2} />
-          <Gap width={12} />
+          <Gap width={15} />
           <TourCard title="Danau Toba" img={Wisata3} />
         </ScrollView>
       </View>
       <Gap height={30} />
       <Title title="Rekomendasi Hotel" />
       <Gap height={15} />
+      <View style={styles.hotel}>
+        <Card
+          img={Hotel1}
+          title="Star Horel"
+          location="Tebet, Jakarta Utara"
+          rate={4.8}
+          price="Rp. 450.000"
+        />
+        <Gap height={12} />
+        <Card
+          img={Hotel2}
+          title="Star Horel"
+          location="Pasar Minggu, Jakarta Utara"
+          rate={4.8}
+          price="Rp. 450.000"
+        />
+        <Gap height={12} />
+        <Card
+          img={Hotel3}
+          title="Hotel Santika"
+          location="Tebet, Jakarta Utara"
+          rate={4.8}
+          price="Rp. 450.000"
+        />
+      </View>
+      <Gap height={30} />
     </ScrollView>
   );
 };
@@ -144,5 +184,8 @@ const styles = StyleSheet.create({
   },
   tour: {
     flexDirection: 'row',
+  },
+  hotel: {
+    paddingHorizontal: 20,
   },
 });
