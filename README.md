@@ -102,7 +102,7 @@ npm i && npm run dev
 
 atau
 
-[Klik disini](./demo.html)
+[Klik disini](./docs/index.html)
 
 
 ___
