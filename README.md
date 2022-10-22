@@ -98,7 +98,7 @@ npm i && npm run dev
 &nbsp;
 
 ## 💻️ Demo Aplikasi
-![Demo gif](./dokumentasi/demo-newsup.gif)
+![Demo gif](./docs/demo-newsup.gif)
 
 atau
 
