@@ -55,23 +55,25 @@ export default ({ category, fetchNews, addNews }) => {
     )
   }
 
+  if (!isDataLoaded) {
+    return (
+      <div className="flex justify-center my-6">
+        <h1 className="text-4xl font-bold text-primary">
+          Something went wrong when fetching data
+        </h1>
+      </div>
+    )
+  }
 
   return (
     <>
       <main className="main-content">
-        {isDataLoaded ? (
-          <div className="flex justify-center my-6">
-            <h1 className="text-4xl font-bold text-primary">
-              Something went wrong when fetching data
-            </h1>
-          </div>
-        ) : (
-          currentNews.map((news, index) => (
-            <CardItem
-              key={index}
-              news={news}
-            />
-          )))}
+        {currentNews.map((news, index) => (
+          <CardItem
+            key={index}
+            news={news}
+          />
+        ))}
       </main>
       {/* <Pagination
           newsPerPage={newsPerPage}
