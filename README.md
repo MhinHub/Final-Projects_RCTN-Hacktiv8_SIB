@@ -94,6 +94,20 @@ npm i && npm run dev
 4. Jika ingin mencari berita coba masukkan inputan di search bar-nya
 5. Pada Header-nya juga terdapat tombol swaper untuk mengganti tema website, silahkan dicoba.
 6. Pada card news-nya terdapat tombol like, dan jika ingin menyimpan berita coba klik tombol save pada berita yang ingin disimpan maka akan muncul di page saved yang bisa diakses dengan klik tombol save di header.
+---
+&nbsp;
+
+## 💻️ Demo Aplikasi
+[Klik disini](./demo.html)
+
+
+___
+&nbsp;
+
+
+## 📝 Catatan
+*  Untuk sekarang ini masih berbasis desktop, belum sepenuhnya responsive
+*  News API yang digunakan masih versi development, jadi data API-nya hanya bisa dipakai pada localhost dan terdapat beberapa batasan lainnya.
 
 ___
 &nbsp;
