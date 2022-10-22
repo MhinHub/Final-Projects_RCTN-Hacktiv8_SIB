@@ -1,3 +1,4 @@
+![Views](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FMhinHub%2FFinal-Projects_RCTN-Hacktiv8_SIB%2Ftree%2Fsib_react_005_fp1&count_bg=%2321211F&title_bg=%23ACACAC&icon=&icon_color=%23FFFBFB&title=Views&edge_flat=false)
 <div align="center">
 <img src="https://i.postimg.cc/fz2Kqddr/logo-news.png" alt="logo" width="200" height="auto" />
   <h1>NewsUp</h1>
@@ -33,10 +34,6 @@
 <li>Error message in section page if fetching data error</li>
 </ol>
 </details>
-<br/>
-
-![Views](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FMhinHub%2FFinal-Projects_RCTN-Hacktiv8_SIB%2Ftree%2Fsib_react_005_fp1&count_bg=%2321211F&title_bg=%23ACACAC&icon=&icon_color=%23FFFBFB&title=hits&edge_flat=false)
-
 
 &nbsp;
 
