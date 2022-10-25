@@ -99,7 +99,7 @@ npm i && npm run dev
 
 atau
 
-[Klik disini](./docs/index.html)
+[Klik disini](.docs/demo-newsup.mp4)
 
 
 ___
