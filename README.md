@@ -99,7 +99,7 @@ npm i && npm run dev
 
 atau
 
-[Klik disini](.docs/demo-newsup.mp4)
+[Klik disini](https://github.com/MhinHub/Final-Projects_RCTN-Hacktiv8_SIB/blob/sib_react_005_fp1/docs/demo-newsup.mp4?raw=true)
 
 
 ___
