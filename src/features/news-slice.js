@@ -19,13 +19,24 @@ export const newsSlice = createSlice({
   initialState,
   reducers: {
     saveThisNews: (state, action) => {
-      const filterSavedNews = state.data.saved.find((item) => item.title === action.payload.title);
+      const filterSavedNews = state.data.saved.find(
+        (item) => item.title === action.payload.title
+      );
       if (filterSavedNews) {
-        const filtered = state.data.saved.filter((item) => item.title !== filterSavedNews.title);
+        const filtered = state.data.saved.filter(
+          (item) => item.title !== filterSavedNews.title
+        );
         state.data.saved = filtered;
       } else {
         state.data.saved.push(action.payload);
       }
+    },
+    deleteThisNews: (state, action) => {
+      state.data.saved.splice(
+        state.data.saved.findIndex((item) => item.title === action.payload),
+        1
+      );
+      // state.data.saved = remove;
     },
     addNewsIndonesia: (state, action) => {
       state.data.indonesia = action.payload;
@@ -59,7 +70,8 @@ export const {
   addNewsEntertainment,
   addNewsSports,
   addNewsTechnology,
-  addNewsByKeyword
+  addNewsByKeyword,
+  deleteThisNews,
 } = newsSlice.actions;
 
 export default newsSlice.reducer;
