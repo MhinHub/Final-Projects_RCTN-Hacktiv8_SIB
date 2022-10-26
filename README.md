@@ -1,3 +1,4 @@
+![Views](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FMhinHub%2FFinal-Projects_RCTN-Hacktiv8_SIB%2Ftree%2Fsib_react_005_fp1&count_bg=%2321211F&title_bg=%23ACACAC&icon=&icon_color=%23FFFBFB&title=Views&edge_flat=false)
 <div align="center">
 <img src="https://i.postimg.cc/fz2Kqddr/logo-news.png" alt="logo" width="200" height="auto" />
   <h1>NewsUp</h1>
@@ -33,10 +34,6 @@
 <li>Error message in section page if fetching data error</li>
 </ol>
 </details>
-<br/>
-
-![GitHub watchers](https://img.shields.io/github/watchers/MhinHub/Final-Projects_RCTN-Hacktiv8_SIB?label=Watch&style=social)
-
 
 &nbsp;
 
@@ -94,6 +91,24 @@ npm i && npm run dev
 4. Jika ingin mencari berita coba masukkan inputan di search bar-nya
 5. Pada Header-nya juga terdapat tombol swaper untuk mengganti tema website, silahkan dicoba.
 6. Pada card news-nya terdapat tombol like, dan jika ingin menyimpan berita coba klik tombol save pada berita yang ingin disimpan maka akan muncul di page saved yang bisa diakses dengan klik tombol save di header.
+---
+&nbsp;
+
+## 💻️ Demo Aplikasi
+![Demo gif](./docs/demo-newsup.gif)
+
+atau
+
+[Klik disini](https://github.com/MhinHub/Final-Projects_RCTN-Hacktiv8_SIB/blob/sib_react_005_fp1/docs/demo-newsup.mp4?raw=true)
+
+
+___
+&nbsp;
+
+
+## 📝 Catatan
+*  Untuk sekarang ini masih berbasis desktop, belum sepenuhnya responsive
+*  News API yang digunakan masih versi development, jadi data API-nya hanya bisa dipakai pada localhost dan terdapat beberapa batasan lainnya.
 
 ___
 &nbsp;
@@ -101,7 +116,8 @@ ___
 <h3 align="left">Top Library and Tools:</h3>
 <div align="left"> 
 <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" width="40" height="40"/>  
-<img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" alt="daisyui" width="40" height="40"/> 
+<img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" alt="tailwind" width="40" height="40"/> 
+<img src="https://vitejs.dev/logo-with-shadow.png" alt="vite" width="40" height="40"/> 
 <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/redux/redux-original.svg" alt="redux" width="40" height="40"/>
 <img src="https://brandeps.com/logo-download/R/React-Router-logo-vector-01.svg" alt="rtk" width="40" height="40"/> 
 <img src="https://www.vectorlogo.zone/logos/figma/figma-icon.svg" alt="figma" width="40" height="40"/> 
