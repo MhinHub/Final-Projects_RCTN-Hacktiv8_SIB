@@ -1,19 +1,26 @@
 import React from "react";
+import { Logo } from "../assets/images";
 
 export default function Navbar() {
   return (
-    <div className="bg-blue-600 shadow-md">
+    <div className="shadow-md">
       <div className="navbar bg-base-100">
-        <div className="flex-1">
-          <a className="btn-ghost btn text-xl normal-case">daisyUI</a>
+        <div className="flex-1 pl-5">
+          <img src={Logo} alt="logo" />
         </div>
-        <div className="form-control pr-5">
-          <input
-            type="text"
-            placeholder="Search"
-            className="input-bordered input"
-          />
+        <div className="flex-col">
+          <div className="form-control pr-5">
+            <input
+              type="text"
+              placeholder="Cari produk"
+              className="input-bordered input"
+            />
+          </div>
+          <div className="flex-row">
+            <p>Jewelery</p>
+          </div>
         </div>
+
         <div className="flex-none">
           <div className="dropdown-end dropdown">
             <label tabIndex={0} className="btn-ghost btn-circle btn">

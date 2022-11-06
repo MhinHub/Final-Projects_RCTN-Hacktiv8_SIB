@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { AiOutlineLinkedin, AiOutlineInstagram } from "react-icons/ai";
+import { Irfan, Muhaemin, Vika } from "../assets/profile";
 
 export default () => {
   return (
@@ -86,10 +87,7 @@ export default () => {
             <div className="w-30 m-4 flex justify-center gap-6 sm:grid-cols-2 lg:grid-cols-3">
               <div className="flex flex-col rounded-md border border-black py-2 px-6 text-center">
                 <p className="py-4">Ketua</p>
-                <img
-                  src="src/assets/foto/Irfan.jpg"
-                  className="aspect-[1/1] rounded-2xl px-4"
-                />
+                <img src={Irfan} className="aspect-[1/1] rounded-2xl px-4" />
                 <h1 className="px-6 py-5 text-lg">Muhammad Irfan Zidni</h1>
                 <p className="px-4 text-center ">RCTN-KS05-002</p>
 
@@ -98,10 +96,7 @@ export default () => {
 
               <div className="flex flex-col rounded-md border border-black py-2 px-6 text-center">
                 <p className="py-4">Anggota</p>
-                <img
-                  src="src/assets/foto/Muhaemin.jpg"
-                  className="aspect-[1/1] rounded-2xl px-4"
-                />
+                <img src={Muhaemin} className="aspect-[1/1] rounded-2xl px-4" />
                 <h1 className="px-4 py-5 text-lg">Muhaemin Iskandar</h1>
                 <p className="px-4 text-center ">RCTN-KS05-001</p>
                 <div className="mt-4 flex flex-row px-4 py-1"></div>
@@ -109,10 +104,7 @@ export default () => {
 
               <div className="flex flex-col rounded-md border border-black py-2 px-6 text-center">
                 <p className="py-4">Anggota</p>
-                <img
-                  src="src/assets/foto/Vika.jpg"
-                  className="aspect-[1/1] rounded-2xl px-4"
-                />
+                <img src={Vika} className="aspect-[1/1] rounded-2xl px-4" />
                 <h1 className="px-4 py-5 text-lg">Vika Alpiana</h1>
                 <p className="px-4 text-center ">RCTN-KS05-004</p>
                 <div className="mt-4 flex flex-row px-4 py-1"></div>
