@@ -1,20 +1,20 @@
 import React from "react";
-import { AppleWatch } from "../assets/images";
+import { Dummy1 } from "../assets/dummy";
 
 function Card() {
   return (
     <div className="w-full max-w-sm rounded-lg bg-white shadow-md dark:border-gray-700 dark:bg-gray-800">
       <a href="#">
         <img
-          className="rounded-t-lg p-8"
-          src={AppleWatch}
+          className="w-full rounded-t-lg p-0"
+          src={Dummy1}
           alt="product image"
         />
       </a>
       <div className="px-5 pb-5">
         <a href="#">
-          <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
-            Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport
+          <h5 className="font-sans text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
+            Foldsack No. 1 Backpack, Fits 15 Laptops
           </h5>
         </a>
         <div className="mt-2.5 mb-5 flex items-center">
@@ -76,7 +76,7 @@ function Card() {
           </span>
         </div>
         <div className="flex items-center justify-between">
-          <span className="text-3xl font-bold text-gray-900 dark:text-white">
+          <span className="font-sans text-3xl font-bold text-gray-900 dark:text-white">
             $599
           </span>
           <a
