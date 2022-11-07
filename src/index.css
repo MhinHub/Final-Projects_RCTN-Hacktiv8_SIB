@@ -7,6 +7,13 @@
   src: url("./assets/fonts/Inter-Regular.ttf");
 }
 
+body {
+  font-size: 16px;
+}
+
+h1 {
+  font-size: 2rem;
+}
 
 .footer-content {
   @apply footer bottom-1 mb-1 mt-10 w-screen border border-y-primary bg-base-100 p-10 text-primary;
