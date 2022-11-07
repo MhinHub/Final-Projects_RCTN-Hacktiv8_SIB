@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { AiOutlineLinkedin, AiOutlineInstagram } from "react-icons/ai";
-import { Irfan, Muhaemin, Vika } from "../assets/profile";
 
 export default () => {
   return (
@@ -8,10 +7,13 @@ export default () => {
       <div>
         <Link to="/" className="flex-1">
           <p className="mb-5 text-4xl text-primary">
-            <b>NewsUp</b>
+            <b>Tokoku</b>
           </p>
         </Link>
-        <p>Jelajahi berita terupdate dengan kami</p>
+        <div className="mt-4">
+              Get the breathing space now, and we’ll extend your term at the
+              other end year for go.
+        </div>
       </div>
       <div>
         <span className="font-bold text-primary">Partner</span>
@@ -74,46 +76,59 @@ export default () => {
 
         <a href="#my-modal" className="justify-self-center !underline">
           More
-        </a>
+          </a>
+        <br/>
+        <div className="d-flex pb-5 fw-bold justify-content-center align-items-center">
+          Copyright ©2022 All rights reserved
+        </div>
 
         <label id="my-modal" className="modal cursor-pointer">
-          <label className="modal-box relative w-11/12 max-w-6xl">
+          <label className="modal-box w-11/12 max-w-6xl relative">
             <center>
               <b>
                 <h1 className="text-2xl font-bold">About</h1>
               </b>
             </center>
 
-            <div className="w-30 m-4 flex justify-center gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              <div className="flex flex-col rounded-md border border-black py-2 px-6 text-center">
+            <div className="flex justify-center gap-6 lg:grid-cols-3 sm:grid-cols-2 w-30 m-4">
+              <div className="flex flex-col text-center py-2 px-6 rounded-md border border-black">
                 <p className="py-4">Ketua</p>
-                <img src={Irfan} className="aspect-[1/1] rounded-2xl px-4" />
-                <h1 className="px-6 py-5 text-lg">Muhammad Irfan Zidni</h1>
-                <p className="px-4 text-center ">RCTN-KS05-002</p>
+                <img
+                  src="src/assets/foto/Irfan.jpg"
+                  className="px-4 aspect-[1/1] rounded-2xl"
+                />
+                <h1 className="text-lg px-6 py-5">Muhammad Irfan Zidni</h1>
+                <p className="text-center px-4 ">RCTN-KS05-002</p>
 
-                <div className="mt-4 flex flex-row px-4 py-1"></div>
+                <div className="flex flex-row mt-4 px-4 py-1"></div>
               </div>
 
-              <div className="flex flex-col rounded-md border border-black py-2 px-6 text-center">
+              <div className="flex flex-col text-center py-2 px-6 rounded-md border border-black">
                 <p className="py-4">Anggota</p>
-                <img src={Muhaemin} className="aspect-[1/1] rounded-2xl px-4" />
-                <h1 className="px-4 py-5 text-lg">Muhaemin Iskandar</h1>
-                <p className="px-4 text-center ">RCTN-KS05-001</p>
-                <div className="mt-4 flex flex-row px-4 py-1"></div>
+                <img
+                  src="src/assets/foto/Muhaemin.jpg"
+                  className="px-4 aspect-[1/1] rounded-2xl"
+                />
+                <h1 className="text-lg px-4 py-5">Muhaemin Iskandar</h1>
+                <p className="text-center px-4 ">RCTN-KS05-001</p>
+                <div className="flex flex-row mt-4 px-4 py-1"></div>
               </div>
 
-              <div className="flex flex-col rounded-md border border-black py-2 px-6 text-center">
+              <div className="flex flex-col text-center py-2 px-6 rounded-md border border-black">
                 <p className="py-4">Anggota</p>
-                <img src={Vika} className="aspect-[1/1] rounded-2xl px-4" />
-                <h1 className="px-4 py-5 text-lg">Vika Alpiana</h1>
-                <p className="px-4 text-center ">RCTN-KS05-004</p>
-                <div className="mt-4 flex flex-row px-4 py-1"></div>
+                <img
+                  src="src/assets/foto/Vika.jpg"
+                  className="px-4 aspect-[1/1] rounded-2xl"
+                />
+                <h1 className="text-lg px-4 py-5">Vika Alpiana</h1>
+                <p className="text-center px-4 ">RCTN-KS05-004</p>
+                <div className="flex flex-row mt-4 px-4 py-1"></div>
               </div>
             </div>
             <div className="modal-action">
               <a
                 href="#"
-                className="btn-circle btn absolute top-2 right-2 bg-primary font-bold text-base-100"
+                className="bg-primary btn-circle absolute btn top-2 right-2 text-base-100 font-bold"
               >
                 X
               </a>
@@ -149,6 +164,7 @@ function Contact({ name, linkIG, linkLI }) {
           <AiOutlineLinkedin className="ml-2" size={20} />
         </a>
       </div>
+      
     </div>
   );
 }
