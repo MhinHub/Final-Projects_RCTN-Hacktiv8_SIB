@@ -1,11 +1,10 @@
 import React from "react";
-import { ImageCategories1 } from "../assets/images";
 
-function CardCategories() {
+function CardCategories({ img, title }) {
   return (
     <div className="relative">
-      <img src={ImageCategories1} alt="" className="rounded-md object-cover" />
-      <p className="absolute bottom-4 left-5">men's clothing</p>
+      <img src={img} alt="" className="w-full rounded-md object-cover  " />
+      <p className="absolute bottom-4 left-5 text-white drop-shadow">{title}</p>
     </div>
   );
 }

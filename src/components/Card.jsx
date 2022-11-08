@@ -1,7 +1,7 @@
 import React from "react";
-import { Dummy1 } from "../assets/dummy";
+import { AiFillStar } from "react-icons/ai";
 import { BsCartPlus } from "react-icons/bs";
-import { AiFillStar, AiFillStepForward } from "react-icons/ai";
+import { Dummy1 } from "../assets/dummy";
 
 function Card() {
   return (
