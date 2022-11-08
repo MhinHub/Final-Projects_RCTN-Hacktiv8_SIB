@@ -17,7 +17,7 @@ export default function Navbar() {
                 className="input-bordered input w-full"
               />
             </div>
-            <div className="dropdown dropdown-end">
+            <div className="dropdown-end dropdown">
               <label tabIndex={0} className="btn-ghost btn-circle btn">
                 <div className="indicator">
                   <svg
@@ -53,7 +53,7 @@ export default function Navbar() {
               </div>
             </div>
             <div className="px-5">
-              <a className="btn">Masuk</a>
+              <a className="btn bg-[#EF6136] hover:bg-[#D63B0C]">Masuk</a>
             </div>
           </div>
           <div className="mr-auto mt-3 hidden space-x-4 sm:flex ">

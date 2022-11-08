@@ -3,9 +3,9 @@ import { ImageCategories1 } from "../assets/images";
 
 function CardCategories() {
   return (
-    <div className="relative px-5 ">
+    <div className="relative">
       <img src={ImageCategories1} alt="" className="rounded-md object-cover" />
-      <p className="absolute bottom-4 left-10">men's clothing</p>
+      <p className="absolute bottom-4 left-5">men's clothing</p>
     </div>
   );
 }

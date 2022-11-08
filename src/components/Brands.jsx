@@ -16,35 +16,65 @@ function Brands() {
   return (
     <div className="carousel-center carousel rounded-box  space-x-4">
       <div className="carousel-item">
-        <img src={Brand1} className="rounded-box" />
+        <img
+          src={Brand1}
+          className="rounded-box h-28 w-28 md:h-32 md:w-32 lg:h-36 lg:w-36"
+        />
       </div>
       <div className="carousel-item">
-        <img src={Brand2} className="rounded-box" />
+        <img
+          src={Brand2}
+          className="rounded-box h-28 w-28 md:h-32 md:w-32 lg:h-36 lg:w-36"
+        />
       </div>
 
       <div className="carousel-item">
-        <img src={Brand3} className="rounded-box" />
+        <img
+          src={Brand3}
+          className="rounded-box h-28 w-28 md:h-32 md:w-32 lg:h-36 lg:w-36"
+        />
       </div>
       <div className="carousel-item">
-        <img src={Brand4} className="rounded-box" />
+        <img
+          src={Brand4}
+          className="rounded-box h-28 w-28 md:h-32 md:w-32 lg:h-36 lg:w-36"
+        />
       </div>
       <div className="carousel-item">
-        <img src={Brand5} className="rounded-box" />
+        <img
+          src={Brand5}
+          className="rounded-box h-28 w-28 md:h-32 md:w-32 lg:h-36 lg:w-36"
+        />
       </div>
       <div className="carousel-item">
-        <img src={Brand6} className="rounded-box" />
+        <img
+          src={Brand6}
+          className="rounded-box h-28 w-28 md:h-32 md:w-32 lg:h-36 lg:w-36"
+        />
       </div>
       <div className="carousel-item">
-        <img src={Brand7} className="rounded-box" />
+        <img
+          src={Brand7}
+          className="rounded-box h-28 w-28 md:h-32 md:w-32 lg:h-36 lg:w-36"
+        />
       </div>
       <div className="carousel-item">
-        <img src={Brand8} className="rounded-box" />
+        <img
+          src={Brand8}
+          className="rounded-box h-28 w-28 md:h-32 md:w-32 lg:h-36 lg:w-36"
+        />
       </div>
       <div className="carousel-item">
-        <img src={Brand9} className="rounded-box" />
+        <img
+          src={Brand9}
+          className="rounded-box h-28 w-28 md:h-32 md:w-32 lg:h-36 lg:w-36"
+        />
       </div>
       <div className="carousel-item">
-        <img src={Brand10} className="rounded-box" />
+        <img
+          src={Brand10}
+          className="rounded-box h-28 w-28 md:h-32 md:w-32 lg:h-36 lg:w-36"
+        />
       </div>
     </div>
   );

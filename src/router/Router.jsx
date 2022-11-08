@@ -8,7 +8,7 @@ import ListProducts from "../pages/ListProducts";
 export default function Router() {
   return (
     <Routes>
-      {/* <Route path="/" element={<Home />} /> */}
+      <Route path="/" element={<Home />} />
       <Route path="/" element={<ListProducts />} />
       <Route path="about" element={<About />} />
       <Route path="gallery" element={<Gallery />} />
