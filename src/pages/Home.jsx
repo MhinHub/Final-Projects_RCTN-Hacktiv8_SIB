@@ -1,4 +1,5 @@
 import React from "react";
+import { Dummy1 } from "../assets/dummy";
 import {
   ImageCategories1,
   ImageCategories2,
@@ -18,18 +19,17 @@ const Home = () => {
       <h1 className="mt-10 mb-6 font-bold">Produk Terlaris</h1>
       <div>
         <div className="grid grid-cols-12 gap-6">
-          <div className="col-span-6 sm:col-span-4 lg:col-span-3 xl:col-span-3">
-            <Card />
-          </div>
-          <div className="col-span-6 sm:col-span-4 lg:col-span-3 xl:col-span-3">
-            <Card />
-          </div>
-          <div className="col-span-6 sm:col-span-4 lg:col-span-3 xl:col-span-3">
-            <Card />
-          </div>
-          <div className="col-span-6 sm:col-span-4 lg:col-span-3 xl:col-span-3">
-            <Card />
-          </div>
+          {[1, 2, 3, 4, 5].map((item, index) => (
+            <Card
+              key={index}
+              img={Dummy1}
+              category="men's clothing"
+              title="Foldsack No. 1 Backpack, Fits 15 Laptops"
+              rate="4.3"
+              count="123"
+              price={109.95}
+            />
+          ))}
         </div>
       </div>
       <div className="mt-6 rounded-xl bg-[#EF6136] pb-6">

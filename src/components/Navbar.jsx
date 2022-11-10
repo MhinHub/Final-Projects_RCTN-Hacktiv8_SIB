@@ -1,12 +1,23 @@
 import React from "react";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Logo } from "../assets/images";
+import MasukComp from "./MasukComp";
 
-export default function Navbar() {
+const Navbar = () => {
+  const [modalLogin, setModalLogin] = useState(false);
+
+  const handleModalOn = () => {
+    setModalLogin(true);
+  };
+
   return (
     <div className="shadow-md">
       <div className="navbar bg-base-100 py-4">
         <div className="flex-1 pl-5">
-          <img src={Logo} alt="logo" />
+          <Link to="/" className="flex">
+            <img src={Logo} alt="logo" />
+          </Link>
         </div>
         <div className="flex w-full max-w-3xl flex-col">
           <div className="flex w-full items-center">
@@ -53,17 +64,41 @@ export default function Navbar() {
               </div>
             </div>
             <div className="px-5">
-              <a className="btn bg-[#EF6136] hover:bg-[#D63B0C]">Masuk</a>
+              <label
+                htmlFor="my-modal-3"
+                className="hover:bg-[#D63B0C] btn bg-[#EF6136]"
+                onClick={() => handleModalOn()}
+              >
+                Masuk
+              </label>
             </div>
           </div>
           <div className="mr-auto mt-3 hidden space-x-4 sm:flex ">
-            <p className="text-[#626262]">men's clothing</p>
-            <p className="text-[#626262]">women's clothing</p>
-            <p className="text-[#626262]">jewelery</p>
-            <p className="text-[#626262]">electronics</p>
+            {[
+              "mens clothing",
+              "womens clothing",
+              "jewelery",
+              "electronics",
+            ].map((item, index) => (
+              <Link to="/products" key={index} className="text-[#626262]">
+                {item}
+              </Link>
+            ))}
           </div>
         </div>
       </div>
+
+      <MasukComp />
+
+      {modalLogin ? (
+        <MasukComp checked={true} />
+      ) : (
+        // <p>login</p>
+        // <p>login keluar</p>
+        <MasukComp checked={false} />
+      )}
     </div>
   );
-}
+};
+
+export default Navbar;
