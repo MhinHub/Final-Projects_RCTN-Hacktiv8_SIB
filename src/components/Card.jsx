@@ -1,9 +1,8 @@
 import React from "react";
 import { AiFillStar } from "react-icons/ai";
 import { BsCartPlus } from "react-icons/bs";
-import { Dummy1 } from "../assets/dummy";
 
-function Card({ img, category, title, count, rate, price,  }) {
+function Card({ img, category, title, count, rate, price, onClick }) {
   return (
     <div className="col-span-6 sm:col-span-4 lg:col-span-3 xl:col-span-3">
       <div className="w-full max-w-sm rounded-lg bg-white shadow-md dark:border-gray-700 dark:bg-gray-800">
@@ -39,7 +38,7 @@ function Card({ img, category, title, count, rate, price,  }) {
             <BsCartPlus
               size={30}
               className="ml-auto w-6 md:w-10 lg:w-12"
-              
+              onClick={onClick}
             />
           </div>
         </div>
