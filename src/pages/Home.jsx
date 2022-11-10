@@ -13,41 +13,53 @@ import HomeCarousel from "../components/HomeCarousel";
 import Promo from "../components/Promo";
 import { getProducts } from "../api";
 import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getListProducts } from "../redux/actions/productAction";
+import products from "../redux/reducers/products";
 
 const Home = () => {
-  const [products, setProducts] = useState([]);
+  const {
+    getListProductsResult,
+    getListProductsLoading,
+    getListProductsError,
+  } = useSelector((state) => state.ProductsReducer);
+
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    getProducts().then((res) => {
-      setProducts(res.data);
-    });
-  }, []);
+    // panggil acyion getListProducts
+    console.log("1. use effect component did mount");
+
+    dispatch(getListProducts());
+  }, [dispatch]);
 
   return (
     <div className="w-full pt-5 md:px-4 lg:px-12">
       <HomeCarousel />
       <h1 className="mt-10 mb-6 font-bold">Produk Terlaris</h1>
+      <div className="grid grid-cols-12 gap-6">
+        {getListProductsResult ? (
+          getListProductsResult.map((products) => {
+            return (
+              <Card
+                key={products.id}
+                img={products.image}
+                title={products.title}
+                category={products.category}
+                rate={products.rating.rate}
+                count={products.rating.count}
+                price={products.price}
+              />
+            );
+          })
+        ) : getListProductsLoading ? (
+          <p>Loading...</p>
+        ) : (
+          <p>{getListProductsError ? getListProductsError : "Data Kosong"}</p>
+        )}
+      </div>
 
       <div>
-        <div className="grid grid-cols-12 gap-6">
-          {[1, 2, 3, 4, 5].map((item, index) => (
-            <Card
-              key={index}
-              img={Dummy1}
-              category="men's clothing"
-              title="Product"
-              rate="4.3"
-              count="123"
-              price={109.95}
-            />
-          ))}
-        </div>
-
-        {/* <div className="grid grid-cols-4 gap-7">
-          {products.map((product) => (
-            <Card products={product} title={products?.title} />
-          ))}
-        </div> */}
         <div className="mt-6 rounded-xl bg-[#EF6136] pb-6">
           <h1 className=" pl-6 font-sans text-white">Kategori</h1>
           <div>
