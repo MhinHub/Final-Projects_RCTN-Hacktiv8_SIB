@@ -8,10 +8,10 @@ export default () => {
       <div>
         <Link to="/" className="flex-1">
           <p className="mb-5 text-4xl text-primary">
-            <b>NewsUp</b>
+            <b>Tokoku</b>
           </p>
         </Link>
-        <p>Jelajahi berita terupdate dengan kami</p>
+        <p>Nikmati berbelanja bersama kami</p>
       </div>
       <div>
         <span className="font-bold text-primary">Partner</span>

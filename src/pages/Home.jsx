@@ -35,7 +35,7 @@ const Home = () => {
               key={index}
               img={Dummy1}
               category="men's clothing"
-              title="Foldsack No. 1 Backpack, Fits 15 Laptops"
+              title="Product"
               rate="4.3"
               count="123"
               price={109.95}
@@ -43,11 +43,11 @@ const Home = () => {
           ))}
         </div>
 
-        <div className="grid grid-cols-4 gap-7">
+        {/* <div className="grid grid-cols-4 gap-7">
           {products.map((product) => (
-            <Card products={product} />
+            <Card products={product} title={products?.title} />
           ))}
-        </div>
+        </div> */}
         <div className="mt-6 rounded-xl bg-[#EF6136] pb-6">
           <h1 className=" pl-6 font-sans text-white">Kategori</h1>
           <div>
