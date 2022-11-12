@@ -8,11 +8,9 @@ export default function Router() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      {/* <Route path="/detail-product" element={<ProductPage />} /> */}
-      <Route path="/products" element={<ListProducts />} />
       <Route path="/detailproduct" element={<ProductPage />} />
+      <Route path="/products" element={<ListProducts />} />
 
-      {/* <Route path="/" element={<ProductPage />} /> */}
       <Route path="/" element={<ListProducts />} />
     </Routes>
   );

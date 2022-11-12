@@ -2,8 +2,10 @@ import axios from "axios";
 
 export const GET_LIST_PRODUCTS = "GET_LIST_PRODUCTS";
 
+export const GET_DETAIL_PRODUCT = "GET_DETAIL_PRODUCT";
+
 export const getListProducts = () => {
-  console.log("2. Masuk Action");
+  // console.log("2. Masuk Action");
   return (dispatch) => {
     // loading
     dispatch({
@@ -22,7 +24,7 @@ export const getListProducts = () => {
       timeout: 120000,
     })
       .then((response) => {
-        console.log("3. Berhasil dapat data", response.data);
+        // console.log("3. Berhasil dapat data", response.data);
         // berhasil get api
 
         dispatch({
@@ -36,7 +38,7 @@ export const getListProducts = () => {
       })
       .catch((error) => {
         // gagal get api
-        console.log("3. Gagal dapat data: ", error);
+        // console.log("3. Gagal dapat data: ", error);
 
         dispatch({
           type: GET_LIST_PRODUCTS,

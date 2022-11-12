@@ -1,8 +1,33 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
+import { useEffect } from "react";
+import { useSelector } from "react-redux";
+import { getLogin } from "../redux/actions/authSlice";
+import { useDispatch } from "react-redux";
+import login from "../redux/reducers/login";
 
 function MasukComp({ check }) {
   const [checked, setChecked] = useState(check);
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const dispatch = useDispatch();
+
+  const handleLogin = () => {
+    // console.log(email, password);
+    dispatch(getLogin(email,password));
+  };
+
+  const { getLoginResult, getLoginLoading, getLoginError } = useSelector(
+    (state) => state.LoginReducer
+  );
+
+  // useEffect(() => {
+  //   console.log("1. use effect component did mount");
+
+  //   dispatch(getLogin());
+  // }, [dispatch]);
+
   return (
     <>
       <input
@@ -21,28 +46,30 @@ function MasukComp({ check }) {
             ✕
           </label>
           <h3 className="mb-8 text-xl font-bold ">Masuk</h3>
-          {/* <p className="py-4">
-            You've been selected for a chance to get one year of subscription to
-            use Wikipedia for free!
-          </p> */}
           <div>
-            <label className="font-regular">Username</label>
+            <label className="font-regular">Email</label>
             <input
-              type="text"
-              placeholder="Masukan Username"
               className="input-bordered input mt-3 mb-5 w-full"
+              type="text"
+              placeholder="Masukan Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
           </div>
           <div>
             <label className="font-regular">Password</label>
             <input
+              className="input-bordered input mt-3 w-full"
               type="password"
               placeholder="Masukan Password"
-              className="input-bordered input mt-3 w-full"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
             />
           </div>
 
-          <button className="btn-primary btn mt-8 w-full">Masuk</button>
+          <button className="btn-primary btn mt-8 w-full" onClick={handleLogin}>
+            Masuk
+          </button>
         </div>
       </div>
     </>

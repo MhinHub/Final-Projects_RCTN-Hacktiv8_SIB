@@ -16,6 +16,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getListProducts } from "../redux/actions/productAction";
 import products from "../redux/reducers/products";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const {
@@ -37,6 +38,7 @@ const Home = () => {
     <div className="w-full pt-5 md:px-4 lg:px-12">
       <HomeCarousel />
       <h1 className="mt-10 mb-6 font-bold">Produk Terlaris</h1>
+
       <div className="grid grid-cols-12 gap-6">
         {getListProductsResult ? (
           getListProductsResult.map((products) => {

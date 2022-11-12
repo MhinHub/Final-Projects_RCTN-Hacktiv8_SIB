@@ -27,15 +27,41 @@ const ProductPage = () => {
                 <span class="ml-3 text-gray-600">23 Ulasan </span>
               </span>
             </div>
-            <span class="title-font text-2xl font-bold text-gray-900">
+            <span class="title-font pb-5 text-2xl font-bold text-gray-900">
               $58.00
             </span>
-            <div class="mt-2 mb-5 flex items-center border-b-2 border-gray-200 pb-5"></div>
-            <p class="leading-relaxed">
+
+            <h4 class="title-font align-center  w-32 pt-5 text-base font-semibold">
+              Deksripsi
+            </h4>
+
+            {/* <div class="mt-2 mb-5 flex items-center border-b-2 border-gray-200 pb-5"></div> */}
+            <p class="mt-3 leading-relaxed">
               Your perfect pack for everyday use and walks in the forest. Stash
               your laptop (up to 15 inches) in the padded sleeve, your everyday
             </p>
-            
+
+            <div class="relative mt-3 flex h-10 w-28 flex-row rounded-lg bg-transparent">
+              <button
+                data-action="decrement"
+                class=" h-full w-20 cursor-pointer rounded-l bg-gray-300 text-gray-600 outline-none hover:bg-gray-400 hover:text-gray-700"
+              >
+                <span class="m-auto text-2xl font-thin">−</span>
+              </button>
+              <input
+                type="number"
+                class="text-md md:text-basecursor-default flex w-full items-center bg-gray-300 text-center font-semibold text-gray-700  outline-none  hover:text-black focus:text-black  focus:outline-none"
+                name="custom-input-number"
+                value="0"
+              ></input>
+              <button
+                data-action="increment"
+                class="h-full w-20 cursor-pointer rounded-r bg-gray-300 text-gray-600 hover:bg-gray-400 hover:text-gray-700"
+              >
+                <span class="m-auto text-2xl font-thin">+</span>
+              </button>
+            </div>
+            <div class="mt-2 mb-5 flex items-center border-b-2 border-gray-200 pb-5"></div>
 
             <div class="mt-10 flex">
               <button class="flex rounded border-0 bg-[#EF6136] py-2 px-6 text-white hover:bg-[#D63B0C] focus:outline-none">
