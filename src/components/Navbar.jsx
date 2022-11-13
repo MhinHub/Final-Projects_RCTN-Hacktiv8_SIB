@@ -12,6 +12,10 @@ const Navbar = () => {
     setModalLogin(true);
   };
 
+  const handleLogout = () => {
+    localStorage.removeItem("user");
+  };
+
   return (
     <div className="shadow-md">
       <div className="navbar bg-base-100 py-4">
@@ -34,22 +38,34 @@ const Navbar = () => {
                 tabIndex={0}
                 className="badge btn-ghost badge-sm btn-circle btn"
               >
-                <div className="indicator">
-                  <BsCartFill color="#EF6136" size={23} />
-                  <span className="badge:sm badge indicator-item text-slate-600 ">
-                    8
-                  </span>
-                </div>
+                <Link to="/cart">
+                  <div className="indicator">
+                    <BsCartFill color="#EF6136" size={23} />
+                    <span className="badge:sm badge indicator-item text-slate-600 ">
+                      8
+                    </span>
+                  </div>
+                </Link>
               </label>
             </div>
             <div className="px-5">
-              <label
-                htmlFor="my-modal-3"
-                className="btn bg-[#EF6136] hover:bg-[#D63B0C]"
-                onClick={() => handleModalOn()}
-              >
-                Masuk
-              </label>
+              {localStorage.getItem("user") ? (
+                <label
+                  // htmlFor="my-modal-3"
+                  className="btn bg-[#EF6136] hover:bg-[#D63B0C]"
+                  onClick={() => handleLogout()}
+                >
+                  Logout
+                </label>
+              ) : (
+                <label
+                  htmlFor="my-modal-3"
+                  className="btn bg-[#EF6136] hover:bg-[#D63B0C]"
+                  onClick={() => handleModalOn()}
+                >
+                  Masuk
+                </label>
+              )}
             </div>
           </div>
           <div className="mr-auto mt-3 hidden space-x-4 sm:flex ">

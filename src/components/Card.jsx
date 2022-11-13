@@ -7,7 +7,7 @@ function Card({ img, category, title, count, rate, price, onClick }) {
   return (
     <div className="col-span-6 sm:col-span-4 lg:col-span-3 xl:col-span-3">
       <div className="w-full max-w-sm rounded-lg bg-white shadow-md dark:border-gray-700 dark:bg-gray-800">
-        <Link to="/detailproduct">
+        <Link to="/detailproduct" >
           <img
             className="h-52 rounded-t-lg pl-7 lg:h-56"
             src={img}

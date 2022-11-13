@@ -8,14 +8,14 @@ import login from "../redux/reducers/login";
 function MasukComp({ check }) {
   const [checked, setChecked] = useState(check);
 
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
   const dispatch = useDispatch();
 
   const handleLogin = () => {
     // console.log(email, password);
-    dispatch(getLogin(email,password));
+    dispatch(getLogin(username, password));
   };
 
   const { getLoginResult, getLoginLoading, getLoginError } = useSelector(
@@ -47,13 +47,13 @@ function MasukComp({ check }) {
           </label>
           <h3 className="mb-8 text-xl font-bold ">Masuk</h3>
           <div>
-            <label className="font-regular">Email</label>
+            <label className="font-regular">Username</label>
             <input
               className="input-bordered input mt-3 mb-5 w-full"
               type="text"
-              placeholder="Masukan Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Masukan Username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
             />
           </div>
           <div>

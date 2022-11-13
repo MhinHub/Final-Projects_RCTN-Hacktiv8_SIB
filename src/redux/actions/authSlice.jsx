@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const SET_LOGIN_STATE = "SET_LOGIN_STATE";
 
-export const getLogin = (email, password) => {
+export const getLogin = (username, password) => {
   let users;
   console.log("2. Masuk Action");
   return (dispatch) => {
@@ -18,31 +18,27 @@ export const getLogin = (email, password) => {
 
     // get API
     axios({
-      method: "GET",
-      url: "https://fakestoreapi.com/users",
+      method: "POST",
+      url: "https://fakestoreapi.com/auth/login",
+      data: {
+        username: username,
+        password: password,
+      },
       timeout: 120000,
     })
       .then((response) => {
         console.log(response.data);
-        response.data.map((item, index) => {
-          if (item.email == email && item.password == password) {
-            localStorage.setItem("user", JSON.stringify(item));
-          } else {
-            console.log("gagal login");
-          }
-        });
-        // berhasil get API
-
-        // dispatch({
-        //   type: SET_LOGIN_STATE,
-        //   payload: {
-        //     loading: true,
-        //     data: response.data,
-        //     errorMessage: false,
-        //   },
+        localStorage.setItem("user", response.data.token);
+        // response.data.map((item, index) => {
+        //   if (item.username == username && item.password == password) {
+        //     localStorage.setItem("user", JSON.stringify(item));
+        //   } else {
+        //     console.log("gagal login");
+        //   }
         // });
       })
       .catch((error) => {
+        console.log("gagal login");
         // console.log("3. Gagal dapat data: ", error);
         // dispatch({
         //   type: SET_LOGIN_STATE,

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Dummy1 } from "../assets/dummy";
 import CartItem from "../components/CartItem";
 
@@ -8,7 +9,9 @@ const Cart = () => {
       <div className="breadcrumbs p-8 text-sm">
         <ul>
           <li>
-            <a className="font-regular">Home</a>
+            <Link to="/" className="font-regular">
+              Home
+            </Link>
           </li>
           <li>
             <a className="font-bold">Cart</a>

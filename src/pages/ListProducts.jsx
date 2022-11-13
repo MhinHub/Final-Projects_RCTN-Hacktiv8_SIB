@@ -1,10 +1,7 @@
-import React from "react";
-import { Dummy1 } from "../assets/dummy";
-import Card from "../components/Card";
-import { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import Card from "../components/Card";
 import { getListProducts } from "../redux/actions/productAction";
-import products from "../redux/reducers/products";
 
 const ListProducts = () => {
   const {
@@ -16,9 +13,6 @@ const ListProducts = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    // panggil acyion getListProducts
-    console.log("1. use effect component did mount");
-
     dispatch(getListProducts());
   }, [dispatch]);
 

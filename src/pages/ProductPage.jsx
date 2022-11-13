@@ -2,7 +2,10 @@ import React from "react";
 import { Dummy1 } from "../assets/dummy";
 import { AiFillStar } from "react-icons/ai";
 
+
+
 const ProductPage = () => {
+
   return (
     <div>
       <div class="container mx-auto px-5 py-24">
