@@ -14,7 +14,7 @@ const SignUp = ({navigation}) => {
         <Gap height={24} />
         <Input label="Password" />
         <Gap height={24} />
-        <Input label="Address" />
+        <Input label="Repeat Password" />
         <Gap height={24} />
         <Button title="Daftar" />
         <Gap height={30} />

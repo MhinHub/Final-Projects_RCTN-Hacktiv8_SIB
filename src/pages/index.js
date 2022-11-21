@@ -6,6 +6,8 @@ import Beranda from './Beranda';
 import Favorit from './Favorit';
 import Pesanan from './Pesanan';
 import Profil from './Profil';
+import About from './About';
+import Team from './Team';
 
 export {
   Splashscreen,
@@ -16,4 +18,6 @@ export {
   Favorit,
   Pesanan,
   Profil,
+  About,
+  Team,
 };

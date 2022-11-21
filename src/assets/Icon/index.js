@@ -12,6 +12,12 @@ import IconDateGrey from './ic-date-grey.svg';
 import IconPersonGrey from './ic-person-grey.svg';
 import IconStar from './ic-star.svg';
 import IconFavoritOutline from './ic-favorit-outline.svg';
+import IconArrowGrey from './ic-arrow-grey.svg';
+import IconTeam from './ic-team.svg';
+import IconPhone from './ic-phone.svg';
+import IconInfo from './ic-info.svg';
+import IconProfile from './ic-profile';
+import IconBackWhite from './ic-back-white.svg';
 
 export {
   IconBackDark,
@@ -28,4 +34,10 @@ export {
   IconPersonGrey,
   IconStar,
   IconFavoritOutline,
+  IconArrowGrey,
+  IconTeam,
+  IconPhone,
+  IconInfo,
+  IconProfile,
+  IconBackWhite,
 };

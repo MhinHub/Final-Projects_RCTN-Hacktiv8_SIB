@@ -15,7 +15,7 @@ const SignIn = ({navigation}) => {
       <Gap height={24} />
       <Input label="Password" />
       <Gap height={18} />
-      <Link title="Lupa Password" size={14} />
+      {/* <Link title="Lupa Password" size={14} /> */}
       <Gap height={24} />
       <Button title="Masuk" onPress={() => navigation.replace('MainApp')} />
       <Gap height={30} />

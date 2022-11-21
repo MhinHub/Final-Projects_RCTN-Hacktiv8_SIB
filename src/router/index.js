@@ -11,6 +11,8 @@ import {
   Favorit,
   Pesanan,
   Profil,
+  About,
+  Team,
 } from '../pages';
 
 const Stack = createStackNavigator();
@@ -69,6 +71,16 @@ const Router = () => {
       <Stack.Screen
         name="MainApp"
         component={MainApp}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="About"
+        component={About}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="Team"
+        component={Team}
         options={{headerShown: false}}
       />
     </Stack.Navigator>
