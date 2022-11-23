@@ -89,6 +89,7 @@ const AppIntro = ({navigation}) => {
   }
 };
 
+
 const WIDTH = Dimensions.get('window').width;
 const HEIGHT = Dimensions.get('window').height;
 

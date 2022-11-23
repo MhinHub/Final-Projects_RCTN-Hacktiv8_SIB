@@ -5,6 +5,8 @@ import MiniCard from './MiniCard';
 import TourCard from './TourCard';
 import Card from './Card';
 import HotelCard from './HotelCard';
+import Review from './Review';
+import Fasilitas from './Fasilitas';
 
 export {
   Header,
@@ -14,4 +16,6 @@ export {
   TourCard,
   Card,
   HotelCard,
+  Review,
+  Fasilitas,
 };

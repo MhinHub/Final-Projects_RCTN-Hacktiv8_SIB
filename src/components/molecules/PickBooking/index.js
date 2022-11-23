@@ -13,7 +13,7 @@ import {IconDateGrey, IconLocGrey, IconPersonGrey} from '../../../assets';
 const Pick = ({icon, title}) => {
   return (
     <View style={styles.pick}>
-      <TouchableOpacity style={styles.linePick}>
+      <TouchableOpacity style={styles.linePick} activeOpacity={0.3}>
         {icon}
         <Text style={styles.text}>{title}</Text>
       </TouchableOpacity>

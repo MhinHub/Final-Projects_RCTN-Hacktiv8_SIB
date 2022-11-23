@@ -2,6 +2,7 @@ import {Dimensions, ScrollView, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import {colors} from '../../utils';
 import {Gap, Header, HotelCard, PickBooking} from '../../components';
+import {HotelDummy1} from '../../assets/Dummy';
 
 const Search = ({navigation}) => {
   return (
@@ -12,9 +13,24 @@ const Search = ({navigation}) => {
         <PickBooking />
       </View>
       <Gap height={20} />
-      <HotelCard />
+      {/* Looping API Hotel  */}
+      <HotelCard
+        img={HotelDummy1}
+        title="MG Suit Hotel Metro"
+        rate="4.9"
+        price="Rp. 45.0000"
+        location="Jakarta Pusat"
+        onPress={() => navigation.navigate('DetailHotel')}
+      />
       <Gap height={25} />
-      <HotelCard />
+      <HotelCard
+        img={HotelDummy1}
+        title="MG Suit Hotel Metro"
+        rate="4.9"
+        price="Rp. 45.0000"
+        location="Jakarta Pusat"
+        onPress={() => navigation.navigate('DetailHotel')}
+      />
     </ScrollView>
   );
 };

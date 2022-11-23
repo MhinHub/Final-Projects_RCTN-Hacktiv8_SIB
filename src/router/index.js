@@ -16,6 +16,7 @@ import {
   Help,
   DetailHotel,
   Search,
+  Sample,
 } from '../pages';
 
 const Stack = createStackNavigator();

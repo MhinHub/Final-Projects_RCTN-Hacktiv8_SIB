@@ -5,27 +5,28 @@ import {HotelDummy1} from '../../../assets/Dummy';
 import {IconFavoritCircle, IconLocation, IconStar} from '../../../assets/Icon';
 import {colors, fonts} from '../../../utils';
 
-const HotelCard = () => {
+const HotelCard = ({onPress, img, title, rate, location, price}) => {
   return (
-    <TouchableOpacity style={styles.container} activeOpacity={0.8}>
-      <Image source={HotelDummy1} style={styles.image} />
-
+    <TouchableOpacity
+      style={styles.container}
+      activeOpacity={0.8}
+      onPress={onPress}>
+      <Image source={img} style={styles.image} />
       <IconFavoritCircle style={styles.iconFavorit} />
-
       <View style={styles.wrapper}>
         <View>
-          <Text style={styles.title}>MG Suit Metro</Text>
+          <Text style={styles.title}>{title}</Text>
           <View style={styles.wrapperLocation}>
             <IconLocation />
-            <Text style={styles.location}>Jakarta Pusat</Text>
+            <Text style={styles.location}>{location}</Text>
           </View>
           <View style={styles.wrapperRate}>
             <IconStar />
-            <Text style={styles.rate}>4.9</Text>
+            <Text style={styles.rate}>{rate}</Text>
           </View>
         </View>
         <View style={styles.wrapperPrice}>
-          <Text style={styles.price}>Rp. 450.000</Text>
+          <Text style={styles.price}>{price}</Text>
           <Text style={styles.night}>/malam</Text>
         </View>
       </View>
@@ -94,14 +95,15 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
   },
-  fontFamily: fonts.primary[400],
-  color: colors.greymedium,
-  fontSize: 14,
-  paddingLeft: 8,
+  night: {
+    fontFamily: fonts.primary[400],
+    color: colors.greymedium,
+    fontSize: 14,
+    paddingLeft: 10,
+  },
   iconFavorit: {
     position: 'absolute',
     marginTop: 15,
-    // justifyContent: 'flex-end',
-    // marginLeft: 20,
+    alignItems: 'flex-end',
   },
 });

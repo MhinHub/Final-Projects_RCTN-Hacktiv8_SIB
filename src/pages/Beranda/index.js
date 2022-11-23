@@ -60,11 +60,13 @@ const Beranda = ({navigation}) => {
       <Gap height={30} />
       <Title title="Kota Populer" />
       <Gap height={15} />
+
       <View style={styles.cityPopular}>
         <ScrollView
           style={styles.city}
           horizontal={true}
           showsHorizontalScrollIndicator={false}>
+          {/*  Looping API */}
           <MiniCard title="Jakarta" />
           <Gap width={12} />
           <MiniCard title="Surabaya" />
@@ -86,6 +88,7 @@ const Beranda = ({navigation}) => {
           style={styles.tour}
           horizontal={true}
           showsHorizontalScrollIndicator={false}>
+          {/*  Looping API Wisata Populer */}
           <TourCard title="Candi Borobudor" img={Wisata1} />
           <Gap width={15} />
           <TourCard title="Nusa Penida" img={Wisata2} />
@@ -97,6 +100,7 @@ const Beranda = ({navigation}) => {
       <Title title="Rekomendasi Hotel" />
       <Gap height={15} />
       <View style={styles.hotel}>
+        {/*  Looping API Hotel */}
         <Card
           img={Hotel1}
           title="Star Horel"
