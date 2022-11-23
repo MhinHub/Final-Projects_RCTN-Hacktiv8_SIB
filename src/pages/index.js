@@ -8,6 +8,8 @@ import Pesanan from './Pesanan';
 import Profil from './Profil';
 import About from './About';
 import Team from './Team';
+import Help from './Help';
+import DetailHotel from './DetailHotel';
 
 export {
   Splashscreen,
@@ -20,4 +22,6 @@ export {
   Profil,
   About,
   Team,
+  Help,
+  DetailHotel,
 };

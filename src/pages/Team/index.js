@@ -92,7 +92,7 @@ const styles = StyleSheet.create({
     fontFamily: fonts.primary[400],
     color: colors.white,
     fontSize: 16,
-    paddingHorizontal: 20,
-    paddingVertical: 20,
+    paddingHorizontal: 15,
+    paddingVertical: 15,
   },
 });

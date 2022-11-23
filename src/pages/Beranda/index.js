@@ -1,4 +1,11 @@
-import {Image, ScrollView, StyleSheet, Text, View} from 'react-native';
+import {
+  Dimensions,
+  Image,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+} from 'react-native';
 import React from 'react';
 import {colors, fonts} from '../../utils';
 import {
@@ -37,7 +44,7 @@ const HeaderHome = () => {
   );
 };
 
-const Beranda = () => {
+const Beranda = ({navigation}) => {
   return (
     <ScrollView style={styles.page}>
       <HeaderHome />
@@ -96,6 +103,7 @@ const Beranda = () => {
           location="Tebet, Jakarta Utara"
           rate={4.8}
           price="Rp. 450.000"
+          onPress={() => navigation.navigate('DetailHotel')}
         />
         <Gap height={12} />
         <Card
@@ -119,6 +127,9 @@ const Beranda = () => {
   );
 };
 
+const WIDTH = Dimensions.get('window').width;
+const HEIGHT = Dimensions.get('window').height;
+
 export default Beranda;
 
 const styles = StyleSheet.create({
@@ -127,10 +138,10 @@ const styles = StyleSheet.create({
     backgroundColor: colors.white,
   },
   image: {
-    width: 38,
-    height: 38,
+    width: 44,
+    height: 44,
     backgroundColor: 'grey',
-    borderRadius: 19,
+    borderRadius: 22,
   },
   containerHeader: {
     paddingTop: 40,
@@ -151,8 +162,7 @@ const styles = StyleSheet.create({
   },
   wrapper: {
     paddingTop: 10,
-
-    height: 210,
+    height: HEIGHT * 0.3,
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -166,8 +176,8 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   imageSlider: {
-    width: 438,
-    height: 210,
+    width: WIDTH,
+    height: HEIGHT * 0.3,
   },
   containerPickBooking: {
     alignItems: 'center',

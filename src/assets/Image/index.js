@@ -6,6 +6,7 @@ import Slider2 from './Slider2.png';
 import ImageIrfan from './ImageIrfan.png';
 import ImageMuhaemin from './ImageMuhaemin.png';
 import ImageVika from './ImageVika.png';
+import HelpCenter from './HelpCenter.png';
 
 export {
   Intro1,
@@ -16,4 +17,5 @@ export {
   ImageIrfan,
   ImageMuhaemin,
   ImageVika,
+  HelpCenter,
 };

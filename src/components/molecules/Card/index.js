@@ -3,10 +3,11 @@ import React from 'react';
 import {colors, fonts} from '../../../utils';
 import {Hotel1, Wisata1} from '../../../assets/Dummy';
 import {IconFavoritOutline, IconStar} from '../../../assets/Icon';
+import {TouchableOpacity} from 'react-native-gesture-handler';
 
-const Card = ({img, title, location, rate, price}) => {
+const Card = ({img, title, location, rate, price, onPress}) => {
   return (
-    <View style={styles.container}>
+    <TouchableOpacity style={styles.container} onPress={onPress}>
       <View style={styles.card}>
         <View style={styles.image}>
           <Image source={img} style={styles.img} />
@@ -22,13 +23,13 @@ const Card = ({img, title, location, rate, price}) => {
               </View>
               <Text style={styles.price}>{price}</Text>
             </View>
-            <View style={styles.favorit}>
+            <TouchableOpacity style={styles.favorit}>
               <IconFavoritOutline style={styles.iconFavorit} />
-            </View>
+            </TouchableOpacity>
           </View>
         </View>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 

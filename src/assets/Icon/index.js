@@ -18,6 +18,12 @@ import IconPhone from './ic-phone.svg';
 import IconInfo from './ic-info.svg';
 import IconProfile from './ic-profile';
 import IconBackWhite from './ic-back-white.svg';
+import IconWhatsapp from './ic-whatsapp.svg';
+import IconEmail from './ic-email.svg';
+import IconAddress from './ic-address.svg';
+import IconBackBlue from './ic-back-blue.svg';
+import IconFavoritBlue from './ic-favorit-blue.svg';
+import IconFavoritBlueActive from './ic-favorit-blue-active.svg';
 
 export {
   IconBackDark,
@@ -40,4 +46,10 @@ export {
   IconInfo,
   IconProfile,
   IconBackWhite,
+  IconWhatsapp,
+  IconEmail,
+  IconAddress,
+  IconBackBlue,
+  IconFavoritBlue,
+  IconFavoritBlueActive,
 };

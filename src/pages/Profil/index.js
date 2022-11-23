@@ -32,7 +32,11 @@ const Profil = ({navigation}) => {
         icon="team"
         onPress={() => navigation.navigate('Team')}
       />
-      <List title="Kontak dan Bantuan" icon="phone" />
+      <List
+        title="Kontak dan Bantuan"
+        icon="phone"
+        onPress={() => navigation.navigate('Help')}
+      />
       <List
         title="Tentang Aplikasi"
         icon="info"
