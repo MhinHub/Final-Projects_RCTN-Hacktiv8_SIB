@@ -37,7 +37,4 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: colors.white,
   },
-  wrapper: {
-    paddingLeft: 20,
-  },
 });

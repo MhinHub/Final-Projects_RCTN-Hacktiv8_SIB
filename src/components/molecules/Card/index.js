@@ -1,9 +1,8 @@
-import {StyleSheet, Text, View, Image} from 'react-native';
 import React from 'react';
-import {colors, fonts} from '../../../utils';
-import {Hotel1, Wisata1} from '../../../assets/Dummy';
-import {IconFavoritOutline, IconStar} from '../../../assets/Icon';
+import {Dimensions, Image, StyleSheet, Text, View} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
+import {IconFavoritOutline, IconStar} from '../../../assets/Icon';
+import {colors, fonts} from '../../../utils';
 
 const Card = ({img, title, location, rate, price, onPress}) => {
   return (
@@ -33,33 +32,34 @@ const Card = ({img, title, location, rate, price, onPress}) => {
   );
 };
 
+const WIDTH = Dimensions.get('window').width;
+const HEIGHT = Dimensions.get('window').height;
+
 export default Card;
 
 const styles = StyleSheet.create({
   container: {
-    width: 370,
-    height: 125,
+    marginHorizontal: 20,
     backgroundColor: colors.grey,
     borderRadius: 10,
   },
   card: {
     flexDirection: 'row',
+    paddingHorizontal: 10,
   },
   image: {
     paddingLeft: 10,
+    paddingVertical: 5,
   },
   img: {
-    width: 88,
-    height: 97,
     borderRadius: 10,
     alignContent: 'center',
     justifyContent: 'center',
-    marginVertical: 15,
+    marginVertical: 10,
   },
   content: {
     flex: 1,
     paddingHorizontal: 15,
-
     justifyContent: 'center',
   },
   titleHotel: {
@@ -84,8 +84,8 @@ const styles = StyleSheet.create({
   },
   price: {
     fontFamily: fonts.primary[500],
-    color: colors.text.secondary,
-    fontSize: 12,
+    color: colors.primary,
+    fontSize: 14,
   },
   divide: {
     flexDirection: 'row',
@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   iconFavorit: {
-    width: 200,
-    height: 200,
+    width: '150%',
+    height: '150%',
   },
 });

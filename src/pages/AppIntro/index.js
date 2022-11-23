@@ -1,4 +1,10 @@
-import {ImageBackground, StyleSheet, Text, View} from 'react-native';
+import {
+  Dimensions,
+  ImageBackground,
+  StyleSheet,
+  Text,
+  View,
+} from 'react-native';
 import React, {useState} from 'react';
 import AppIntroSlider from 'react-native-app-intro-slider';
 import {Gradiasi, Intro1, Intro2, Intro3} from '../../assets';
@@ -83,6 +89,9 @@ const AppIntro = ({navigation}) => {
   }
 };
 
+const WIDTH = Dimensions.get('window').width;
+const HEIGHT = Dimensions.get('window').height;
+
 export default AppIntro;
 
 const styles = StyleSheet.create({
@@ -115,8 +124,8 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   image: {
-    width: '100%',
-    height: 374,
+    width: WIDTH,
+    height: HEIGHT * 0.6,
     resizeMode: 'cover',
     position: 'relative',
   },

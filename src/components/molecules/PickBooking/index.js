@@ -1,4 +1,10 @@
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {
+  Dimensions,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import React from 'react';
 import {colors, fonts} from '../../../utils';
 import {Gap} from '../../atoms';
@@ -16,36 +22,42 @@ const Pick = ({icon, title}) => {
   );
 };
 
-const PickBooking = () => {
+const PickBooking = ({onPress}) => {
   return (
     <View style={styles.container}>
       <Pick title="Jakarta" icon={<IconLocGrey />} />
       <Pick title="Fri, 7 Oct -  Sat, 8 Oct 2022 " icon={<IconDateGrey />} />
       <Pick title="1 Room, 1 Adult, 0 Children" icon={<IconPersonGrey />} />
-      <Gap height={10} />
-      <TouchableOpacity style={styles.containerButton} activeOpacity={0.7}>
+      <Gap height={15} />
+      <TouchableOpacity
+        style={styles.containerButton}
+        activeOpacity={0.7}
+        onPress={onPress}>
         <View style={styles.button}>
           <Text style={styles.search}>Cari</Text>
         </View>
+        <Gap height={15} />
       </TouchableOpacity>
     </View>
   );
 };
 
+const WIDTH = Dimensions.get('window').width;
+
 export default PickBooking;
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     marginTop: -20,
-    width: 294,
-    height: 233,
+    flex: 1,
+    width: WIDTH * 0.77,
     borderRadius: 8,
     shadowOffset: {width: 0, height: 1},
     backgroundColor: colors.white,
     shadowOpacity: 0.7,
     shadowRadius: 2,
     elevation: 5,
+    alignItems: 'center',
   },
   text: {
     color: colors.text.primary,
@@ -56,7 +68,7 @@ const styles = StyleSheet.create({
   line: {
     borderWidth: 1,
     borderColor: '#D3D3D3',
-    width: 250,
+    width: WIDTH * 0.68,
     alignItems: 'center',
     justifyContent: 'center',
     alignSelf: 'center',
@@ -70,15 +82,15 @@ const styles = StyleSheet.create({
   },
   button: {
     backgroundColor: colors.primary,
-    width: 120,
-    height: 28,
-    borderRadius: 5,
+    borderRadius: 8,
     justifyContent: 'center',
   },
   search: {
     fontFamily: fonts.primary[400],
     color: colors.white,
     textAlign: 'center',
+    paddingHorizontal: 40,
+    paddingVertical: 5,
   },
   linePick: {
     flexDirection: 'row',

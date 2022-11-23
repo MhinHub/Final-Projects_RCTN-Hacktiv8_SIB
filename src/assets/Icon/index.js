@@ -24,6 +24,9 @@ import IconAddress from './ic-address.svg';
 import IconBackBlue from './ic-back-blue.svg';
 import IconFavoritBlue from './ic-favorit-blue.svg';
 import IconFavoritBlueActive from './ic-favorit-blue-active.svg';
+import IconLocation from './ic-location.svg';
+import IconFavoritCircle from './ic-favorit-circle.svg';
+import IconFavoritCircleActive from './ic-favorit-blue-active.svg';
 
 export {
   IconBackDark,
@@ -52,4 +55,7 @@ export {
   IconBackBlue,
   IconFavoritBlue,
   IconFavoritBlueActive,
+  IconLocation,
+  IconFavoritCircle,
+  IconFavoritCircleActive,
 };

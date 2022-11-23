@@ -10,6 +10,7 @@ import About from './About';
 import Team from './Team';
 import Help from './Help';
 import DetailHotel from './DetailHotel';
+import Search from './Search';
 
 export {
   Splashscreen,
@@ -24,4 +25,5 @@ export {
   Team,
   Help,
   DetailHotel,
+  Search,
 };

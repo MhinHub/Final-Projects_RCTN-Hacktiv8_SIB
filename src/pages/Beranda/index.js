@@ -31,7 +31,7 @@ const HeaderHome = () => {
   return (
     <View style={styles.containerHeader}>
       <View>
-        <Text style={styles.textHello}>Hi, Irfan Zidni</Text>
+        <Text style={styles.textHello}>Hi, John</Text>
         <Gap height={7} />
         <Text style={styles.textGreeting}>
           Selamat menginap dengan nyaman {'\n'}di Hotelio{' '}
@@ -48,14 +48,14 @@ const Beranda = ({navigation}) => {
   return (
     <ScrollView style={styles.page}>
       <HeaderHome />
-      <Gap height={17} />
+      <Gap height={20} />
       <Swiper style={styles.wrapper} showsButtons loop={false} autoplay={true}>
         <Image source={Slider1} style={styles.imageSlider} />
         <Image source={Slider2} style={styles.imageSlider} />
         <Image source={Slider1} style={styles.imageSlider} />
       </Swiper>
       <View style={styles.containerPickBooking}>
-        <PickBooking />
+        <PickBooking onPress={() => navigation.navigate('Search')} />
       </View>
       <Gap height={30} />
       <Title title="Kota Populer" />
@@ -161,7 +161,6 @@ const styles = StyleSheet.create({
     color: colors.text.secondary,
   },
   wrapper: {
-    paddingTop: 10,
     height: HEIGHT * 0.3,
     alignItems: 'center',
     justifyContent: 'center',
@@ -194,8 +193,5 @@ const styles = StyleSheet.create({
   },
   tour: {
     flexDirection: 'row',
-  },
-  hotel: {
-    paddingHorizontal: 20,
   },
 });

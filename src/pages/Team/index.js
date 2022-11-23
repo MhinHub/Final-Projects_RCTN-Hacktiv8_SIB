@@ -1,5 +1,5 @@
 import React from 'react';
-import {Image, StyleSheet, Text, View} from 'react-native';
+import {Dimensions, Image, StyleSheet, Text, View} from 'react-native';
 import {ImageIrfan, ImageMuhaemin, ImageVika} from '../../assets';
 import {Gap, Header} from '../../components';
 import {colors, fonts} from '../../utils';
@@ -20,6 +20,8 @@ const CardTeam = ({name, code, img}) => {
     </View>
   );
 };
+const WIDTH = Dimensions.get('window').width;
+const HEIGHT = Dimensions.get('window').height;
 
 const Team = ({navigation}) => {
   return (
@@ -55,8 +57,8 @@ const styles = StyleSheet.create({
     backgroundColor: colors.white,
   },
   container: {
-    marginLeft: 20,
-    width: 370,
+    marginHorizontal: 20,
+    width: WIDTH * 0.9,
     height: 125,
     backgroundColor: colors.grey,
     borderRadius: 10,

@@ -14,8 +14,8 @@ const ProfileInfo = () => {
         <Image source={Hotel1} style={styles.photo} />
       </View>
       <Gap height={20} />
-      <Text style={styles.textName}>Irfan Zidni</Text>
-      <Text style={styles.textGmail}>irfanzidni@gmail.com</Text>
+      <Text style={styles.textName}>John</Text>
+      <Text style={styles.textGmail}>john@gmail.com</Text>
     </View>
   );
 };

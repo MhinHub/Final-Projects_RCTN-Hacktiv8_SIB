@@ -15,6 +15,7 @@ import {
   Team,
   Help,
   DetailHotel,
+  Search,
 } from '../pages';
 
 const Stack = createStackNavigator();
@@ -93,6 +94,11 @@ const Router = () => {
       <Stack.Screen
         name="DetailHotel"
         component={DetailHotel}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="Search"
+        component={Search}
         options={{headerShown: false}}
       />
     </Stack.Navigator>
