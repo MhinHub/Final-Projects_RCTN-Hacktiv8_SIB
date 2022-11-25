@@ -11,9 +11,17 @@ import React from 'react';
 import Swiper from 'react-native-swiper';
 import {colors, fonts} from '../../utils';
 import {Intro1, Intro2, Intro3} from '../../assets/Image';
-import {IconLocation, IconStar} from '../../assets/Icon';
+import {
+  IconCalendarBlue,
+  IconDoorBlue,
+  IconLocation,
+  IconNightBlue,
+  IconPersonBlue,
+  IconStar,
+} from '../../assets/Icon';
 import {Fasilitas, Gap, Header, Review} from '../../components';
 import {HotelDummy1} from '../../assets/Dummy';
+import {TouchableOpacity} from 'react-native-gesture-handler';
 
 const HotelInfo = ({title, location, rate, price}) => {
   return (
@@ -53,10 +61,38 @@ const Desc = ({desc}) => {
   );
 };
 
+const Box = () => {
+  return (
+    <View style={styles.containerBox}>
+      <TouchableOpacity style={styles.wrapperBox}>
+        <IconCalendarBlue />
+        <Text style={styles.textLabel}>19 Nov 2022</Text>
+      </TouchableOpacity>
+      <View
+        style={{borderRightColor: colors.greymedium, borderRightWidth: 1}}
+      />
+      <TouchableOpacity style={styles.wrapperBox}>
+        <IconNightBlue />
+        <Text style={styles.textLabel}>2 Malam</Text>
+      </TouchableOpacity>
+      <View
+        style={{borderRightColor: colors.greymedium, borderRightWidth: 1}}
+      />
+      <TouchableOpacity style={styles.wrapperBox}>
+        <IconPersonBlue style={{marginHorizontal: 3}} />
+        <Text style={styles.textLabel}>1</Text>
+        <IconDoorBlue style={{marginHorizontal: 6}} />
+        <Text style={styles.textLabel}>1</Text>
+      </TouchableOpacity>
+    </View>
+  );
+};
+
 const DetailHotel = ({navigation}) => {
   return (
     <ScrollView style={styles.page} showsVerticalScrollIndicator={false}>
       <Header title="Detail Hotel" onPress={() => navigation.goBack()} />
+      <Box />
       <Swiper
         style={styles.wrapperSwipper}
         showsButtons={true}
@@ -80,11 +116,15 @@ const DetailHotel = ({navigation}) => {
         desc="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
 "
       />
-
       <Gap height={12} />
       <Title title="Fasilitas" />
       <Gap height={15} />
-      <Fasilitas />
+      <Fasilitas
+        apartment="Apartment"
+        bathrooms="1"
+        kitchen="Kitchen"
+        bedrooms="2"
+      />
       <Gap height={12} />
 
       <View style={styles.wrapperReview}>
@@ -203,5 +243,37 @@ const styles = StyleSheet.create({
     height: HEIGHT * 0.4,
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  containerBox: {
+    flexDirection: 'row',
+    alignContent: 'space-between',
+    borderTopColor: colors.greymedium,
+    borderTopWidth: 1,
+    borderBottomWidth: 1,
+    flex: 1,
+    paddingVertical: 6,
+    paddingHorizontal: 10,
+  },
+  wrapperBox: {
+    alignItems: 'center',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingHorizontal: 20,
+    paddingVertical: 15,
+    flex: 1,
+  },
+
+  textLabel: {
+    fontFamily: fonts.primary[500],
+    color: colors.primary,
+    marginLeft: 3,
+    fontSize: 14,
+  },
+
+  textLabelNumber: {
+    fontFamily: fonts.primary[500],
+    color: colors.primary,
+    paddingHorizontal: 5,
+    fontSize: 14,
   },
 });

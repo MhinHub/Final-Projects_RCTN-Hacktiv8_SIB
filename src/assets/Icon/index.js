@@ -27,6 +27,17 @@ import IconFavoritBlueActive from './ic-favorit-blue-active.svg';
 import IconLocation from './ic-location.svg';
 import IconFavoritCircle from './ic-favorit-circle.svg';
 import IconFavoritCircleActive from './ic-favorit-blue-active.svg';
+import IconParking from './ic-parking.svg';
+import IconHours from './ic-hours.svg';
+import IconWifi from './ic-wifi.svg';
+import IconKitchen from './ic-kitchen.svg';
+import IconApartment from './ic-apartment.svg';
+import IconBedroom from './ic-bedroom.svg';
+import IconBathroom from './ic-bathroom.svg';
+import IconCalendarBlue from './ic-calendar-blue.svg';
+import IconDoorBlue from './ic-door-blue.svg';
+import IconPersonBlue from './ic-person-blue.svg';
+import IconNightBlue from './ic-night-blue.svg';
 
 export {
   IconBackDark,
@@ -58,4 +69,15 @@ export {
   IconLocation,
   IconFavoritCircle,
   IconFavoritCircleActive,
+  IconParking,
+  IconWifi,
+  IconHours,
+  IconKitchen,
+  IconApartment,
+  IconBedroom,
+  IconBathroom,
+  IconCalendarBlue,
+  IconDoorBlue,
+  IconNightBlue,
+  IconPersonBlue,
 };

@@ -26,7 +26,11 @@ const Profil = ({navigation}) => {
       <Header type="first" title="Profile" />
       <ProfileInfo />
       <Gap height={20} />
-      <List title="Edit Profile" icon="profile" />
+      <List
+        title="Edit Profile"
+        icon="profile"
+        onPress={() => navigation.navigate('ProfileEdit')}
+      />
       <List
         title="Nama Kelompok"
         icon="team"
