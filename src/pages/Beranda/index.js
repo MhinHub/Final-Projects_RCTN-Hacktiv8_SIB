@@ -49,7 +49,7 @@ const Beranda = ({navigation}) => {
     <ScrollView style={styles.page}>
       <HeaderHome />
       <Gap height={20} />
-      <Swiper style={styles.wrapper} showsButtons loop={false} autoplay={true}>
+      <Swiper style={styles.wrapper} showsButtons loop={false} autoplay>
         <Image source={Slider1} style={styles.imageSlider} />
         <Image source={Slider2} style={styles.imageSlider} />
         <Image source={Slider1} style={styles.imageSlider} />
@@ -179,8 +179,8 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   imageSlider: {
-    width: WIDTH,
-    height: HEIGHT * 0.3,
+    width: '100%',
+    height: '100%',
   },
   containerPickBooking: {
     alignItems: 'center',
