@@ -1,8 +1,8 @@
-import {Pressable, StatusBar, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
-import {colors, fonts} from '../../utils';
+import {Pressable, StyleSheet, Text, View} from 'react-native';
 import {IconBackWhite, ILLogo} from '../../assets';
-import {Button, Gap} from '../../components';
+import {Gap} from '../../components';
+import {colors, fonts} from '../../utils';
 
 const About = ({navigation}) => {
   return (

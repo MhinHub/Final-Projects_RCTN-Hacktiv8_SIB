@@ -48,6 +48,5 @@ const styles = StyleSheet.create({
   containerPick: {
     alignSelf: 'center',
     width: WIDTH * 0.77,
-    height: HEIGHT * 0.33,
   },
 });

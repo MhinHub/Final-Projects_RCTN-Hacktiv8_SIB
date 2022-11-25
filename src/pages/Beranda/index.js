@@ -60,7 +60,6 @@ const Beranda = ({navigation}) => {
       <Gap height={30} />
       <Title title="Kota Populer" />
       <Gap height={15} />
-
       <View style={styles.cityPopular}>
         <ScrollView
           style={styles.city}

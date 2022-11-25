@@ -11,6 +11,7 @@ import Team from './Team';
 import Help from './Help';
 import DetailHotel from './DetailHotel';
 import Search from './Search';
+import ProfileEdit from './ProfileEdit';
 
 export {
   Splashscreen,
@@ -26,4 +27,5 @@ export {
   Help,
   DetailHotel,
   Search,
+  ProfileEdit,
 };

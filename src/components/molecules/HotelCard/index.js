@@ -103,7 +103,8 @@ const styles = StyleSheet.create({
   },
   iconFavorit: {
     position: 'absolute',
-    marginTop: 15,
+    top: 15,
+    right: 15,
     alignItems: 'flex-end',
   },
 });
