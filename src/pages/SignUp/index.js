@@ -49,6 +49,7 @@ const SignUp = ({navigation}) => {
           value={form.password}
           onChangeText={value => onInputChange(value, 'password')}
           textContentType="password"
+          visiblePassword={false}
         />
         <Gap height={24} />
         <Button title="Daftar" onPress={sendData} />
@@ -57,7 +58,7 @@ const SignUp = ({navigation}) => {
           title="Masuk Akun"
           size={16}
           align="center"
-          onPress={() => navigation.navigate('SignUp')}
+          onPress={() => navigation.navigate('SignIn')}
         />
       </View>
     </View>
