@@ -62,7 +62,7 @@ export default class DateRangePicker extends Component<Props> {
     let mToDate = new XDate(toDate);
     let range = mFromDate.diffDays(mToDate);
     if (range >= 0) {
-      if (range == 0) {
+      if (range === 0) {
         markedDates = {
           [toDate]: {
             color: this.props.theme.markColor,

@@ -2,11 +2,17 @@ import {StyleSheet, Text, TextInput, View} from 'react-native';
 import React from 'react';
 import {colors} from '../../../utils';
 
-const Input = ({label}) => {
+const Input = ({label, textContentType, onChangeText, value}) => {
   return (
     <View>
       <Text style={styles.label}>{label}</Text>
-      <TextInput style={styles.input} />
+      <TextInput
+        style={styles.input}
+        textContentType={textContentType}
+        placeholder={`Masukkan ${label}`}
+        value={value}
+        onChange={onChangeText}
+      />
     </View>
   );
 };
