@@ -4,7 +4,7 @@ import {Button, Gap, Header, Input, Link} from '../../components';
 import {colors} from '../../utils';
 import {useState} from 'react';
 import {useDispatch} from 'react-redux';
-import {login} from '../../context/reducer';
+import {signup} from '../../context/reducer';
 
 const SignUp = ({navigation}) => {
   const [name, setName] = useState('');
@@ -15,7 +15,7 @@ const SignUp = ({navigation}) => {
 
   const onBtnClicked = () => {
     console.log('name: ' + name, 'email: ' + email, 'password: ' + password);
-    dispatch(login({name: name, email: email, password: password}));
+    dispatch(signup({name, email, password}));
     navigation.replace('MainApp');
   };
 
