@@ -19,7 +19,7 @@ import {
   IconPersonBlue,
   IconStar,
 } from '../../assets/Icon';
-import {Fasilitas, Gap, Header, Review} from '../../components';
+import {Button, Fasilitas, Gap, Header, Review} from '../../components';
 import {HotelDummy1} from '../../assets/Dummy';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 
@@ -145,6 +145,8 @@ const DetailHotel = ({navigation}) => {
         rate="4.9"
         desc=" Very nice and comfortable hotel. thank you for accompanying my vacation"
       />
+      <Gap height={30} />
+      <Button title="Pesan Sekarang" />
       <Gap height={30} />
     </ScrollView>
   );

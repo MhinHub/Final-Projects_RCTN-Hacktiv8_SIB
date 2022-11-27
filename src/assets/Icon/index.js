@@ -38,6 +38,7 @@ import IconCalendarBlue from './ic-calendar-blue.svg';
 import IconDoorBlue from './ic-door-blue.svg';
 import IconPersonBlue from './ic-person-blue.svg';
 import IconNightBlue from './ic-night-blue.svg';
+import IconSearch from './ic-search.svg';
 
 export {
   IconBackDark,
@@ -80,4 +81,5 @@ export {
   IconDoorBlue,
   IconNightBlue,
   IconPersonBlue,
+  IconSearch,
 };

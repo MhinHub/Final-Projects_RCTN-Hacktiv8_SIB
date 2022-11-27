@@ -1,6 +1,5 @@
-import {Image, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
-import {HotelDummy1} from '../../../assets/Dummy';
+import {Image, StyleSheet, Text, View} from 'react-native';
 import {IconStar} from '../../../assets';
 import {colors, fonts} from '../../../utils';
 import {Gap} from '../../atoms';

@@ -1,19 +1,25 @@
+import moment from 'moment';
+import React, {useState} from 'react';
 import {
+  Button,
   Dimensions,
+  Modal,
   StyleSheet,
   Text,
   TouchableOpacity,
   View,
-  Button,
 } from 'react-native';
-import React, {useState} from 'react';
+import {Calendar} from 'react-native-calendars';
+// import Modal from 'react-native-modal';
+import {
+  IconDateGrey,
+  IconLocGrey,
+  IconPersonGrey,
+  IconSearch,
+} from '../../../assets';
 import {colors, fonts} from '../../../utils';
 import {Gap} from '../../atoms';
-import {IconDateGrey, IconLocGrey, IconPersonGrey} from '../../../assets';
-import {Calendar} from 'react-native-calendars';
-import Modal from 'react-native-modal';
-import moment from 'moment';
-import DateRangePicker from '../DateRangePicker';
+import {Searchbar} from 'react-native-paper';
 
 const Pick = ({icon, title, onPress}) => {
   return (
@@ -36,13 +42,19 @@ const PickBooking = ({onPress}) => {
   const [startDay, setStartDay] = useState(null);
   const [endDay, setEndDay] = useState(null);
   const [markedDates, setMarkedDates] = useState({});
+  const [showModalPerson, setShowModalPerson] = useState(false);
+  const [searchQuery, setSearchQuery] = React.useState('');
+  const onChangeSearch = query => setSearchQuery(query);
 
-  const toggleModal = () => {
+  const toggleModalLoc = () => {
     setShowModalLoc(!showModalLoc);
   };
 
   const toggleModalCalendar = () => {
     setShowModalDate(!showModalDate);
+  };
+  const toggleModalPerson = () => {
+    setShowModalPerson(!showModalPerson);
   };
 
   return (
@@ -58,7 +70,11 @@ const PickBooking = ({onPress}) => {
           icon={<IconDateGrey />}
           onPress={() => setShowModalDate(true)}
         />
-        <Pick title="1 Room, 1 Adult, 0 Children" icon={<IconPersonGrey />} />
+        <Pick
+          title="1 Room, 1 Adult, 0 Children"
+          icon={<IconPersonGrey />}
+          onPress={() => setShowModalPerson(true)}
+        />
         <Gap height={15} />
         <TouchableOpacity
           style={styles.containerButton}
@@ -72,21 +88,17 @@ const PickBooking = ({onPress}) => {
       </View>
 
       {/* Modal Date */}
-      <Modal visible={showModalDate} backdropColor="transparent">
+      <Modal
+        visible={showModalDate}
+        backdropColor="transparent"
+        animationType="slide">
         <View>
           <Calendar
             style={{
-              shadowColor: '#000',
-              shadowOffset: {
-                width: 0,
-                height: 1,
-              },
-              shadowOpacity: 0.22,
-              shadowRadius: 2.22,
-
-              elevation: 3,
-
-              borderRadius: 15,
+              borderTopLeftRadius: 15,
+              borderTopRightRadius: 15,
+              paddingVertical: 20,
+              paddingHorizontal: 20,
             }}
             onDayPress={day => {
               console.log(day);
@@ -140,17 +152,43 @@ const PickBooking = ({onPress}) => {
               dotColor: colors.white,
             }}
           />
-          <Button title="OK" onPress={toggleModalCalendar} />
+          {/* <Button
+            title="Terapkan"
+            onPress={toggleModalCalendar}
+            style={{borderBottomRightRadius: 15, borderBottomLeftRadius: 15}}
+          /> */}
         </View>
+        <TouchableOpacity
+          activeOpacity={0.9}
+          style={styles.wrapperButtonModal}
+          onPress={toggleModalCalendar}>
+          <Text style={styles.textButtonModal}>TERAPKAN</Text>
+        </TouchableOpacity>
       </Modal>
 
       {/* Modal Location */}
 
-      <Modal visible={showModalLoc}>
-        <View style={styles.wrapperModalLoc}>
+      <Modal visible={showModalLoc} animationType="slide">
+        <View>
+          <Searchbar
+            placeholder="Cari"
+            onChangeText={onChangeSearch}
+            value={searchQuery}
+          />
+        </View>
+
+        <Button title="X" onPress={toggleModalLoc} />
+      </Modal>
+
+      {/* Modal Person */}
+      <Modal
+        visible={showModalPerson}
+        statusBarTranslucent={true}
+        animationType="slide">
+        <View>
           <Text>Text</Text>
         </View>
-        <Button title="X" onPress={toggleModal} />
+        <Button title="X" onPress={toggleModalPerson} />
       </Modal>
     </>
   );
@@ -220,7 +258,20 @@ const styles = StyleSheet.create({
   },
   wrapperModalLoc: {
     backgroundColor: colors.white,
-    marginHorizontal: 20,
+    marginHorizontal: 2,
     borderRadius: 5,
+  },
+  wrapperButtonModal: {
+    backgroundColor: colors.primary,
+    borderBottomLeftRadius: 15,
+    borderBottomRightRadius: 15,
+  },
+  textButtonModal: {
+    fontFamily: fonts.primary[500],
+    fontSize: 16,
+    textAlign: 'center',
+    paddingVertical: 10,
+    paddingHorizontal: 10,
+    color: colors.white,
   },
 });
