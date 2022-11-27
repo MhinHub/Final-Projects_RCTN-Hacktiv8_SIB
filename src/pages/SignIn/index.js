@@ -1,23 +1,45 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {Alert, StyleSheet, Text, View} from 'react-native';
 import {LogoBlue} from '../../assets';
 import {Button, Gap, Input, Link} from '../../components';
 import {colors} from '../../utils';
+import {useState} from 'react';
+import {useSelector} from 'react-redux';
 
 const SignIn = ({navigation}) => {
+  const [email, setEmail] = useState('john@mail.com');
+  const [password, setPassword] = useState('123john');
+
+  const {email: defaultEmail, password: defaultPassword} = useSelector(
+    state => state.user.user,
+  );
+
+  const onBtnClicked = () => {
+    const isEmailMatch = email && defaultEmail;
+    const isPasswordMatch = password && defaultPassword;
+    isEmailMatch && isPasswordMatch
+      ? navigation.replace('MainApp')
+      : Alert.alert('Email atau Password salah');
+  };
   return (
     <View style={styles.page}>
       <LogoBlue />
-      <Gap height={24} />
       <Text style={styles.title}>Masuk dan mulai{'\n'}menginap</Text>
       <Gap height={38} />
-      <Input label="Email Address" />
-      <Gap height={24} />
-      <Input label="Password" />
+      <Input
+        label="Email Address"
+        textContentType="emailAddress"
+        value={email}
+        onChangeText={e => setEmail(e.nativeEvent.text)}
+      />
+      <Input
+        label="Password"
+        textContentType="password"
+        value={password}
+        onChangeText={e => setPassword(e.nativeEvent.text)}
+      />
       <Gap height={18} />
-      {/* <Link title="Lupa Password" size={14} /> */}
-      <Gap height={24} />
-      <Button title="Masuk" onPress={() => navigation.replace('MainApp')} />
+      <Button title="Masuk" onPress={onBtnClicked} />
       <Gap height={30} />
       <Link
         title="Buat Akun"

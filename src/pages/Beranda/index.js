@@ -26,12 +26,15 @@ import {
   Hotel2,
   Hotel3,
 } from '../../assets/Dummy';
+import {useSelector} from 'react-redux';
 
 const HeaderHome = () => {
+  const {name} = useSelector(state => state.user.user);
+
   return (
     <View style={styles.containerHeader}>
       <View>
-        <Text style={styles.textHello}>Hi, John</Text>
+        <Text style={styles.textHello}>Hi, {name}</Text>
         <Gap height={7} />
         <Text style={styles.textGreeting}>
           Selamat menginap dengan nyaman {'\n'}di Hotelio{' '}
@@ -49,7 +52,7 @@ const Beranda = ({navigation}) => {
     <ScrollView style={styles.page}>
       <HeaderHome />
       <Gap height={20} />
-      <Swiper style={styles.wrapper} showsButtons loop={false} autoplay={true}>
+      <Swiper style={styles.wrapper} showsButtons loop={false} autoplay>
         <Image source={Slider1} style={styles.imageSlider} />
         <Image source={Slider2} style={styles.imageSlider} />
         <Image source={Slider1} style={styles.imageSlider} />
@@ -178,8 +181,8 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   imageSlider: {
-    width: WIDTH,
-    height: HEIGHT * 0.3,
+    width: '100%',
+    height: '100%',
   },
   containerPickBooking: {
     alignItems: 'center',
