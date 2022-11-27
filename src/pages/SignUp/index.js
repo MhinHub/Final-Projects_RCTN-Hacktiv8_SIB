@@ -7,24 +7,34 @@ import {useDispatch} from 'react-redux';
 import {login} from '../../context/reducer';
 
 const SignUp = ({navigation}) => {
-  const [form, setForm] = useState({
-    fullName: '',
-    email: '',
-    password: '',
-  });
-
-  const onInputChange = (value, input) => {
-    setForm({
-      ...form,
-      [input]: value,
-    });
-  };
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   const dispatch = useDispatch();
-  const sendData = () => {
-    console.log('data yang dikirim: ', form);
-    dispatch(login(form));
+
+  const onBtnClicked = () => {
+    dispatch(login({name: name, email: email, password: password}));
   };
+
+  // const [form, setForm] = useState({
+  //   fullName: '',
+  //   email: '',
+  //   password: '',
+  // });
+
+  // const onInputChange = (value, input) => {
+  //   setForm({
+  //     ...form,
+  //     [input]: value,
+  //   });
+  // };
+
+  // const dispatch = useDispatch();
+  // const sendData = () => {
+  //   dispatch(login(form));
+  //   console.log('data yang dikirim: ', form);
+  // };
 
   return (
     <View style={styles.page}>
@@ -32,27 +42,38 @@ const SignUp = ({navigation}) => {
       <View style={styles.content}>
         <Input
           label="Nama Lengkap"
-          value={form.fullName}
-          onChangeText={value => onInputChange(value, 'fullName')}
+          // value={form.name}
+          // onChangeText={value => onInputChange(value, 'name')}
           textContentType="name"
+          value={name}
+          onChangeText={value => setName(value)}
         />
         <Gap height={24} />
         <Input
           label="Email"
-          value={form.email}
-          onChangeText={value => onInputChange(value, 'email')}
+          // value={form.email}
+          // onChangeText={value => onInputChange(value, 'email')}
           textContentType="emailAddress"
+          value={email}
+          onChangeText={value => setEmail(value)}
         />
         <Gap height={24} />
         <Input
           label="Password"
-          value={form.password}
-          onChangeText={value => onInputChange(value, 'password')}
+          // value={form.password}
+          // onChangeText={value => onInputChange(value, 'password')}
           textContentType="password"
-          visiblePassword={false}
+          value={password}
+          onChangeText={value => setPassword(value)}
         />
         <Gap height={24} />
-        <Button title="Daftar" onPress={sendData} />
+        <Button
+          title="Daftar"
+          onPress={() => {
+            onBtnClicked();
+            navigation.replace('MainApp');
+          }}
+        />
         <Gap height={30} />
         <Link
           title="Masuk Akun"
