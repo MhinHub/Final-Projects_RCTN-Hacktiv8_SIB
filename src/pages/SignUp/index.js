@@ -1,4 +1,4 @@
-import {StyleSheet, View, TextInput} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import React from 'react';
 import {Button, Gap, Header, Input, Link} from '../../components';
 import {colors} from '../../utils';
@@ -42,55 +42,30 @@ const SignUp = ({navigation}) => {
     <View style={styles.page}>
       <Header title="Daftar Akun" onPress={() => navigation.goBack()} />
       <View style={styles.content}>
-        <TextInput
-          style={styles.input}
-          textContentType="name"
-          placeholder={'Masukkan nama'}
-          value={name}
-          onChange={e => setName(e.nativeEvent.text)}
-        />
-        <TextInput
-          style={styles.input}
-          textContentType="emailAddress"
-          placeholder={'Masukkan email'}
-          value={email}
-          onChange={e => setEmail(e.nativeEvent.text)}
-        />
-        <TextInput
-          style={styles.input}
-          textContentType="password"
-          placeholder={'Masukkan password'}
-          value={password}
-          onChange={e => setPassword(e.nativeEvent.text)}
-        />
-
-        {/* <Input
+        <Input
           label="Nama Lengkap"
           // value={form.name}
           // onChangeText={value => onInputChange(value, 'name')}
           textContentType="name"
           value={name}
-          onChangeText={value => setName(value)}
+          onChangeText={e => setName(e.nativeEvent.text)}
         />
-        <Gap height={24} />
         <Input
           label="Email"
           // value={form.email}
           // onChangeText={value => onInputChange(value, 'email')}
           textContentType="emailAddress"
           value={email}
-          onChangeText={value => setEmail(value)}
+          onChangeText={e => setEmail(e.nativeEvent.text)}
         />
-        <Gap height={24} />
         <Input
           label="Password"
           // value={form.password}
           // onChangeText={value => onInputChange(value, 'password')}
           textContentType="password"
           value={password}
-          onChangeText={value => setPassword(value)}
+          onChangeText={e => setPassword(e.nativeEvent.text)}
         />
-        <Gap height={24} /> */}
         <Button title="Daftar" onPress={onBtnClicked} />
         <Gap height={30} />
         <Link
@@ -114,12 +89,5 @@ const styles = StyleSheet.create({
   content: {
     padding: 40,
     paddingTop: 0,
-  },
-  input: {
-    borderWidth: 1,
-    borderColor: colors.border,
-    borderRadius: 10,
-    padding: 12,
-    marginBottom: 20,
   },
 });

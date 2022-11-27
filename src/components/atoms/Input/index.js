@@ -25,6 +25,7 @@ const styles = StyleSheet.create({
     borderColor: colors.border,
     borderRadius: 10,
     padding: 12,
+    marginBottom: 20,
   },
   label: {
     fontFamily: 'Poppins-Regular',
