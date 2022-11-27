@@ -26,15 +26,15 @@ import {
   Hotel2,
   Hotel3,
 } from '../../assets/Dummy';
-// import {useSelector} from 'react-redux';
+import {useSelector} from 'react-redux';
 
 const HeaderHome = () => {
-  // const {name} = useSelector(state => state.user.user);
+  const {name} = useSelector(state => state.user.user);
 
   return (
     <View style={styles.containerHeader}>
       <View>
-        <Text style={styles.textHello}>Hi, </Text>
+        <Text style={styles.textHello}>Hi, {name}</Text>
         <Gap height={7} />
         <Text style={styles.textGreeting}>
           Selamat menginap dengan nyaman {'\n'}di Hotelio{' '}

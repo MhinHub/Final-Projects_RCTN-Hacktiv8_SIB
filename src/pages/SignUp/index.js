@@ -1,4 +1,4 @@
-import {StyleSheet, View} from 'react-native';
+import {StyleSheet, View, TextInput} from 'react-native';
 import React from 'react';
 import {Button, Gap, Header, Input, Link} from '../../components';
 import {colors} from '../../utils';
@@ -14,7 +14,9 @@ const SignUp = ({navigation}) => {
   const dispatch = useDispatch();
 
   const onBtnClicked = () => {
+    console.log('name: ' + name, 'email: ' + email, 'password: ' + password);
     dispatch(login({name: name, email: email, password: password}));
+    navigation.replace('MainApp');
   };
 
   // const [form, setForm] = useState({
@@ -40,7 +42,29 @@ const SignUp = ({navigation}) => {
     <View style={styles.page}>
       <Header title="Daftar Akun" onPress={() => navigation.goBack()} />
       <View style={styles.content}>
-        <Input
+        <TextInput
+          style={styles.input}
+          textContentType="name"
+          placeholder={'Masukkan nama'}
+          value={name}
+          onChange={e => setName(e.nativeEvent.text)}
+        />
+        <TextInput
+          style={styles.input}
+          textContentType="emailAddress"
+          placeholder={'Masukkan email'}
+          value={email}
+          onChange={e => setEmail(e.nativeEvent.text)}
+        />
+        <TextInput
+          style={styles.input}
+          textContentType="password"
+          placeholder={'Masukkan password'}
+          value={password}
+          onChange={e => setPassword(e.nativeEvent.text)}
+        />
+
+        {/* <Input
           label="Nama Lengkap"
           // value={form.name}
           // onChangeText={value => onInputChange(value, 'name')}
@@ -66,14 +90,8 @@ const SignUp = ({navigation}) => {
           value={password}
           onChangeText={value => setPassword(value)}
         />
-        <Gap height={24} />
-        <Button
-          title="Daftar"
-          onPress={() => {
-            onBtnClicked();
-            navigation.replace('MainApp');
-          }}
-        />
+        <Gap height={24} /> */}
+        <Button title="Daftar" onPress={onBtnClicked} />
         <Gap height={30} />
         <Link
           title="Masuk Akun"
@@ -96,5 +114,12 @@ const styles = StyleSheet.create({
   content: {
     padding: 40,
     paddingTop: 0,
+  },
+  input: {
+    borderWidth: 1,
+    borderColor: colors.border,
+    borderRadius: 10,
+    padding: 12,
+    marginBottom: 20,
   },
 });
