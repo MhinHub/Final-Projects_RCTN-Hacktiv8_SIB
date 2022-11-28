@@ -231,7 +231,7 @@ const PickBooking = ({onPress}) => {
               onChange={counter => {
                 console.log('onChange Counter:', counter);
               }}
-              min={1}
+              min={0}
               style={styles.counter}
               horizontal
               increaseButtonBackgroundColor={colors.primary}
