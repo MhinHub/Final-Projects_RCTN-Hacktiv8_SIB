@@ -1,5 +1,5 @@
 import moment from 'moment';
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import {
   Dimensions,
   Modal,
@@ -8,14 +8,14 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import {Calendar} from 'react-native-calendars';
-import {SelectList} from 'react-native-dropdown-select-list';
-import {IconDateGrey, IconLocGrey, IconPersonGrey} from '../../../assets';
-import {colors, fonts} from '../../../utils';
-import {Gap} from '../../atoms';
+import { Calendar } from 'react-native-calendars';
+import { SelectList } from 'react-native-dropdown-select-list';
+import { IconDateGrey, IconLocGrey, IconPersonGrey } from '../../../assets';
+import { colors, fonts } from '../../../utils';
+import { Gap } from '../../atoms';
 import CounterInput from 'react-native-counter-input';
 
-const Pick = ({icon, title, onPress}) => {
+const Pick = ({ icon, title, onPress }) => {
   return (
     <View style={styles.pick}>
       <TouchableOpacity
@@ -30,14 +30,71 @@ const Pick = ({icon, title, onPress}) => {
   );
 };
 
-const PickBooking = ({onPress}) => {
+let arrivalDate = '';
+let departureDate = '';
+let guestQty = 1;
+
+const apiurl = `https://apidojo-booking-v1.p.rapidapi.com/properties/list?offset=0&arrival_date=${arrivalDate}&departure_date=${departureDate}&guest_qty=${guestQty}&dest_ids=835&search_type=region&price_filter_currencycode=IDR&languagecode=id&travel_purpose=leisure`;
+
+const apiKey = '00f78e7496msh070c85e2a78bcf1p1b4069jsnfab51c21f3d1';
+const apiHost = 'apidojo-booking-v1.p.rapidapi.com';
+
+const getDataApi = async () => {
+  try {
+    const response = await fetch(apiurl, {
+      method: 'GET',
+      headers: {
+        'X-RapidAPI-Key': apiKey,
+        'X-RapidAPI-Host': apiHost,
+      },
+    });
+    const json = await response.json();
+    console.log('json : ', json);
+    return json;
+  } catch (error) {
+    console.log('error : ', error);
+  }
+};
+
+// console.log(moment().format('YYYY-MM-DD'));
+
+const PickBooking = ({ onPress }) => {
   const [showModalDate, setShowModalDate] = useState(false);
   const [showModalLoc, setShowModalLoc] = useState(false);
-  const [startDay, setStartDay] = useState(null);
-  const [endDay, setEndDay] = useState(null);
+  const [startDay, setStartDay] = useState('');
+  const [endDay, setEndDay] = useState('');
   const [markedDates, setMarkedDates] = useState({});
   const [showModalPerson, setShowModalPerson] = useState(false);
-  const [searchQuery, setSearchQuery] = React.useState('');
+  const [room, setRoom] = useState(1);
+  const [guest, setguest] = useState(1);
+
+  // arrivalDate = 
+  // departureDate =
+  // guestQty = guest;
+
+  // const apiurl = `https://apidojo-booking-v1.p.rapidapi.com/properties/list?offset=0&arrival_date=${startDay}&departure_date=${endDay}&guest_qty=${guest}&dest_ids=835&search_type=region&price_filter_currencycode=IDR&languagecode=id&travel_purpose=leisure`;
+
+  // const apiKey = '00f78e7496msh070c85e2a78bcf1p1b4069jsnfab51c21f3d1';
+  // const apiHost = 'apidojo-booking-v1.p.rapidapi.com';
+
+  // const getDataApi = async () => {
+  //   try {
+  //     const response = await fetch(apiurl, {
+  //       method: 'GET',
+  //       headers: {
+  //         'X-RapidAPI-Key': apiKey,
+  //         'X-RapidAPI-Host': apiHost,
+  //       },
+  //     });
+  //     const json = await response.json();
+  //     console.log('json : ', json);
+  //     return json;
+  //   } catch (error) {
+  //     console.log('error : ', error);
+  //   }
+  // };
+
+  const [searchQuery, setSearchQuery] = useState('');
 
   const onChangeSearch = query => setSearchQuery(query);
 
@@ -53,34 +110,34 @@ const PickBooking = ({onPress}) => {
   };
 
   // Searh Location
-  const [selected, setSelected] = React.useState('');
+  const [citySelected, setCitySelected] = useState('Pilih Kota');
   const data = [
-    {key: '1', value: 'Jakarta'},
-    {key: '2', value: 'Surabaya'},
-    {key: '3', value: 'Bali'},
-    {key: '4', value: 'Bandung'},
-    {key: '5', value: 'Semarang'},
-    {key: '6', value: 'Medan'},
-    {key: '7', value: 'Banjarmasin'},
+    { key: '1', value: 'Jakarta' },
+    { key: '2', value: 'Surabaya' },
+    { key: '3', value: 'Bali' },
+    { key: '4', value: 'Bandung' },
+    { key: '5', value: 'Semarang' },
+    { key: '6', value: 'Medan' },
+    { key: '7', value: 'Banjarmasin' },
   ];
 
   return (
     <>
       <View style={styles.container}>
         <Pick
-          title="Jakarta"
+          title={citySelected}
           icon={<IconLocGrey />}
-          onPress={() => setShowModalLoc(true)}
+          onPress={toggleModalLoc}
         />
         <Pick
-          title="7 Oct 2022 -  8 Oct 2022 "
+          title={`${startDay}  •  ${endDay}`} //? sementara
           icon={<IconDateGrey />}
-          onPress={() => setShowModalDate(true)}
+          onPress={toggleModalCalendar}
         />
         <Pick
-          title="1 Room, 1 Adult, 0 Children"
+          title={`${room} Kamar, ${guest} Tamu`}
           icon={<IconPersonGrey />}
-          onPress={() => setShowModalPerson(true)}
+          onPress={toggleModalPerson}
         />
         <Gap height={15} />
         <TouchableOpacity
@@ -93,20 +150,19 @@ const PickBooking = ({onPress}) => {
           <Gap height={15} />
         </TouchableOpacity>
       </View>
-
       {/* Modal Date */}
       <Modal
         visible={showModalDate}
         backdropColor="transparent"
         animationType="slide">
-        <View style={{backgroundColor: 'white', flex: 1}}>
+        <View style={{ backgroundColor: 'white', flex: 1 }}>
           <View style={styles.headerModal}>
             <Text style={styles.textHeaderModal}>Tanggal Menginap</Text>
           </View>
           <Gap height={30} />
           <Calendar
             onDayPress={day => {
-              console.log(day);
+              console.log('day : ', day);
               if (startDay && !endDay) {
                 const date = {};
                 for (
@@ -120,10 +176,12 @@ const PickBooking = ({onPress}) => {
                     textColor: 'white',
                   };
 
-                  if (d.format('YYYY-MM-DD') === startDay)
+                  if (d.format('YYYY-MM-DD') === startDay) {
                     date[d.format('YYYY-MM-DD')].startingDay = true;
-                  if (d.format('YYYY-MM-DD') === day.dateString)
+                  }
+                  if (d.format('YYYY-MM-DD') === day.dateString) {
                     date[d.format('YYYY-MM-DD')].endingDay = true;
+                  }
                 }
 
                 setMarkedDates(date);
@@ -165,21 +223,19 @@ const PickBooking = ({onPress}) => {
           <Text style={styles.textButtonModal}>TERAPKAN</Text>
         </TouchableOpacity>
       </Modal>
-
       {/* Modal Location */}
-
       <Modal
         visible={showModalLoc}
         backdropColor="transparent"
         animationType="slide">
-        <View style={{flex: 1}}>
+        <View style={{ flex: 1 }}>
           <View style={styles.headerModal}>
             <Text style={styles.textHeaderModal}>Lokasi</Text>
           </View>
           <Gap height={30} />
-          <View style={{paddingHorizontal: 20}}>
+          <View style={{ paddingHorizontal: 20 }}>
             <SelectList
-              setSelected={val => setSelected(val)}
+              setSelected={setCitySelected}
               data={data}
               save="value"
             />
@@ -192,13 +248,12 @@ const PickBooking = ({onPress}) => {
           <Text style={styles.textButtonModal}>TERAPKAN</Text>
         </TouchableOpacity>
       </Modal>
-
       {/* Modal Person */}
       <Modal
         visible={showModalPerson}
         animationType="slide"
         backdropColor="transparent">
-        <View style={{backgroundColor: 'white', flex: 1}}>
+        <View style={{ backgroundColor: 'white', flex: 1 }}>
           <View style={styles.headerModal}>
             <Text style={styles.textHeaderModal}>Tambahkan Kamar dan Tamu</Text>
           </View>
@@ -210,6 +265,7 @@ const PickBooking = ({onPress}) => {
               initial={1}
               onChange={counter => {
                 console.log('onChange Counter:', counter);
+                setRoom(counter);
               }}
               min={1}
               style={styles.counter}
@@ -220,7 +276,7 @@ const PickBooking = ({onPress}) => {
           </View>
           <Gap height={15} />
           <View
-            style={{borderBottomWidth: 1, borderBottomColor: colors.border}}
+            style={{ borderBottomWidth: 1, borderBottomColor: colors.border }}
           />
 
           <Gap height={15} />
@@ -229,7 +285,8 @@ const PickBooking = ({onPress}) => {
             <CounterInput
               initial={0}
               onChange={counter => {
-                console.log('onChange Counter:', counter);
+                console.log('Guest Counter:', counter);
+                setguest(counter);
               }}
               min={0}
               style={styles.counter}
@@ -239,7 +296,6 @@ const PickBooking = ({onPress}) => {
             />
           </View>
         </View>
-
         <TouchableOpacity
           activeOpacity={0.9}
           style={styles.wrapperButtonModal}
@@ -262,7 +318,7 @@ const styles = StyleSheet.create({
     flex: 1,
     width: WIDTH * 0.77,
     borderRadius: 8,
-    shadowOffset: {width: 0, height: 1},
+    shadowOffset: { width: 0, height: 1 },
     backgroundColor: colors.white,
     shadowOpacity: 0.7,
     shadowRadius: 2,
