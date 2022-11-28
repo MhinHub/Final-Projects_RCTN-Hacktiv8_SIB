@@ -1,7 +1,6 @@
 import moment from 'moment';
 import React, {useState} from 'react';
 import {
-  Button,
   Dimensions,
   Modal,
   StyleSheet,
@@ -10,16 +9,11 @@ import {
   View,
 } from 'react-native';
 import {Calendar} from 'react-native-calendars';
-// import Modal from 'react-native-modal';
-import {
-  IconDateGrey,
-  IconLocGrey,
-  IconPersonGrey,
-  IconSearch,
-} from '../../../assets';
+import {SelectList} from 'react-native-dropdown-select-list';
+import {IconDateGrey, IconLocGrey, IconPersonGrey} from '../../../assets';
 import {colors, fonts} from '../../../utils';
 import {Gap} from '../../atoms';
-import {Searchbar} from 'react-native-paper';
+import CounterInput from 'react-native-counter-input';
 
 const Pick = ({icon, title, onPress}) => {
   return (
@@ -44,6 +38,7 @@ const PickBooking = ({onPress}) => {
   const [markedDates, setMarkedDates] = useState({});
   const [showModalPerson, setShowModalPerson] = useState(false);
   const [searchQuery, setSearchQuery] = React.useState('');
+
   const onChangeSearch = query => setSearchQuery(query);
 
   const toggleModalLoc = () => {
@@ -56,6 +51,18 @@ const PickBooking = ({onPress}) => {
   const toggleModalPerson = () => {
     setShowModalPerson(!showModalPerson);
   };
+
+  // Searh Location
+  const [selected, setSelected] = React.useState('');
+  const data = [
+    {key: '1', value: 'Jakarta'},
+    {key: '2', value: 'Surabaya'},
+    {key: '3', value: 'Bali'},
+    {key: '4', value: 'Bandung'},
+    {key: '5', value: 'Semarang'},
+    {key: '6', value: 'Medan'},
+    {key: '7', value: 'Banjarmasin'},
+  ];
 
   return (
     <>
@@ -92,14 +99,12 @@ const PickBooking = ({onPress}) => {
         visible={showModalDate}
         backdropColor="transparent"
         animationType="slide">
-        <View>
+        <View style={{backgroundColor: 'white', flex: 1}}>
+          <View style={styles.headerModal}>
+            <Text style={styles.textHeaderModal}>Tanggal Menginap</Text>
+          </View>
+          <Gap height={30} />
           <Calendar
-            style={{
-              borderTopLeftRadius: 15,
-              borderTopRightRadius: 15,
-              paddingVertical: 20,
-              paddingHorizontal: 20,
-            }}
             onDayPress={day => {
               console.log(day);
               if (startDay && !endDay) {
@@ -152,11 +157,6 @@ const PickBooking = ({onPress}) => {
               dotColor: colors.white,
             }}
           />
-          {/* <Button
-            title="Terapkan"
-            onPress={toggleModalCalendar}
-            style={{borderBottomRightRadius: 15, borderBottomLeftRadius: 15}}
-          /> */}
         </View>
         <TouchableOpacity
           activeOpacity={0.9}
@@ -168,27 +168,84 @@ const PickBooking = ({onPress}) => {
 
       {/* Modal Location */}
 
-      <Modal visible={showModalLoc} animationType="slide">
-        <View>
-          <Searchbar
-            placeholder="Cari"
-            onChangeText={onChangeSearch}
-            value={searchQuery}
-          />
+      <Modal
+        visible={showModalLoc}
+        backdropColor="transparent"
+        animationType="slide">
+        <View style={{flex: 1}}>
+          <View style={styles.headerModal}>
+            <Text style={styles.textHeaderModal}>Lokasi</Text>
+          </View>
+          <Gap height={30} />
+          <View style={{paddingHorizontal: 20}}>
+            <SelectList
+              setSelected={val => setSelected(val)}
+              data={data}
+              save="value"
+            />
+          </View>
         </View>
-
-        <Button title="X" onPress={toggleModalLoc} />
+        <TouchableOpacity
+          activeOpacity={0.9}
+          style={styles.wrapperButtonModal}
+          onPress={toggleModalLoc}>
+          <Text style={styles.textButtonModal}>TERAPKAN</Text>
+        </TouchableOpacity>
       </Modal>
 
       {/* Modal Person */}
       <Modal
         visible={showModalPerson}
-        statusBarTranslucent={true}
-        animationType="slide">
-        <View>
-          <Text>Text</Text>
+        animationType="slide"
+        backdropColor="transparent">
+        <View style={{backgroundColor: 'white', flex: 1}}>
+          <View style={styles.headerModal}>
+            <Text style={styles.textHeaderModal}>Tambahkan Kamar dan Tamu</Text>
+          </View>
+          <Gap height={15} />
+
+          <View style={styles.containerCounter}>
+            <Text style={styles.labelCounter}>Kamar</Text>
+            <CounterInput
+              initial={1}
+              onChange={counter => {
+                console.log('onChange Counter:', counter);
+              }}
+              min={1}
+              style={styles.counter}
+              horizontal
+              increaseButtonBackgroundColor={colors.primary}
+              decreaseButtonBackgroundColor={colors.primary}
+            />
+          </View>
+          <Gap height={15} />
+          <View
+            style={{borderBottomWidth: 1, borderBottomColor: colors.border}}
+          />
+
+          <Gap height={15} />
+          <View style={styles.containerCounter}>
+            <Text style={styles.labelCounter}>Tamu</Text>
+            <CounterInput
+              initial={0}
+              onChange={counter => {
+                console.log('onChange Counter:', counter);
+              }}
+              min={1}
+              style={styles.counter}
+              horizontal
+              increaseButtonBackgroundColor={colors.primary}
+              decreaseButtonBackgroundColor={colors.primary}
+            />
+          </View>
         </View>
-        <Button title="X" onPress={toggleModalPerson} />
+
+        <TouchableOpacity
+          activeOpacity={0.9}
+          style={styles.wrapperButtonModal}
+          onPress={toggleModalPerson}>
+          <Text style={styles.textButtonModal}>TERAPKAN</Text>
+        </TouchableOpacity>
       </Modal>
     </>
   );
@@ -263,9 +320,18 @@ const styles = StyleSheet.create({
   },
   wrapperButtonModal: {
     backgroundColor: colors.primary,
-    borderBottomLeftRadius: 15,
-    borderBottomRightRadius: 15,
+    borderRadius: 10,
+    // alignSelf: 'flex-end',
+    marginBottom: 20,
+    marginHorizontal: 20,
   },
+  wrapperButtonModalClose: {
+    backgroundColor: colors.greymedium,
+    borderRadius: 10,
+    marginBottom: 20,
+    marginHorizontal: 20,
+  },
+
   textButtonModal: {
     fontFamily: fonts.primary[500],
     fontSize: 16,
@@ -273,5 +339,43 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     paddingHorizontal: 10,
     color: colors.white,
+  },
+  textButtonModalClose: {
+    fontFamily: fonts.primary[500],
+    fontSize: 16,
+    textAlign: 'center',
+    paddingVertical: 10,
+    paddingHorizontal: 10,
+    color: colors.white,
+  },
+  headerModal: {
+    backgroundColor: colors.primary,
+  },
+  textHeaderModal: {
+    fontFamily: fonts.primary[500],
+    color: colors.white,
+    paddingHorizontal: 20,
+    paddingVertical: 20,
+    fontSize: 20,
+  },
+  counter: {
+    borderRadius: 15,
+  },
+  labelCounter: {
+    fontFamily: fonts.primary[500],
+    color: colors.secondary,
+    alignSelf: 'flex-start',
+    paddingVertical: 20,
+    fontSize: 20,
+    justifyContent: 'flex-start',
+
+    flex: 1,
+  },
+  containerCounter: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    alignContent: 'center',
+    justifyContent: 'center',
+    paddingHorizontal: 20,
   },
 });
