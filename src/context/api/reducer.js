@@ -17,7 +17,6 @@ export const getDataApiForUrlSearch = createAsyncThunk(
         try {
             const response = await fetch(`${baseUrl}/locations/auto-complete?text=${city}&languagecode=id`, options);
             const data = await response.json();
-            console.log('getDataApiForUrlSearch:  ', data);
             return data;
         }
         catch (error) {
@@ -28,9 +27,9 @@ export const getDataApiForUrlSearch = createAsyncThunk(
 
 export const getDataApiForSearchbar = createAsyncThunk(
     'api/getDataApiForSearchbar',
-    async (arrivalDate, departureDate, guestQty, childrenQty) => {
+    async (arrivalDate, departureDate, roomQty, guestQty, childrenQty, destId) => {
         try {
-            const response = await fetch(`${baseUrl}/properties/list?offset=0&arrival_date=${arrivalDate}&departure_date=${departureDate}&guest_qty=${guestQty}&children_qty=${childrenQty}&dest_ids=835&search_type=region&price_filter_currencycode=IDR&languagecode=id&order_by=popularity&travel_purpose=leisure`, options);
+            const response = await fetch(`${baseUrl}/properties/list?offset=0&arrival_date=${arrivalDate}&departure_date=${departureDate}&room_qty=${roomQty}&guest_qty=${guestQty}&children_qty=${childrenQty}&dest_ids=${destId}&search_type=city&price_filter_currencycode=IDR&languagecode=id&order_by=popularity&travel_purpose=leisure`, options);
             const data = await response.json();
             console.log('json : ', data);
             return FormDataEvent;

@@ -43,10 +43,6 @@ const PickBooking = ({ onPress }) => {
   const [guest, setguest] = useState(1);
   const [child, setChild] = useState(0);
 
-  // const [searchQuery, setSearchQuery] = useState('');
-
-  // const onChangeSearch = query => setSearchQuery(query);
-
   const toggleModalLoc = () => {
     setShowModalLoc(!showModalLoc);
   };
@@ -75,9 +71,17 @@ const PickBooking = ({ onPress }) => {
 
   useEffect(() => {
     if (citySelected !== 'Pilih Kota') {
-      dispatch(getDataApiForUrlSearch(citySelected));
+      dispatch(getDataApiForUrlSearch(citySelected))
     }
   }, [citySelected]);
+
+  const { data } = useSelector(state => state.api);
+
+  const onBtnPress = () => {
+    const { dest_id } = data.find(item => item?.name === citySelected);
+    console.log('dest_id : ', dest_id);
+    dispatch(getDataApiForSearchbar(startDay, endDay, room, guest, child, dest_id));
+  };
 
   return (
     <>

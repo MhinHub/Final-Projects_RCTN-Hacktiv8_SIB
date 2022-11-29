@@ -2,9 +2,17 @@ import {Dimensions, ScrollView, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import {colors} from '../../utils';
 import {Gap, Header, HotelCard, PickBooking} from '../../components';
-import {HotelDummy1} from '../../assets/Dummy';
+import { HotelDummy1 } from '../../assets/Dummy';
+import { useDispatch, useSelector } from 'react-redux';
+// import { getDataApiDetailHotels } from '../../context/api/reducer'
 
-const Search = ({navigation}) => {
+const Search = ({ navigation }) => {
+  const dispatch = useDispatch();
+
+  const { searchResult } = useSelector((state) => state.api);
+
+  console.log('searchResult : ', searchResult);
+
   return (
     <ScrollView style={styles.page}>
       <Header title="Hasil Pencarian" onPress={() => navigation.goBack()} />
