@@ -15,8 +15,8 @@ const SignIn = ({navigation}) => {
   );
 
   const onBtnClicked = () => {
-    const isEmailMatch = email && defaultEmail;
-    const isPasswordMatch = password && defaultPassword;
+    const isEmailMatch = email === defaultEmail;
+    const isPasswordMatch = password === defaultPassword;
     isEmailMatch && isPasswordMatch
       ? navigation.replace('MainApp')
       : Alert.alert('Email atau Password salah');

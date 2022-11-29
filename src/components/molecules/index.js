@@ -7,6 +7,7 @@ import Card from './Card';
 import HotelCard from './HotelCard';
 import Review from './Review';
 import Fasilitas from './Fasilitas';
+import BookingCard from './BookingCard';
 
 export {
   Header,
@@ -18,4 +19,5 @@ export {
   HotelCard,
   Review,
   Fasilitas,
+  BookingCard,
 };

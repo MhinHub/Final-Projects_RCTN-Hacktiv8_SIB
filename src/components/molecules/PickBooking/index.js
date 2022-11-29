@@ -1,5 +1,5 @@
 import moment from 'moment';
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import {
   Dimensions,
   Modal,
@@ -8,14 +8,14 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import { Calendar } from 'react-native-calendars';
-import { SelectList } from 'react-native-dropdown-select-list';
-import { IconDateGrey, IconLocGrey, IconPersonGrey } from '../../../assets';
-import { colors, fonts } from '../../../utils';
-import { Gap } from '../../atoms';
+import {Calendar} from 'react-native-calendars';
+import {SelectList} from 'react-native-dropdown-select-list';
+import {IconDateGrey, IconLocGrey, IconPersonGrey} from '../../../assets';
+import {colors, fonts} from '../../../utils';
+import {Gap} from '../../atoms';
 import CounterInput from 'react-native-counter-input';
 
-const Pick = ({ icon, title, onPress }) => {
+const Pick = ({icon, title, onPress}) => {
   return (
     <View style={styles.pick}>
       <TouchableOpacity
@@ -58,7 +58,7 @@ const getDataApi = async () => {
 
 // console.log(moment().format('YYYY-MM-DD'));
 
-const PickBooking = ({ onPress }) => {
+const PickBooking = ({onPress}) => {
   const [showModalDate, setShowModalDate] = useState(false);
   const [showModalLoc, setShowModalLoc] = useState(false);
   const [startDay, setStartDay] = useState('');
@@ -68,31 +68,31 @@ const PickBooking = ({ onPress }) => {
   const [room, setRoom] = useState(1);
   const [guest, setguest] = useState(1);
 
-  // arrivalDate = 
+  // arrivalDate =
   // departureDate =
   // guestQty = guest;
 
-  // const apiurl = `https://apidojo-booking-v1.p.rapidapi.com/properties/list?offset=0&arrival_date=${startDay}&departure_date=${endDay}&guest_qty=${guest}&dest_ids=835&search_type=region&price_filter_currencycode=IDR&languagecode=id&travel_purpose=leisure`;
+  const apiurl = `https://apidojo-booking-v1.p.rapidapi.com/properties/list?offset=0&arrival_date=${startDay}&departure_date=${endDay}&guest_qty=${guest}&dest_ids=835&search_type=region&price_filter_currencycode=IDR&languagecode=id&travel_purpose=leisure`;
 
-  // const apiKey = '00f78e7496msh070c85e2a78bcf1p1b4069jsnfab51c21f3d1';
-  // const apiHost = 'apidojo-booking-v1.p.rapidapi.com';
+  const apiKey = '00f78e7496msh070c85e2a78bcf1p1b4069jsnfab51c21f3d1';
+  const apiHost = 'apidojo-booking-v1.p.rapidapi.com';
 
-  // const getDataApi = async () => {
-  //   try {
-  //     const response = await fetch(apiurl, {
-  //       method: 'GET',
-  //       headers: {
-  //         'X-RapidAPI-Key': apiKey,
-  //         'X-RapidAPI-Host': apiHost,
-  //       },
-  //     });
-  //     const json = await response.json();
-  //     console.log('json : ', json);
-  //     return json;
-  //   } catch (error) {
-  //     console.log('error : ', error);
-  //   }
-  // };
+  const getDataApi = async () => {
+    try {
+      const response = await fetch(apiurl, {
+        method: 'GET',
+        headers: {
+          'X-RapidAPI-Key': apiKey,
+          'X-RapidAPI-Host': apiHost,
+        },
+      });
+      const json = await response.json();
+      console.log('json : ', json);
+      return json;
+    } catch (error) {
+      console.log('error : ', error);
+    }
+  };
 
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -112,13 +112,13 @@ const PickBooking = ({ onPress }) => {
   // Searh Location
   const [citySelected, setCitySelected] = useState('Pilih Kota');
   const data = [
-    { key: '1', value: 'Jakarta' },
-    { key: '2', value: 'Surabaya' },
-    { key: '3', value: 'Bali' },
-    { key: '4', value: 'Bandung' },
-    { key: '5', value: 'Semarang' },
-    { key: '6', value: 'Medan' },
-    { key: '7', value: 'Banjarmasin' },
+    {key: '1', value: 'Jakarta'},
+    {key: '2', value: 'Surabaya'},
+    {key: '3', value: 'Bali'},
+    {key: '4', value: 'Bandung'},
+    {key: '5', value: 'Semarang'},
+    {key: '6', value: 'Medan'},
+    {key: '7', value: 'Banjarmasin'},
   ];
 
   return (
@@ -155,7 +155,7 @@ const PickBooking = ({ onPress }) => {
         visible={showModalDate}
         backdropColor="transparent"
         animationType="slide">
-        <View style={{ backgroundColor: 'white', flex: 1 }}>
+        <View style={{backgroundColor: 'white', flex: 1}}>
           <View style={styles.headerModal}>
             <Text style={styles.textHeaderModal}>Tanggal Menginap</Text>
           </View>
@@ -200,6 +200,7 @@ const PickBooking = ({ onPress }) => {
                 });
               }
             }}
+            minDate={moment().format('YYYY-MM-DD')}
             monthFormat={'MMM yyyy'}
             hideDayNames={false}
             markingType={'period'}
@@ -228,12 +229,12 @@ const PickBooking = ({ onPress }) => {
         visible={showModalLoc}
         backdropColor="transparent"
         animationType="slide">
-        <View style={{ flex: 1 }}>
+        <View style={{flex: 1}}>
           <View style={styles.headerModal}>
             <Text style={styles.textHeaderModal}>Lokasi</Text>
           </View>
           <Gap height={30} />
-          <View style={{ paddingHorizontal: 20 }}>
+          <View style={{paddingHorizontal: 20}}>
             <SelectList
               setSelected={setCitySelected}
               data={data}
@@ -253,7 +254,7 @@ const PickBooking = ({ onPress }) => {
         visible={showModalPerson}
         animationType="slide"
         backdropColor="transparent">
-        <View style={{ backgroundColor: 'white', flex: 1 }}>
+        <View style={{backgroundColor: 'white', flex: 1}}>
           <View style={styles.headerModal}>
             <Text style={styles.textHeaderModal}>Tambahkan Kamar dan Tamu</Text>
           </View>
@@ -276,7 +277,7 @@ const PickBooking = ({ onPress }) => {
           </View>
           <Gap height={15} />
           <View
-            style={{ borderBottomWidth: 1, borderBottomColor: colors.border }}
+            style={{borderBottomWidth: 1, borderBottomColor: colors.border}}
           />
 
           <Gap height={15} />
@@ -318,7 +319,7 @@ const styles = StyleSheet.create({
     flex: 1,
     width: WIDTH * 0.77,
     borderRadius: 8,
-    shadowOffset: { width: 0, height: 1 },
+    shadowOffset: {width: 0, height: 1},
     backgroundColor: colors.white,
     shadowOpacity: 0.7,
     shadowRadius: 2,

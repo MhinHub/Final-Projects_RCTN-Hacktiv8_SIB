@@ -12,6 +12,7 @@ import Help from './Help';
 import DetailHotel from './DetailHotel';
 import Search from './Search';
 import ProfileEdit from './ProfileEdit';
+import DetailBooking from './DetailBooking';
 
 export {
   Splashscreen,
@@ -28,4 +29,5 @@ export {
   DetailHotel,
   Search,
   ProfileEdit,
+  DetailBooking,
 };
