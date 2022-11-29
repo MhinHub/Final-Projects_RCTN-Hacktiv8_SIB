@@ -14,7 +14,7 @@ import { IconDateGrey, IconLocGrey, IconPersonGrey } from '../../../assets';
 import { colors, fonts } from '../../../utils';
 import { Gap } from '../../atoms';
 import CounterInput from 'react-native-counter-input';
-import { getDataApiForUrlSearch, getDataApiForSearchbar } from '../../../context/api/reducer';
+import { getDataLocation, getDataPropertiesList } from '../../../context/api/reducer';
 import { useDispatch, useSelector } from 'react-redux';
 
 const Pick = ({ icon, title, onPress }) => {
@@ -71,16 +71,26 @@ const PickBooking = ({ onPress }) => {
 
   useEffect(() => {
     if (citySelected !== 'Pilih Kota') {
-      dispatch(getDataApiForUrlSearch(citySelected))
+      dispatch(getDataLocation(citySelected))
     }
   }, [citySelected]);
 
   const { data } = useSelector(state => state.api);
 
+  const dataLoc = data.find(item => item?.name === citySelected);
+
+  const destId = dataLoc?.dest_id;
+
   const onBtnPress = () => {
-    const { dest_id } = data.find(item => item?.name === citySelected);
-    console.log('dest_id : ', dest_id);
-    dispatch(getDataApiForSearchbar(startDay, endDay, room, guest, child, dest_id));
+    const args = {
+      arrivalDate: startDay,
+      departureDate: endDay,
+      destId: destId,
+      guestQty: guest,
+      roomQty: room,
+      childrenQty: child,
+    };
+    return dispatch(getDataPropertiesList(args)); // dispatch hanya menerima satu parameter jika menggunakan createAsyncThunk
   };
 
   return (
@@ -105,7 +115,10 @@ const PickBooking = ({ onPress }) => {
         <TouchableOpacity
           style={styles.containerButton}
           activeOpacity={0.7}
-          onPress={onPress}>
+          onPress={() => {
+            onBtnPress();
+            onPress();
+          }}>
           <View style={styles.button}>
             <Text style={styles.search}>Cari</Text>
           </View>
