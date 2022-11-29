@@ -239,7 +239,7 @@ const PickBooking = ({ onPress }) => {
                 console.log('Guest Counter:', counter);
                 setguest(counter);
               }}
-              min={1}
+              min={0}
               style={styles.counter}
               horizontal
               increaseButtonBackgroundColor={colors.primary}

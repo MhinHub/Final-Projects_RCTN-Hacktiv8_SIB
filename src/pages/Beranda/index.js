@@ -17,7 +17,7 @@ import {
   TourCard,
 } from '../../components';
 import Swiper from 'react-native-swiper';
-import {Slider1, Slider2} from '../../assets';
+import {Slider1, Slider2, Slider3} from '../../assets';
 import {
   Wisata1,
   Wisata2,
@@ -55,7 +55,7 @@ const Beranda = ({navigation}) => {
       <Swiper style={styles.wrapper} showsButtons loop={false} autoplay>
         <Image source={Slider1} style={styles.imageSlider} />
         <Image source={Slider2} style={styles.imageSlider} />
-        <Image source={Slider1} style={styles.imageSlider} />
+        <Image source={Slider3} style={styles.imageSlider} />
       </Swiper>
       <View style={styles.containerPickBooking}>
         <PickBooking onPress={() => navigation.navigate('Search')} />
