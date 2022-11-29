@@ -30,34 +30,6 @@ const Pick = ({ icon, title, onPress }) => {
   );
 };
 
-let arrivalDate = '';
-let departureDate = '';
-let guestQty = 1;
-
-const apiurl = `https://apidojo-booking-v1.p.rapidapi.com/properties/list?offset=0&arrival_date=${arrivalDate}&departure_date=${departureDate}&guest_qty=${guestQty}&dest_ids=835&search_type=region&price_filter_currencycode=IDR&languagecode=id&travel_purpose=leisure`;
-
-const apiKey = '00f78e7496msh070c85e2a78bcf1p1b4069jsnfab51c21f3d1';
-const apiHost = 'apidojo-booking-v1.p.rapidapi.com';
-
-const getDataApi = async () => {
-  try {
-    const response = await fetch(apiurl, {
-      method: 'GET',
-      headers: {
-        'X-RapidAPI-Key': apiKey,
-        'X-RapidAPI-Host': apiHost,
-      },
-    });
-    const json = await response.json();
-    console.log('json : ', json);
-    return json;
-  } catch (error) {
-    console.log('error : ', error);
-  }
-};
-
-// console.log(moment().format('YYYY-MM-DD'));
-
 const PickBooking = ({ onPress }) => {
   const [showModalDate, setShowModalDate] = useState(false);
   const [showModalLoc, setShowModalLoc] = useState(false);
@@ -68,35 +40,9 @@ const PickBooking = ({ onPress }) => {
   const [room, setRoom] = useState(1);
   const [guest, setguest] = useState(1);
 
-  // arrivalDate = 
-  // departureDate =
-  // guestQty = guest;
+  // const [searchQuery, setSearchQuery] = useState('');
 
-  // const apiurl = `https://apidojo-booking-v1.p.rapidapi.com/properties/list?offset=0&arrival_date=${startDay}&departure_date=${endDay}&guest_qty=${guest}&dest_ids=835&search_type=region&price_filter_currencycode=IDR&languagecode=id&travel_purpose=leisure`;
-
-  // const apiKey = '00f78e7496msh070c85e2a78bcf1p1b4069jsnfab51c21f3d1';
-  // const apiHost = 'apidojo-booking-v1.p.rapidapi.com';
-
-  // const getDataApi = async () => {
-  //   try {
-  //     const response = await fetch(apiurl, {
-  //       method: 'GET',
-  //       headers: {
-  //         'X-RapidAPI-Key': apiKey,
-  //         'X-RapidAPI-Host': apiHost,
-  //       },
-  //     });
-  //     const json = await response.json();
-  //     console.log('json : ', json);
-  //     return json;
-  //   } catch (error) {
-  //     console.log('error : ', error);
-  //   }
-  // };
-
-  const [searchQuery, setSearchQuery] = useState('');
-
-  const onChangeSearch = query => setSearchQuery(query);
+  // const onChangeSearch = query => setSearchQuery(query);
 
   const toggleModalLoc = () => {
     setShowModalLoc(!showModalLoc);
@@ -108,6 +54,7 @@ const PickBooking = ({ onPress }) => {
   const toggleModalPerson = () => {
     setShowModalPerson(!showModalPerson);
   };
+
 
   // Searh Location
   const [citySelected, setCitySelected] = useState('Pilih Kota');
@@ -143,7 +90,10 @@ const PickBooking = ({ onPress }) => {
         <TouchableOpacity
           style={styles.containerButton}
           activeOpacity={0.7}
-          onPress={onPress}>
+          onPress={() => {
+            getDataApi();
+            onPress
+          }}>
           <View style={styles.button}>
             <Text style={styles.search}>Cari</Text>
           </View>
@@ -200,6 +150,7 @@ const PickBooking = ({ onPress }) => {
                 });
               }
             }}
+            minDate={moment().format('YYYY-MM-DD')}
             monthFormat={'MMM yyyy'}
             hideDayNames={false}
             markingType={'period'}

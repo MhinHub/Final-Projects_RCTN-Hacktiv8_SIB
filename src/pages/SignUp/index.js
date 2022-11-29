@@ -4,7 +4,7 @@ import {Button, Gap, Header, Input, Link} from '../../components';
 import {colors} from '../../utils';
 import {useState} from 'react';
 import {useDispatch} from 'react-redux';
-import {signup} from '../../context/reducer';
+import { signup } from '../../context/user/reducer';
 
 const SignUp = ({navigation}) => {
   const [name, setName] = useState('');
