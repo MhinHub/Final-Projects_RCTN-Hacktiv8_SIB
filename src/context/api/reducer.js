@@ -1,5 +1,5 @@
 // Todo refactoring api
-import { createAsyncThunk } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 const baseUrl = 'https://apidojo-booking-v1.p.rapidapi.com';
 
@@ -40,11 +40,45 @@ export const getDataApiForSearchbar = createAsyncThunk(
     }
 );
 
-// export const getDataApiForDetail = createAsyncThunk(
-//     'api/getDataApiForDetail',
-//     async (id) => {
-//         try {
+const initialState = {
+    data: [],
+    searchResult: [],
+    loading: false,
+    error: null
+};
 
-//         }
+export const ApiSlice = createSlice({
+    name: 'api',
+    initialState,
+    reducers: {},
+    extraReducers: (builder) => {
+        builder
+            .addCase(getDataApiForUrlSearch.pending, (state) => {
+                state.loading = true;
+            })
+            .addCase(getDataApiForUrlSearch.fulfilled, (state, action) => {
+                state.loading = false;
+                state.data = action.payload;
+            })
+            .addCase(getDataApiForUrlSearch.rejected, (state, action) => {
+                state.loading = false;
+                state.error = action.error.message;
+            })
+            .addCase(getDataApiForSearchbar.pending, (state) => {
+                state.loading = true;
+            })
+            .addCase(getDataApiForSearchbar.fulfilled, (state, action) => {
+                state.loading = false;
+                state.searchResult = action.payload;
+            })
+            .addCase(getDataApiForSearchbar.rejected, (state, action) => {
+                state.loading = false;
+                state.error = action.error.message;
+            })
+    }
+});
+
+export default ApiSlice.reducer;
+
 
 

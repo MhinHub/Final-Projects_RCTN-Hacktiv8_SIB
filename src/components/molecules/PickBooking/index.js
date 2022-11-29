@@ -1,5 +1,5 @@
 import moment from 'moment';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Dimensions,
   Modal,
@@ -14,6 +14,8 @@ import { IconDateGrey, IconLocGrey, IconPersonGrey } from '../../../assets';
 import { colors, fonts } from '../../../utils';
 import { Gap } from '../../atoms';
 import CounterInput from 'react-native-counter-input';
+import { getDataApiForUrlSearch, getDataApiForSearchbar } from '../../../context/api/reducer';
+import { useDispatch, useSelector } from 'react-redux';
 
 const Pick = ({ icon, title, onPress }) => {
   return (
@@ -59,7 +61,7 @@ const PickBooking = ({ onPress }) => {
 
   // Searh Location
   const [citySelected, setCitySelected] = useState('Pilih Kota');
-  const data = [
+  const listCity = [
     { key: '1', value: 'Jakarta' },
     { key: '2', value: 'Surabaya' },
     { key: '3', value: 'Bali' },
@@ -68,6 +70,14 @@ const PickBooking = ({ onPress }) => {
     { key: '6', value: 'Medan' },
     { key: '7', value: 'Banjarmasin' },
   ];
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (citySelected !== 'Pilih Kota') {
+      dispatch(getDataApiForUrlSearch(citySelected));
+    }
+  }, [citySelected]);
 
   return (
     <>
@@ -185,7 +195,7 @@ const PickBooking = ({ onPress }) => {
           <View style={{ paddingHorizontal: 20 }}>
             <SelectList
               setSelected={setCitySelected}
-              data={data}
+              data={listCity}
               save="value"
             />
           </View>
