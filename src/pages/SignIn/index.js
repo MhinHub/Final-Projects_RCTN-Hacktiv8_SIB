@@ -37,6 +37,7 @@ const SignIn = ({navigation}) => {
         textContentType="password"
         value={password}
         onChangeText={e => setPassword(e.nativeEvent.text)}
+        secureTextEntry
       />
       <Gap height={18} />
       <Button title="Masuk" onPress={onBtnClicked} />

@@ -39,6 +39,7 @@ const PickBooking = ({ onPress }) => {
   const [showModalPerson, setShowModalPerson] = useState(false);
   const [room, setRoom] = useState(1);
   const [guest, setguest] = useState(1);
+  const [child, setChild] = useState(0);
 
   // const [searchQuery, setSearchQuery] = useState('');
 
@@ -77,12 +78,12 @@ const PickBooking = ({ onPress }) => {
           onPress={toggleModalLoc}
         />
         <Pick
-          title={`${startDay}  •  ${endDay}`} //? sementara
+          title={endDay === '' ? 'Pilih Tanggal' : `${startDay}  •  ${endDay}`}
           icon={<IconDateGrey />}
           onPress={toggleModalCalendar}
         />
         <Pick
-          title={`${room} Kamar, ${guest} Tamu`}
+          title={`${room} Kamar, ${guest} Tamu, ${child} Anak`}
           icon={<IconPersonGrey />}
           onPress={toggleModalPerson}
         />
@@ -90,10 +91,7 @@ const PickBooking = ({ onPress }) => {
         <TouchableOpacity
           style={styles.containerButton}
           activeOpacity={0.7}
-          onPress={() => {
-            getDataApi();
-            onPress
-          }}>
+          onPress={onPress}>
           <View style={styles.button}>
             <Text style={styles.search}>Cari</Text>
           </View>
@@ -213,9 +211,9 @@ const PickBooking = ({ onPress }) => {
           <View style={styles.containerCounter}>
             <Text style={styles.labelCounter}>Kamar</Text>
             <CounterInput
-              initial={1}
+              initial={room}
               onChange={counter => {
-                console.log('onChange Counter:', counter);
+                console.log('guest Counter:', counter);
                 setRoom(counter);
               }}
               min={1}
@@ -234,10 +232,29 @@ const PickBooking = ({ onPress }) => {
           <View style={styles.containerCounter}>
             <Text style={styles.labelCounter}>Tamu</Text>
             <CounterInput
-              initial={0}
+              initial={guest}
               onChange={counter => {
                 console.log('Guest Counter:', counter);
                 setguest(counter);
+              }}
+              min={1}
+              style={styles.counter}
+              horizontal
+              increaseButtonBackgroundColor={colors.primary}
+              decreaseButtonBackgroundColor={colors.primary}
+            />
+          </View>
+          <View
+            style={{ borderBottomWidth: 1, borderBottomColor: colors.border }}
+          />
+          <Gap height={15} />
+          <View style={styles.containerCounter}>
+            <Text style={styles.labelCounter}>Anak</Text>
+            <CounterInput
+              initial={child}
+              onChange={counter => {
+                console.log('Anak Counter:', counter);
+                setChild(counter);
               }}
               min={0}
               style={styles.counter}

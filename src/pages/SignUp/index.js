@@ -65,6 +65,7 @@ const SignUp = ({navigation}) => {
           textContentType="password"
           value={password}
           onChangeText={e => setPassword(e.nativeEvent.text)}
+          secureTextEntry
         />
         <Button title="Daftar" onPress={onBtnClicked} />
         <Gap height={30} />

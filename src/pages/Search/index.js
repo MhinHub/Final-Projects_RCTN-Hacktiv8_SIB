@@ -9,10 +9,6 @@ const Search = ({navigation}) => {
     <ScrollView style={styles.page}>
       <Header title="Hasil Pencarian" onPress={() => navigation.goBack()} />
       <Gap height={20} />
-      <View style={styles.containerPick}>
-        <PickBooking />
-      </View>
-      <Gap height={20} />
       {/* Looping API Hotel  */}
       <HotelCard
         img={HotelDummy1}
