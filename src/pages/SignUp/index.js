@@ -63,6 +63,7 @@ const SignUp = ({navigation}) => {
           // value={form.password}
           // onChangeText={value => onInputChange(value, 'password')}
           textContentType="password"
+          secureTextEntry
           value={password}
           onChangeText={e => setPassword(e.nativeEvent.text)}
           secureTextEntry

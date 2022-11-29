@@ -1,7 +1,7 @@
-import {Dimensions, ScrollView, StyleSheet, Text, View} from 'react-native';
+import { Dimensions, ScrollView, StyleSheet, Text, View } from 'react-native';
 import React from 'react';
-import {colors} from '../../utils';
-import {Gap, Header, HotelCard, PickBooking} from '../../components';
+import { colors } from '../../utils';
+import { Gap, Header, HotelCard, PickBooking } from '../../components';
 import { HotelDummy1 } from '../../assets/Dummy';
 import { useDispatch, useSelector } from 'react-redux';
 // import { getDataApiDetailHotels } from '../../context/api/reducer'

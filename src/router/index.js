@@ -17,6 +17,7 @@ import {
   DetailHotel,
   Search,
   ProfileEdit,
+  DetailBooking,
 } from '../pages';
 
 const Stack = createStackNavigator();
@@ -105,6 +106,11 @@ const Router = () => {
       <Stack.Screen
         name="ProfileEdit"
         component={ProfileEdit}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="DetailBooking"
+        component={DetailBooking}
         options={{headerShown: false}}
       />
     </Stack.Navigator>

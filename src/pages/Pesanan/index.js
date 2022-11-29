@@ -1,12 +1,17 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
-import {Header} from '../../components';
+import {BookingCard, Gap, Header} from '../../components';
+
 import {colors} from '../../utils';
 
-const Pesanan = () => {
+const Pesanan = ({navigation}) => {
   return (
     <View style={styles.page}>
       <Header title="Pesanan" type="first" />
+      <Gap height={30} />
+      <BookingCard onPress={() => navigation.navigate('DetailBooking')} />
+      <Gap height={15} />
+      <BookingCard />
     </View>
   );
 };
