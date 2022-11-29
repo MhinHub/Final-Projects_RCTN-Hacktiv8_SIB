@@ -13,32 +13,31 @@ const Search = ({ navigation }) => {
 
   console.log('fulfilled', fulfilled);
 
-  let result = searchResult.result
+  const result = searchResult.result
 
-  useEffect(() => {
-    fulfilled ? console.log('result', typeof result) : null;
-  }, [fulfilled]);
+  const rpFormatter = new Intl.NumberFormat('id-ID', {
+    maximumFractionDigits: 0,
+  });
 
   return (
     <ScrollView style={styles.page}>
       <Header title="Hasil Pencarian" onPress={() => navigation.goBack()} />
       <Gap height={20} />
-      {fulfilled ? (
-        Object.keys(result).map((item, index) => {
+      {fulfilled === true ? (
+        result?.map((item, index) => (
           <HotelCard
             key={index}
             img={item.main_photo_url}
             title={item.hotel_name}
             rate={item.review_score}
-            price={item.min_total_price}
+            price={`Rp ${rpFormatter.format(item.min_total_price)}`}
             location={item.city}
             onPress={() => navigation.navigate('DetailHotel')}
           />
-        })
+        ))
       ) : (
         <Text>loading</Text>
       )}
-      <Gap height={25} />
       <HotelCard
         img={HotelDummy1}
         title="MG Suit Hotel Metro"

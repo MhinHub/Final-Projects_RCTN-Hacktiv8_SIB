@@ -28,8 +28,8 @@ export const getDataLocation = createAsyncThunk(
 
 export const getDataPropertiesList = createAsyncThunk(
     'properties/list',
-    async (arg) => {
-        const { arrivalDate, departureDate, roomQty, guestQty, childrenQty, destId } = arg;
+    async (args) => {
+        const { arrivalDate, departureDate, roomQty, guestQty, childrenQty, destId } = args;
         try {
             const response = await fetch(`${baseUrl}/properties/list?offset=0&arrival_date=${arrivalDate}&departure_date=${departureDate}&room_qty=${roomQty}&guest_qty=${guestQty}&children_qty=${childrenQty}&dest_ids=${destId}&search_type=city&price_filter_currencycode=IDR&languagecode=id&order_by=popularity&travel_purpose=leisure`, options);
             const data = await response.json();
@@ -43,9 +43,10 @@ export const getDataPropertiesList = createAsyncThunk(
 
 export const getDataPropertiesDetail = createAsyncThunk(
     'properties/detail',
-    async (hotelID, searchId, departureDate, arrivalDate, recGuestQty, recRoomQty, destId, recChildrenQty) => {
+    async (args) => {
+        const { hotelId, searchId, departureDate, arrivalDate, recGuestQty, recRoomQty, recChildrenQty } = args;
         try {
-            const response = await fetch(`${baseUrl}/properties/detail?hotel_id=${hotelID}&search_id=${searchId}departure_date=${departureDate}&arrival_date=${arrivalDate}&rec_guest_qty=${recGuestQty}&rec_room_qty=${recRoomQty}&rec_children_qty=${recChildrenQty}&dest_ids=${destId}&languagecode=id&currency_code=IDR`, options);
+            const response = await fetch(`${baseUrl}/properties/detail?hotel_id=${hotelId}&search_id=${searchId}&departure_date=${departureDate}&arrival_date=${arrivalDate}&rec_guest_qty=${recGuestQty}&rec_room_qty=${recRoomQty}&rec_children_qty=${recChildrenQty}&languagecode=id&currency_code=IDR`, options);
             const data = await response.json();
             return data;
         } catch (error) {
@@ -70,7 +71,8 @@ export const getDataPropertiesDescription = createAsyncThunk(
 
 export const getDataPropertiesRoom = createAsyncThunk(
     'properties/get-room',
-    async (hotelId, departureDate, arrivalDate, recGuestQty, recRoomQty, recChildrenQty) => {
+    async (args) => {
+        const { hotelId, departureDate, arrivalDate, recGuestQty, recRoomQty, recChildrenQty } = args;
         try {
             const response = await fetch(`${baseUrl}/properties/v2/get-rooms?hotel_id=${hotelId}&departure_date=${departureDate}&arrival_date=${arrivalDate}&rec_guest_qty=${recGuestQty}&rec_room_qty=${recRoomQty}&rec_children_qty=${recChildrenQty}&currency_code=IDR&languagecode=id`, options);
             const data = await response.json();

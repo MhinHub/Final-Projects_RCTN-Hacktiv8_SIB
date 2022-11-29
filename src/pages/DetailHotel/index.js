@@ -9,8 +9,8 @@ import {
 } from 'react-native';
 import React from 'react';
 import Swiper from 'react-native-swiper';
-import {colors, fonts} from '../../utils';
-import {Intro1, Intro2, Intro3} from '../../assets/Image';
+import { colors, fonts } from '../../utils';
+import { Intro1, Intro2, Intro3 } from '../../assets/Image';
 import {
   IconCalendarBlue,
   IconDoorBlue,
@@ -19,11 +19,14 @@ import {
   IconPersonBlue,
   IconStar,
 } from '../../assets/Icon';
-import {Button, Fasilitas, Gap, Header, Review} from '../../components';
-import {HotelDummy1} from '../../assets/Dummy';
-import {TouchableOpacity} from 'react-native-gesture-handler';
+import { Button, Fasilitas, Gap, Header, Review } from '../../components';
+import { HotelDummy1 } from '../../assets/Dummy';
+import { TouchableOpacity } from 'react-native-gesture-handler';
+import { getDataPropertiesDetail } from '../../context/api/reducer';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
 
-const HotelInfo = ({title, location, rate, price}) => {
+const HotelInfo = ({ title, location, rate, price }) => {
   return (
     <View style={styles.wrapper}>
       <View>
@@ -38,24 +41,24 @@ const HotelInfo = ({title, location, rate, price}) => {
         </View>
       </View>
       <View style={styles.wrapperPrice}>
-        <Text style={styles.price}>Rp. {price}</Text>
+        <Text style={styles.price}>Rp {price}</Text>
         <Text style={styles.night}>/malam</Text>
       </View>
     </View>
   );
 };
 
-const Title = ({title}) => {
+const Title = ({ title }) => {
   return (
-    <View style={{paddingLeft: 20}}>
+    <View style={{ paddingLeft: 20 }}>
       <Text style={styles.title}>{title}</Text>
     </View>
   );
 };
 
-const Desc = ({desc}) => {
+const Desc = ({ desc }) => {
   return (
-    <View style={{paddingHorizontal: 20}}>
+    <View style={{ paddingHorizontal: 20 }}>
       <Text style={styles.textGrey}>{desc}</Text>
     </View>
   );
@@ -69,26 +72,48 @@ const Box = () => {
         <Text style={styles.textLabel}>19 Nov 2022</Text>
       </TouchableOpacity>
       <View
-        style={{borderRightColor: colors.greymedium, borderRightWidth: 1}}
+        style={{ borderRightColor: colors.greymedium, borderRightWidth: 1 }}
       />
       <TouchableOpacity style={styles.wrapperBox}>
         <IconNightBlue />
         <Text style={styles.textLabel}>2 Malam</Text>
       </TouchableOpacity>
       <View
-        style={{borderRightColor: colors.greymedium, borderRightWidth: 1}}
+        style={{ borderRightColor: colors.greymedium, borderRightWidth: 1 }}
       />
       <TouchableOpacity style={styles.wrapperBox}>
-        <IconPersonBlue style={{marginHorizontal: 3}} />
+        <IconPersonBlue style={{ marginHorizontal: 3 }} />
         <Text style={styles.textLabel}>1</Text>
-        <IconDoorBlue style={{marginHorizontal: 6}} />
+        <IconDoorBlue style={{ marginHorizontal: 6 }} />
         <Text style={styles.textLabel}>1</Text>
       </TouchableOpacity>
     </View>
   );
 };
 
-const DetailHotel = ({navigation}) => {
+const DetailHotel = ({ navigation }) => {
+  const dispatch = useDispatch();
+  const { fulfilled, hotelDetail } = useSelector((state) => state.api);
+
+  useEffect(() => {
+    const args = {
+      hotelId: '2439030',
+      searchId: 'bdfb81b98d1669427737520bbca6fbd2173:2:101',
+      departureDate: '2022-12-25',
+      arrivalDate: '2022-12-24',
+      recGuestQty: '1',
+      recRoomQty: '1',
+      recChildrenQty: '0'
+    }
+    dispatch(getDataPropertiesDetail(args));
+  }, []);
+
+  useEffect(() => {
+    if (fulfilled) {
+      console.log('hotelDetail', hotelDetail);
+    }
+  }, [hotelDetail]);
+
   return (
     <ScrollView style={styles.page} showsVerticalScrollIndicator={false}>
       <Header title="Detail Hotel" onPress={() => navigation.goBack()} />
