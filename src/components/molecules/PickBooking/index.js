@@ -66,7 +66,7 @@ const PickBooking = ({onPress}) => {
   const [markedDates, setMarkedDates] = useState({});
   const [showModalPerson, setShowModalPerson] = useState(false);
   const [room, setRoom] = useState(1);
-  const [guest, setguest] = useState(1);
+  const [guest, setguest] = useState(0);
 
   // arrivalDate =
   // departureDate =

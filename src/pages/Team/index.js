@@ -29,7 +29,7 @@ const Team = ({navigation}) => {
       <Header title="Nama Kelompok" onPress={() => navigation.goBack()} />
       <Gap height={10} />
       <View style={styles.cardTitle}>
-        <Text style={styles.title}>Developer Member of Team 1</Text>
+        <Text style={styles.title}>Developer Team 1 - Project 3</Text>
       </View>
       <Gap height={20} />
       <CardTeam
