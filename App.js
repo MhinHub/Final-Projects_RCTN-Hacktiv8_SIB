@@ -15,3 +15,15 @@ const App = () => {
 };
 
 export default App;
+
+// Copyright - Kelompok 1 Project 3 - RCTN-KS05 Hactiv8
+
+// =======================
+// Nama: Muhammad Irfan Zidni
+// Kode Peserta : RCTN-KS05-002
+// =======================
+// Nama: Muhaemin Iskandar
+// Kode Peserta : RCTN-KS05-001
+// =======================
+// Nama: Vika Alpiana
+// Kode Peserta : RCTN-KS05-004

@@ -41,7 +41,36 @@ const PickBooking = ({ onPress }) => {
   const [showModalPerson, setShowModalPerson] = useState(false);
   const [room, setRoom] = useState(1);
   const [guest, setguest] = useState(1);
-  const [child, setChild] = useState(0);
+
+  // arrivalDate =
+  // departureDate =
+  // guestQty = guest;
+
+  const apiurl = `https://apidojo-booking-v1.p.rapidapi.com/properties/list?offset=0&arrival_date=${startDay}&departure_date=${endDay}&guest_qty=${guest}&dest_ids=835&search_type=region&price_filter_currencycode=IDR&languagecode=id&travel_purpose=leisure`;
+
+  const apiKey = '00f78e7496msh070c85e2a78bcf1p1b4069jsnfab51c21f3d1';
+  const apiHost = 'apidojo-booking-v1.p.rapidapi.com';
+
+  const getDataApi = async () => {
+    try {
+      const response = await fetch(apiurl, {
+        method: 'GET',
+        headers: {
+          'X-RapidAPI-Key': apiKey,
+          'X-RapidAPI-Host': apiHost,
+        },
+      });
+      const json = await response.json();
+      console.log('json : ', json);
+      return json;
+    } catch (error) {
+      console.log('error : ', error);
+    }
+  };
+
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const onChangeSearch = query => setSearchQuery(query);
 
   const toggleModalLoc = () => {
     setShowModalLoc(!showModalLoc);

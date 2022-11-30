@@ -17,9 +17,9 @@ const About = ({navigation}) => {
         <Gap height={30} />
         <ILLogo style={styles.logo} />
         <Gap height={30} />
-        <Text style={styles.text}>@2022 - Kampus Merdeka</Text>
+        <Text style={styles.text}>@2022 - Kelompok 1 RCTN-KS05</Text>
         <Gap height={8} />
-        <Text style={styles.text}>PT HACTIV8 TEKNOLOGI INDONESIA</Text>
+        <Text style={styles.text}>HOTELIO TEAM HACTIV8</Text>
       </View>
     </>
   );
