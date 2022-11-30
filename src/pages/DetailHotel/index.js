@@ -24,7 +24,7 @@ import { HotelDummy1 } from '../../assets/Dummy';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { getDataPropertiesDetail } from '../../context/api/reducer';
 import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 const HotelInfo = ({ title, location, rate, price }) => {
   return (
@@ -93,26 +93,52 @@ const Box = () => {
 
 const DetailHotel = ({ navigation }) => {
   const dispatch = useDispatch();
-  const { fulfilled, hotelDetail } = useSelector((state) => state.api);
+  const { hotelAbout, fulfilled } = useSelector((state) => state.api);
 
+  const [hotelDetails, setHotelDetails] = useState('');
+  const [hotelPhotos, setHotelPhotos] = useState([]);
+  const [hotelDesc, setHotelDesc] = useState('');
+
+
+  const args = {
+    hotelId: '2439030',
+    searchId: 'bdfb81b98d1669427737520bbca6fbd2173:2:101',
+    departureDate: '2022-12-25',
+    arrivalDate: '2022-12-24',
+    recGuestQty: '1',
+    recRoomQty: '1',
+    recChildrenQty: '0'
+  }
   useEffect(() => {
-    const args = {
-      hotelId: '2439030',
-      searchId: 'bdfb81b98d1669427737520bbca6fbd2173:2:101',
-      departureDate: '2022-12-25',
-      arrivalDate: '2022-12-24',
-      recGuestQty: '1',
-      recRoomQty: '1',
-      recChildrenQty: '0'
-    }
     dispatch(getDataPropertiesDetail(args));
   }, []);
 
+  // const objectMap = (obj) =>
+  //   Object.fromEntries(
+  //     Object.entries(obj).map(i => i)
+  //   )
+
   useEffect(() => {
-    if (fulfilled) {
-      console.log('hotelDetail', hotelDetail);
+    if (fulfilled === true) {
+      console.log('HOTEL ABOUT', hotelAbout);
+
+      hotelAbout.map((item) => {
+        setHotelDetails(Object.values(item.details)[0]);
+        setHotelPhotos(item.photos)
+        setHotelDesc(Object.values(item.description).find((item) => item.descriptiontype_id === 6))
+      })
+
+      // console.log('hotelDetails asdjfbslkdjbfds', hotelDetails)
+      // console.log('hotelPhotos', hotelPhotos);
+      // console.log('hotelDesc', hotelDesc);
+
+      // console.log('URL IMage jhgcjhgx', hotelPhotos.data[2439030].map((item) => `https://cf.bstatic.com${item[4]}`));
     }
-  }, [hotelDetail]);
+  }, [hotelAbout]);
+
+  const rpFormatter = new Intl.NumberFormat('id-ID', {
+    maximumFractionDigits: 0,
+  });
 
   return (
     <ScrollView style={styles.page} showsVerticalScrollIndicator={false}>
@@ -123,24 +149,29 @@ const DetailHotel = ({ navigation }) => {
         showsButtons={true}
         loop={false}
         autoplay={true}>
-        <Image source={Intro1} style={styles.container} />
+        {/* {hotelPhotos.data[2439030].map((item, idx) => (
+          item[4].map((img) => (
+            <ImageBackground
+              key={idx}
+              source={{ uri: `https://cf.bstatic.com${img}` }}
+              style={styles.imageSwipper}
+            />
+          ))
+        ))} */}
         <Image source={Intro2} style={styles.container} />
         <Image source={Intro3} style={styles.container} />
       </Swiper>
       <HotelInfo
-        title="MG Suit Hotel Metro"
+        title={hotelDetails.hotel_name}
         rate="4.9"
-        location="Jakarta Pusat"
-        price="450.000"
+        location={hotelDetails.city}
+        price={hotelDetails.block?.map((item) => rpFormatter.format(item.min_price.price))}
       />
       <View style={styles.line} />
       <Gap height={15} />
       <Title title="Deskipsi" />
       <Gap height={12} />
-      <Desc
-        desc="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
-"
-      />
+      <Desc desc={hotelDesc.description} />
       <Gap height={12} />
       <Title title="Fasilitas" />
       <Gap height={15} />

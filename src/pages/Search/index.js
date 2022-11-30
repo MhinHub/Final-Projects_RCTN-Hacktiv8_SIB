@@ -24,9 +24,9 @@ const Search = ({ navigation }) => {
       <Header title="Hasil Pencarian" onPress={() => navigation.goBack()} />
       <Gap height={20} />
       {fulfilled === true ? (
-        result?.map((item, index) => (
+        result?.map((item) => (
           <HotelCard
-            key={index}
+            key={item.hotel_id}
             img={item.main_photo_url}
             title={item.hotel_name}
             rate={item.review_score}
