@@ -1,5 +1,5 @@
 import moment from 'moment';
-import React, {useState} from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Dimensions,
   Modal,
@@ -8,14 +8,16 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import {Calendar} from 'react-native-calendars';
-import {SelectList} from 'react-native-dropdown-select-list';
-import {IconDateGrey, IconLocGrey, IconPersonGrey} from '../../../assets';
-import {colors, fonts} from '../../../utils';
-import {Gap} from '../../atoms';
+import { Calendar } from 'react-native-calendars';
+import { SelectList } from 'react-native-dropdown-select-list';
+import { IconDateGrey, IconLocGrey, IconPersonGrey } from '../../../assets';
+import { colors, fonts } from '../../../utils';
+import { Gap } from '../../atoms';
 import CounterInput from 'react-native-counter-input';
+import { getDataLocation, getDataPropertiesList } from '../../../context/api/reducer';
+import { useDispatch, useSelector } from 'react-redux';
 
-const Pick = ({icon, title, onPress}) => {
+const Pick = ({ icon, title, onPress }) => {
   return (
     <View style={styles.pick}>
       <TouchableOpacity
@@ -30,35 +32,7 @@ const Pick = ({icon, title, onPress}) => {
   );
 };
 
-let arrivalDate = '';
-let departureDate = '';
-let guestQty = 1;
-
-const apiurl = `https://apidojo-booking-v1.p.rapidapi.com/properties/list?offset=0&arrival_date=${arrivalDate}&departure_date=${departureDate}&guest_qty=${guestQty}&dest_ids=835&search_type=region&price_filter_currencycode=IDR&languagecode=id&travel_purpose=leisure`;
-
-const apiKey = '00f78e7496msh070c85e2a78bcf1p1b4069jsnfab51c21f3d1';
-const apiHost = 'apidojo-booking-v1.p.rapidapi.com';
-
-const getDataApi = async () => {
-  try {
-    const response = await fetch(apiurl, {
-      method: 'GET',
-      headers: {
-        'X-RapidAPI-Key': apiKey,
-        'X-RapidAPI-Host': apiHost,
-      },
-    });
-    const json = await response.json();
-    console.log('json : ', json);
-    return json;
-  } catch (error) {
-    console.log('error : ', error);
-  }
-};
-
-// console.log(moment().format('YYYY-MM-DD'));
-
-const PickBooking = ({onPress}) => {
+const PickBooking = ({ onPress }) => {
   const [showModalDate, setShowModalDate] = useState(false);
   const [showModalLoc, setShowModalLoc] = useState(false);
   const [startDay, setStartDay] = useState('');
@@ -66,7 +40,7 @@ const PickBooking = ({onPress}) => {
   const [markedDates, setMarkedDates] = useState({});
   const [showModalPerson, setShowModalPerson] = useState(false);
   const [room, setRoom] = useState(1);
-  const [guest, setguest] = useState(0);
+  const [guest, setguest] = useState(1);
 
   // arrivalDate =
   // departureDate =
@@ -109,17 +83,44 @@ const PickBooking = ({onPress}) => {
     setShowModalPerson(!showModalPerson);
   };
 
+
   // Searh Location
   const [citySelected, setCitySelected] = useState('Pilih Kota');
-  const data = [
-    {key: '1', value: 'Jakarta'},
-    {key: '2', value: 'Surabaya'},
-    {key: '3', value: 'Bali'},
-    {key: '4', value: 'Bandung'},
-    {key: '5', value: 'Semarang'},
-    {key: '6', value: 'Medan'},
-    {key: '7', value: 'Banjarmasin'},
+  const listCity = [
+    { key: '1', value: 'Jakarta' },
+    { key: '2', value: 'Surabaya' },
+    { key: '3', value: 'Bali' },
+    { key: '4', value: 'Bandung' },
+    { key: '5', value: 'Semarang' },
+    { key: '6', value: 'Medan' },
+    { key: '7', value: 'Banjarmasin' },
   ];
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (citySelected !== 'Pilih Kota') {
+      dispatch(getDataLocation(citySelected))
+    }
+  }, [citySelected]);
+
+  const { data } = useSelector(state => state.api);
+
+  const dataLoc = data.find(item => item?.name === citySelected);
+
+  const destId = dataLoc?.dest_id;
+
+  const onBtnPress = () => {
+    const args = {
+      arrivalDate: startDay,
+      departureDate: endDay,
+      destId: destId,
+      guestQty: guest,
+      roomQty: room,
+      childrenQty: child,
+    };
+    return dispatch(getDataPropertiesList(args)); // dispatch hanya menerima satu parameter jika menggunakan createAsyncThunk
+  };
 
   return (
     <>
@@ -130,12 +131,12 @@ const PickBooking = ({onPress}) => {
           onPress={toggleModalLoc}
         />
         <Pick
-          title={`${startDay}  •  ${endDay}`} //? sementara
+          title={endDay === '' ? 'Pilih Tanggal' : `${startDay}  •  ${endDay}`}
           icon={<IconDateGrey />}
           onPress={toggleModalCalendar}
         />
         <Pick
-          title={`${room} Kamar, ${guest} Tamu`}
+          title={`${room} Kamar, ${guest} Tamu, ${child} Anak`}
           icon={<IconPersonGrey />}
           onPress={toggleModalPerson}
         />
@@ -143,7 +144,10 @@ const PickBooking = ({onPress}) => {
         <TouchableOpacity
           style={styles.containerButton}
           activeOpacity={0.7}
-          onPress={onPress}>
+          onPress={() => {
+            onBtnPress();
+            onPress();
+          }}>
           <View style={styles.button}>
             <Text style={styles.search}>Cari</Text>
           </View>
@@ -155,7 +159,7 @@ const PickBooking = ({onPress}) => {
         visible={showModalDate}
         backdropColor="transparent"
         animationType="slide">
-        <View style={{backgroundColor: 'white', flex: 1}}>
+        <View style={{ backgroundColor: 'white', flex: 1 }}>
           <View style={styles.headerModal}>
             <Text style={styles.textHeaderModal}>Tanggal Menginap</Text>
           </View>
@@ -229,15 +233,15 @@ const PickBooking = ({onPress}) => {
         visible={showModalLoc}
         backdropColor="transparent"
         animationType="slide">
-        <View style={{flex: 1}}>
+        <View style={{ flex: 1 }}>
           <View style={styles.headerModal}>
             <Text style={styles.textHeaderModal}>Lokasi</Text>
           </View>
           <Gap height={30} />
-          <View style={{paddingHorizontal: 20}}>
+          <View style={{ paddingHorizontal: 20 }}>
             <SelectList
               setSelected={setCitySelected}
-              data={data}
+              data={listCity}
               save="value"
             />
           </View>
@@ -254,7 +258,7 @@ const PickBooking = ({onPress}) => {
         visible={showModalPerson}
         animationType="slide"
         backdropColor="transparent">
-        <View style={{backgroundColor: 'white', flex: 1}}>
+        <View style={{ backgroundColor: 'white', flex: 1 }}>
           <View style={styles.headerModal}>
             <Text style={styles.textHeaderModal}>Tambahkan Kamar dan Tamu</Text>
           </View>
@@ -263,9 +267,9 @@ const PickBooking = ({onPress}) => {
           <View style={styles.containerCounter}>
             <Text style={styles.labelCounter}>Kamar</Text>
             <CounterInput
-              initial={1}
+              initial={room}
               onChange={counter => {
-                console.log('onChange Counter:', counter);
+                console.log('guest Counter:', counter);
                 setRoom(counter);
               }}
               min={1}
@@ -277,17 +281,36 @@ const PickBooking = ({onPress}) => {
           </View>
           <Gap height={15} />
           <View
-            style={{borderBottomWidth: 1, borderBottomColor: colors.border}}
+            style={{ borderBottomWidth: 1, borderBottomColor: colors.border }}
           />
 
           <Gap height={15} />
           <View style={styles.containerCounter}>
             <Text style={styles.labelCounter}>Tamu</Text>
             <CounterInput
-              initial={0}
+              initial={guest}
               onChange={counter => {
                 console.log('Guest Counter:', counter);
                 setguest(counter);
+              }}
+              min={1}
+              style={styles.counter}
+              horizontal
+              increaseButtonBackgroundColor={colors.primary}
+              decreaseButtonBackgroundColor={colors.primary}
+            />
+          </View>
+          <View
+            style={{ borderBottomWidth: 1, borderBottomColor: colors.border }}
+          />
+          <Gap height={15} />
+          <View style={styles.containerCounter}>
+            <Text style={styles.labelCounter}>Anak</Text>
+            <CounterInput
+              initial={child}
+              onChange={counter => {
+                console.log('Anak Counter:', counter);
+                setChild(counter);
               }}
               min={0}
               style={styles.counter}
@@ -319,7 +342,7 @@ const styles = StyleSheet.create({
     flex: 1,
     width: WIDTH * 0.77,
     borderRadius: 8,
-    shadowOffset: {width: 0, height: 1},
+    shadowOffset: { width: 0, height: 1 },
     backgroundColor: colors.white,
     shadowOpacity: 0.7,
     shadowRadius: 2,

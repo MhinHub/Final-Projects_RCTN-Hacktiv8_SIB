@@ -1,11 +1,11 @@
 import React from 'react';
-import {Dimensions, Image, StyleSheet, Text, View} from 'react-native';
-import {TouchableOpacity} from 'react-native-gesture-handler';
-import {HotelDummy1} from '../../../assets/Dummy';
-import {IconFavoritCircle, IconLocation, IconStar} from '../../../assets/Icon';
-import {colors, fonts} from '../../../utils';
+import { Dimensions, Image, StyleSheet, Text, View } from 'react-native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
+import { HotelDummy1 } from '../../../assets/Dummy';
+import { IconFavoritCircle, IconLocation, IconStar } from '../../../assets/Icon';
+import { colors, fonts } from '../../../utils';
 
-const HotelCard = ({onPress, img, title, rate, location, price}) => {
+const HotelCard = ({ onPress, img, title, rate, location, price }) => {
   return (
     <TouchableOpacity
       style={styles.container}
@@ -40,11 +40,12 @@ export default HotelCard;
 
 const styles = StyleSheet.create({
   container: {
+    marginBottom: 25,
     marginHorizontal: 20,
-    width: WIDTH * 0.88,
-    height: 263,
+    width: WIDTH * 0.9,
+    height: 'auto',
     borderRadius: 12,
-    shadowOffset: {width: 0, height: 1},
+    shadowOffset: { width: 0, height: 1 },
     backgroundColor: colors.white,
     shadowOpacity: 0.7,
     shadowRadius: 2,
@@ -59,6 +60,7 @@ const styles = StyleSheet.create({
     fontFamily: fonts.primary[600],
     color: colors.secondary,
     fontSize: 16,
+    maxWidth: '80%',
   },
   location: {
     fontFamily: fonts.primary[400],

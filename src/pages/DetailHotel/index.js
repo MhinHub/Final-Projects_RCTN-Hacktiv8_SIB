@@ -2,7 +2,6 @@ import moment from 'moment';
 import {
   Dimensions,
   Image,
-  ImageBackground,
   Modal,
   ScrollView,
   StyleSheet,
@@ -42,7 +41,7 @@ const HotelInfo = ({title, location, rate, price}) => {
         </View>
       </View>
       <View style={styles.wrapperPrice}>
-        <Text style={styles.price}>Rp. {price}</Text>
+        <Text style={styles.price}>Rp {price}</Text>
         <Text style={styles.night}>/malam</Text>
       </View>
     </View>
@@ -66,21 +65,27 @@ const Desc = ({desc}) => {
 };
 
 const DetailHotel = ({navigation}) => {
-  const [showModalDate, setShowModalDate] = useState(false);
-  const [startDay, setStartDay] = useState('');
-  const [endDay, setEndDay] = useState('');
-  const [markedDates, setMarkedDates] = useState({});
-  const [showModalPerson, setShowModalPerson] = useState(false);
-  const [room, setRoom] = useState(1);
-  const [guest, setguest] = useState(0);
+  const dispatch = useDispatch();
+  const {fulfilled, hotelDetail} = useSelector(state => state.api);
 
-  const toggleModalCalendar = () => {
-    setShowModalDate(!showModalDate);
-  };
+  useEffect(() => {
+    const args = {
+      hotelId: '2439030',
+      searchId: 'bdfb81b98d1669427737520bbca6fbd2173:2:101',
+      departureDate: '2022-12-25',
+      arrivalDate: '2022-12-24',
+      recGuestQty: '1',
+      recRoomQty: '1',
+      recChildrenQty: '0',
+    };
+    dispatch(getDataPropertiesDetail(args));
+  }, []);
 
-  const toggleModalPerson = () => {
-    setShowModalPerson(!showModalPerson);
-  };
+  useEffect(() => {
+    if (fulfilled) {
+      console.log('hotelDetail', hotelDetail);
+    }
+  }, [hotelDetail]);
 
   return (
     <>
