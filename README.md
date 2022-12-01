@@ -15,8 +15,9 @@
 
 Perlu diketahui sebelumnya bahwa di web app ini ada 2 macam role pengguna, yaitu:
 
-Guest (pengguna yang belum login )
-User (pengguna yang sudah login dengan role user)
+1. Guest (pengguna yang belum login )
+2. User (pengguna yang sudah login dengan role user)
+
 ---
 
 ### 1. Splashscreen
