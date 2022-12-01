@@ -13,10 +13,9 @@
 
 ## Panduan Aplikasi dari Sisi Pengguna (User Guide) 📒
 
-Perlu diketahui sebelumnya bahwa di web app ini ada 2 macam role pengguna, yaitu:
-
-1. Guest (pengguna yang belum login )
-2. User (pengguna yang sudah login dengan role user)
+Perlu diketahui sebelumnya bahwa di aplikasi Hotelio ini pengguna harus ;
+1. LOgin terlebih dahulu menggunakan email dan password
+2. Singup memasukan full name, email address, password, dan repeat password
 
 ---
 
