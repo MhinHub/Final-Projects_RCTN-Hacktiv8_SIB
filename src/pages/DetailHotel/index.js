@@ -73,6 +73,21 @@ const DetailHotel = ({navigation}) => {
   const [hotelDetails, setHotelDetails] = useState('');
   const [hotelPhotos, setHotelPhotos] = useState([]);
   const [hotelDesc, setHotelDesc] = useState('');
+  const [showModalDate, setShowModalDate] = useState(false);
+  const [markedDates, setMarkedDates] = useState({});
+  const [startDay, setStartDay] = useState('');
+  const [endDay, setEndDay] = useState('');
+  const [showModalPerson, setShowModalPerson] = useState(false);
+  const [room, setRoom] = useState(1);
+  const [guest, setguest] = useState(0);
+
+  const toggleModalCalendar = () => {
+    setShowModalDate(!showModalDate);
+  };
+
+  const toggleModalPerson = () => {
+    setShowModalPerson(!showModalPerson);
+  };
 
   const args = {
     hotelId: '2439030',
@@ -122,7 +137,29 @@ const DetailHotel = ({navigation}) => {
     <>
       <ScrollView style={styles.page} showsVerticalScrollIndicator={false}>
         <Header title="Detail Hotel" onPress={() => navigation.goBack()} />
-        {/* <Box /> */}
+        {/* Box Pick Date */}
+        <View style={styles.containerBox}>
+          <TouchableOpacity style={styles.wrapperBox}>
+            <IconCalendarBlue />
+            <Text style={styles.textLabel}>19 Nov 2022</Text>
+          </TouchableOpacity>
+          <View
+            style={{borderRightColor: colors.greymedium, borderRightWidth: 1}}
+          />
+          <TouchableOpacity style={styles.wrapperBox}>
+            <IconNightBlue />
+            <Text style={styles.textLabel}>2 Malam</Text>
+          </TouchableOpacity>
+          <View
+            style={{borderRightColor: colors.greymedium, borderRightWidth: 1}}
+          />
+          <TouchableOpacity style={styles.wrapperBox}>
+            <IconPersonBlue style={{marginHorizontal: 3}} />
+            <Text style={styles.textLabel}>1</Text>
+            <IconDoorBlue style={{marginHorizontal: 6}} />
+            <Text style={styles.textLabel}>1</Text>
+          </TouchableOpacity>
+        </View>
         <Swiper
           style={styles.wrapperSwipper}
           showsButtons={true}

@@ -2,7 +2,7 @@
 
 <div align="center">
 <img src="./README-ASSET/image/logo-hotelio.png" alt="logo" width="200" height="auto" />
-  <h1>Hotelio</h1>
+ 
   <p><b>Final project 3 - Kelompok 1</b></p>
   <p>Aplikasi yang dibuat pada Final project ini adalah sebuah aplikasi mobile dengan menggunakan framework React Native. Aplikasi ini menggunakan API dari Rapaidapi dengan menerapkan sistem database  Local Storage.
 </p>
@@ -14,6 +14,7 @@
 ## Panduan Aplikasi dari Sisi Pengguna (User Guide) 📒
 
 Perlu diketahui sebelumnya bahwa di aplikasi Hotelio ini pengguna harus ;
+
 1. Login terlebih dahulu menggunakan email dan password
 2. Singup memasukan full name, email address, password, dan repeat password
 
@@ -23,7 +24,7 @@ Perlu diketahui sebelumnya bahwa di aplikasi Hotelio ini pengguna harus ;
 
 Halaman Splashcreen akan muncul pertama kali kita buka Aplikasi Hotelio
 
-![](./README-ASSET/page/splashcreen.png)
+![](./README-ASSET/page/splashscreen.png)
 
 ### 2. Intro Aplikasi
 
@@ -39,45 +40,36 @@ Halaman Splashcreen akan muncul pertama kali kita buka Aplikasi Hotelio
 
 ![](./README-ASSET/page/signup.png)
 
-### 3. Halaman Utama (Home) 🏠
+### 5. Halaman Utama (Beranda) 🏠
 
-Halaman ini bisa diakses
+Halaman beranda adalah halaman yang pertama kali muncul ketika pengguna sudah melakukan signup dan login. Halaman ini berisi halaman cari berdasarkan (lokasi, kalender, dan room), kota populer, wisata trending, dam rekomendasi hotel. Halaman ini berisi detail hotel, dan juga terdapat tombol untuk Pesan. Pengguna dapat melihat detail hotel, dan memesan hotel dengan ketentuan harus login sebagai user terlebih dahulu.
 
-### 4. Halaman Favorit
+![](./README-ASSET/page/beranda.png)
+![](./README-ASSET/modal/modallocation.png)
+![](./README-ASSET/modal/modaldate.png)
+![](./README-ASSET/modal/modalguest.png)
 
-Secara default halaman ini akan menampilkan semua daftar produk. Pengguna bisa filter produk berdasarkan kategori, atau urut berdasarkan property produk (Masi dalam tahap development).
+### 6. Halaman Favorit
 
-![sc product](./README-ASSET/page/products.png)
+Secara default halaman ini dibuat untuk menandai atau menambahkan hotel kedalam halaman favorit agar mempermudah user mengunjungi atau mengakses halaman ini kembali.
 
-### 5. Halaman Detail Produk (Detail Product) 📜
+![sc favorit](./README-ASSET/page/favorit.png)
 
-Halaman ini muncul ketika card produk diklik. Halaman ini berisi detail produk, dan juga terdapat tombol untuk menambahkan produk ke keranjang belanja. Pengguna dapat melihat melihat detail produk, dan menambahkan produk ke keranjang belanja dengan ketentuan harus login sebagai user terlebih dahulu.
+### 7. Halaman Pemesanan 📜
 
-![sc detail-product](./README-ASSET/page/detail-product.png)
+Halaman pemesanan ini berisi daftar produk yang telah dipesan. dihalaman ini user dapat membatalkan pesanan, lihat tiket dan detail pesanan.
 
-### 4. Halaman/Modal Keranjang Belanja (Cart - User) 🛒
+![sc pemesanan](./README-ASSET/page/detailhotel.png.png)
+![sc pemesanan](./README-ASSET/page/pesanan.png)
+![sc detail pesanan](./README-ASSET/page/detailpesanan.png)
 
-Halaman/Modal ini muncul ketika tombol keranjang belanja di navbar diklik pada role user. Halaman ini berisi daftar produk yang telah ditambahkan ke keranjang belanja. Pengguna dapat mengubah jumlah produk yang akan dibeli, menghapus produk dari keranjang belanja, dan melanjutkan ke halaman checkout.
+### 8. Halaman Profile
 
-![sc cart](./README-ASSET/modal/cart.png)
+Halaman profil ini berisi informasi mengenai edit akun atau profil, developer, kontak bantuan dan tentang aplikasi.
 
-### 5. Halaman Update Stock (Update Stock - Admin) 🗄️
-
-Halaman ini muncul ketika tombol update stock di navbar diklik pada role admin. Halaman ini berisi daftar produk yang dapat diupdate stocknya. Pengguna dapat mengubah stock produk, dan menghapus produk dari daftar produk.
-
-![sc update-stock](./README-ASSET/page/update-stock.png)
-
-### 6. Halaman Sales Recap (Sales Recap - Admin) 📈
-
-Halaman ini muncul ketika tombol sales recap di navbar diklik pada role admin. Halaman ini berisi daftar transaksi yang telah dilakukan oleh user. Pengguna dapat melihat total transaksi.
-
-![sc sales-recap](./README-ASSET/page/sales-recap.png)
-
-### 7. Halaman About Dev (About Dev) 👨‍💻
-
-Halaman ini berada di footer web app. Halaman ini berisi informasi mengenai developer dan info secara singkat pada proses management pengembangan web.
-
-![sc about-dev](./README-ASSET/page/about-dev.png)
+![sc profile](./README-ASSET/page/profile.png)
+![sc team](./README-ASSET/page/team.png.png)
+![sc helpcenter](./README-ASSET/page/helpcenter.png)
 
 - Note: _Kedepannya akan dilakukan pengembangan lebih lanjut terkait project web app ini. Terima kasih._
 
