@@ -49,21 +49,27 @@ Halaman beranda adalah halaman yang pertama kali muncul ketika pengguna sudah me
 ![](./README-ASSET/modal/modaldate.png)
 ![](./README-ASSET/modal/modalguest.png)
 
-### 6. Halaman Favorit
+### 6. Halaman Detail Hotel
+
+Halaman ini bersisi informasi terkait hotel dari harga, location, rating, deskripsi hoteal, fasilitas hotel. Ketika user tertarik dan cocok ingin menginap di hotel langsung bisa menekan tombol pesan yang ada di bawah halaman Detail Hotel
+
+![](./README-ASSET/page/detailhotel.png)
+
+### 7. Halaman Favorit
 
 Secara default halaman ini dibuat untuk menandai atau menambahkan hotel kedalam halaman favorit agar mempermudah user mengunjungi atau mengakses halaman ini kembali.
 
 ![sc favorit](./README-ASSET/page/favorit.png)
 
-### 7. Halaman Pemesanan 📜
+### 8. Halaman Pemesanan 📜
 
 Halaman pemesanan ini berisi daftar produk yang telah dipesan. dihalaman ini user dapat membatalkan pesanan, lihat tiket dan detail pesanan.
 
-![](./README-ASSET/page/detailhotel.png)
+
 ![](./README-ASSET/page/pesanan.png)
 ![](./README-ASSET/page/detailpesanan.png)
 
-### 8. Halaman Profile
+### 9. Halaman Profile
 
 Halaman profil ini berisi informasi mengenai edit akun atau profil, developer, kontak bantuan dan tentang aplikasi.
 

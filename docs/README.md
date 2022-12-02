@@ -7,20 +7,24 @@
 
 ## Tentang Aplikasi 📖
 
-1. Konsep design yang digunakan: Blutarism dengan dasar warna putih dan biru beserta ungu gradient sebagai tambahan.
+1. Konsep design menggunakan backgorund warna putih dan biru sebagai warna primary
 2. Font : Poppins (sans-serif)
-3.
-4. Halaman: Home, Products, detail product,
-5. Modal: Date, Pick Location, Guest & Room
-6. Fitur Komponen wajib: (Mengikuti [Instruksi](https://) dari Hacktiv8)
-7. Fitur Komponen tambahan:
+3. Halaman: Beranda, Favorit, Pesanan, Profile
+4. Modal: Date, Pick Location, Guest & Room
+5. Fitur Komponen wajib: (Mengikuti [Instruksi](https://) dari Hacktiv8)
+6. Fitur Komponen tambahan:
 
-   Note
+- Splahscreen
+- App Intro
+- Sign Up
+- Banner Promo Slider
+- Status Pesanan
+- About Aplication
 
-   - Secara garis besar inspirasi desainnya berasal dari output image API-nya yang backgroundnya berwarnah putih (jpg) dan tidak sepenuhnya transparant. Untuk itu, warna putih digunakan sebagai background utama supaya gambarnya terlihat menyatu.
-   - Dari hal itu terpikirkan untuk menerapkan sistem design blutarism yang sifatnya kaku makanya hampir tiap komponenen setidaknya memiliki sistem sudut siku-siku termasuk font berikut ke logo dan nama brandnya.
-   - Logo yang paling mendekati dari sistem desain yang diterapkan adalah '#' (hashtag).
-   - Nama Brandnya pun diambil menggabungkan dua kata yaitu 'Hashtag' (dari logo) dan 'Shop' (dari jenis project web) sehingga menjadi '**Hashop**'.
+Note
+
+- Secara garis besar inspirasi desainnya berasal dari traveloka pemesanan hotel.
+- Nama Brandnya pun diambil menggabungkan dua kata yaitu 'Hashtag' (dari logo) dan 'Shop' (dari jenis project web) sehingga menjadi '**Hashop**'.
 
 ---
 
@@ -62,7 +66,7 @@
 ## 📝 Dokumentasi
 
 - [x] [Panduan](./panduan-aplikasi-fp3.pdf)
-- [x] [Power Point]()
+- [x] [Power Point](https://docs.google.com/presentation/d/1WD4eo_DZcuSbQI1cieGUsqXKNKCkYHTl/edit?rtpof=true&sd=true)
 - [x] [Notion](https://www.notion.so/bfabb433980c4480ac88d20fe1307944?v=76dae75bc61543efa83661c27367dcd3)
 - [x] [Figma](https://www.figma.com/file/5euY19gGAtEd07NI9fcwdk/Mobile-UI-UX?node-id=0%3A1&t=0dK9FbYRSWkyJi4F-0)
 
@@ -162,6 +166,6 @@ git push origin <nama-branch>
 To learn more about Next.js, take a look at the following resources:
 
 - [React Native Documentation](https://reactnative.dev/) - learn about react Native features
-- [Learn Next.js](https://reactnative.dev/docs/tutorial) - an interactive React Native tutorial.
+- [Learn React Native](https://reactnative.dev/docs/tutorial) - an interactive React Native tutorial.
 
 You can check out [the React Native GitHub repository](https://github.com/facebook/react-native) - your feedback and contributions are welcome!
