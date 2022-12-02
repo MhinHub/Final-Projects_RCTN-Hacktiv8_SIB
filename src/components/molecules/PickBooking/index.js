@@ -1,5 +1,5 @@
 import moment from 'moment';
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect} from 'react';
 import {
   Dimensions,
   Modal,
@@ -8,16 +8,19 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import { Calendar } from 'react-native-calendars';
-import { SelectList } from 'react-native-dropdown-select-list';
-import { IconDateGrey, IconLocGrey, IconPersonGrey } from '../../../assets';
-import { colors, fonts } from '../../../utils';
-import { Gap } from '../../atoms';
+import {Calendar} from 'react-native-calendars';
+import {SelectList} from 'react-native-dropdown-select-list';
+import {IconDateGrey, IconLocGrey, IconPersonGrey} from '../../../assets';
+import {colors, fonts} from '../../../utils';
+import {Gap} from '../../atoms';
 import CounterInput from 'react-native-counter-input';
-import { getDataLocation, getDataPropertiesList } from '../../../context/api/reducer';
-import { useDispatch, useSelector } from 'react-redux';
+import {
+  getDataLocation,
+  getDataPropertiesList,
+} from '../../../context/api/reducer';
+import {useDispatch, useSelector} from 'react-redux';
 
-const Pick = ({ icon, title, onPress }) => {
+const Pick = ({icon, title, onPress}) => {
   return (
     <View style={styles.pick}>
       <TouchableOpacity
@@ -32,7 +35,7 @@ const Pick = ({ icon, title, onPress }) => {
   );
 };
 
-const PickBooking = ({ onPress }) => {
+const PickBooking = ({onPress}) => {
   const [showModalDate, setShowModalDate] = useState(false);
   const [showModalLoc, setShowModalLoc] = useState(false);
   const [startDay, setStartDay] = useState('');
@@ -41,6 +44,7 @@ const PickBooking = ({ onPress }) => {
   const [showModalPerson, setShowModalPerson] = useState(false);
   const [room, setRoom] = useState(1);
   const [guest, setguest] = useState(1);
+  const [child, setChild] = useState(1);
 
   // arrivalDate =
   // departureDate =
@@ -83,28 +87,27 @@ const PickBooking = ({ onPress }) => {
     setShowModalPerson(!showModalPerson);
   };
 
-
   // Searh Location
   const [citySelected, setCitySelected] = useState('Pilih Kota');
   const listCity = [
-    { key: '1', value: 'Jakarta' },
-    { key: '2', value: 'Surabaya' },
-    { key: '3', value: 'Bali' },
-    { key: '4', value: 'Bandung' },
-    { key: '5', value: 'Semarang' },
-    { key: '6', value: 'Medan' },
-    { key: '7', value: 'Banjarmasin' },
+    {key: '1', value: 'Jakarta'},
+    {key: '2', value: 'Surabaya'},
+    {key: '3', value: 'Bali'},
+    {key: '4', value: 'Bandung'},
+    {key: '5', value: 'Semarang'},
+    {key: '6', value: 'Medan'},
+    {key: '7', value: 'Banjarmasin'},
   ];
 
   const dispatch = useDispatch();
 
   useEffect(() => {
     if (citySelected !== 'Pilih Kota') {
-      dispatch(getDataLocation(citySelected))
+      dispatch(getDataLocation(citySelected));
     }
   }, [citySelected]);
 
-  const { data } = useSelector(state => state.api);
+  const {data} = useSelector(state => state.api);
 
   const dataLoc = data.find(item => item?.name === citySelected);
 
@@ -159,7 +162,7 @@ const PickBooking = ({ onPress }) => {
         visible={showModalDate}
         backdropColor="transparent"
         animationType="slide">
-        <View style={{ backgroundColor: 'white', flex: 1 }}>
+        <View style={{backgroundColor: 'white', flex: 1}}>
           <View style={styles.headerModal}>
             <Text style={styles.textHeaderModal}>Tanggal Menginap</Text>
           </View>
@@ -233,12 +236,12 @@ const PickBooking = ({ onPress }) => {
         visible={showModalLoc}
         backdropColor="transparent"
         animationType="slide">
-        <View style={{ flex: 1 }}>
+        <View style={{flex: 1}}>
           <View style={styles.headerModal}>
             <Text style={styles.textHeaderModal}>Lokasi</Text>
           </View>
           <Gap height={30} />
-          <View style={{ paddingHorizontal: 20 }}>
+          <View style={{paddingHorizontal: 20}}>
             <SelectList
               setSelected={setCitySelected}
               data={listCity}
@@ -258,7 +261,7 @@ const PickBooking = ({ onPress }) => {
         visible={showModalPerson}
         animationType="slide"
         backdropColor="transparent">
-        <View style={{ backgroundColor: 'white', flex: 1 }}>
+        <View style={{backgroundColor: 'white', flex: 1}}>
           <View style={styles.headerModal}>
             <Text style={styles.textHeaderModal}>Tambahkan Kamar dan Tamu</Text>
           </View>
@@ -281,7 +284,7 @@ const PickBooking = ({ onPress }) => {
           </View>
           <Gap height={15} />
           <View
-            style={{ borderBottomWidth: 1, borderBottomColor: colors.border }}
+            style={{borderBottomWidth: 1, borderBottomColor: colors.border}}
           />
 
           <Gap height={15} />
@@ -301,7 +304,7 @@ const PickBooking = ({ onPress }) => {
             />
           </View>
           <View
-            style={{ borderBottomWidth: 1, borderBottomColor: colors.border }}
+            style={{borderBottomWidth: 1, borderBottomColor: colors.border}}
           />
           <Gap height={15} />
           <View style={styles.containerCounter}>
@@ -342,7 +345,7 @@ const styles = StyleSheet.create({
     flex: 1,
     width: WIDTH * 0.77,
     borderRadius: 8,
-    shadowOffset: { width: 0, height: 1 },
+    shadowOffset: {width: 0, height: 1},
     backgroundColor: colors.white,
     shadowOpacity: 0.7,
     shadowRadius: 2,

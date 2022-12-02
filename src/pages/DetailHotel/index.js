@@ -8,7 +8,7 @@ import {
   Text,
   View,
 } from 'react-native';
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import Swiper from 'react-native-swiper';
 import {colors, fonts} from '../../utils';
 import {Intro1, Intro2, Intro3} from '../../assets/Image';
@@ -25,9 +25,8 @@ import {HotelDummy1} from '../../assets/Dummy';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {Calendar} from 'react-native-calendars';
 import CounterInput from 'react-native-counter-input';
-import { getDataPropertiesDetail } from '../../context/api/reducer';
-import { useDispatch, useSelector } from 'react-redux';
-import { useEffect, useState } from 'react';
+import {getDataPropertiesDetail} from '../../context/api/reducer';
+import {useDispatch, useSelector} from 'react-redux';
 
 const HotelInfo = ({title, location, rate, price}) => {
   return (
@@ -69,12 +68,11 @@ const Desc = ({desc}) => {
 
 const DetailHotel = ({navigation}) => {
   const dispatch = useDispatch();
-  const { hotelAbout, fulfilled } = useSelector((state) => state.api);
+  const {hotelAbout, fulfilled} = useSelector(state => state.api);
 
   const [hotelDetails, setHotelDetails] = useState('');
   const [hotelPhotos, setHotelPhotos] = useState([]);
   const [hotelDesc, setHotelDesc] = useState('');
-
 
   const args = {
     hotelId: '2439030',
@@ -83,8 +81,8 @@ const DetailHotel = ({navigation}) => {
     arrivalDate: '2022-12-24',
     recGuestQty: '1',
     recRoomQty: '1',
-    recChildrenQty: '0'
-  }
+    recChildrenQty: '0',
+  };
   useEffect(() => {
     dispatch(getDataPropertiesDetail(args));
   }, []);
@@ -98,11 +96,15 @@ const DetailHotel = ({navigation}) => {
     if (fulfilled === true) {
       console.log('HOTEL ABOUT', hotelAbout);
 
-      hotelAbout.map((item) => {
+      hotelAbout.map(item => {
         setHotelDetails(Object.values(item.details)[0]);
-        setHotelPhotos(item.photos)
-        setHotelDesc(Object.values(item.description).find((item) => item.descriptiontype_id === 6))
-      })
+        setHotelPhotos(item.photos);
+        setHotelDesc(
+          Object.values(item.description).find(
+            item => item.descriptiontype_id === 6,
+          ),
+        );
+      });
 
       // console.log('hotelDetails asdjfbslkdjbfds', hotelDetails)
       // console.log('hotelPhotos', hotelPhotos);
@@ -118,15 +120,15 @@ const DetailHotel = ({navigation}) => {
 
   return (
     <>
-    <ScrollView style={styles.page} showsVerticalScrollIndicator={false}>
-      <Header title="Detail Hotel" onPress={() => navigation.goBack()} />
-      <Box />
-      <Swiper
-        style={styles.wrapperSwipper}
-        showsButtons={true}
-        loop={false}
-        autoplay={true}>
-        {/* {hotelPhotos.data[2439030].map((item, idx) => (
+      <ScrollView style={styles.page} showsVerticalScrollIndicator={false}>
+        <Header title="Detail Hotel" onPress={() => navigation.goBack()} />
+        {/* <Box /> */}
+        <Swiper
+          style={styles.wrapperSwipper}
+          showsButtons={true}
+          loop={false}
+          autoplay={true}>
+          {/* {hotelPhotos.data[2439030].map((item, idx) => (
           item[4].map((img) => (
             <ImageBackground
               key={idx}
@@ -135,30 +137,32 @@ const DetailHotel = ({navigation}) => {
             />
           ))
         ))} */}
-        <Image source={Intro2} style={styles.container} />
-        <Image source={Intro3} style={styles.container} />
-      </Swiper>
-      <HotelInfo
-        title={hotelDetails.hotel_name}
-        rate="4.9"
-        location={hotelDetails.city}
-        price={hotelDetails.block?.map((item) => rpFormatter.format(item.min_price.price))}
-      />
-      <View style={styles.line} />
-      <Gap height={15} />
-      <Title title="Deskipsi" />
-      <Gap height={12} />
-      <Desc desc={hotelDesc.description} />
-      <Gap height={12} />
-      <Title title="Fasilitas" />
-      <Gap height={15} />
-      <Fasilitas
-        apartment="Apartment"
-        bathrooms="1"
-        kitchen="Kitchen"
-        bedrooms="2"
-      />
-      <Gap height={12} />
+          <Image source={Intro2} style={styles.container} />
+          <Image source={Intro3} style={styles.container} />
+        </Swiper>
+        <HotelInfo
+          title={hotelDetails.hotel_name}
+          rate="4.9"
+          location={hotelDetails.city}
+          price={hotelDetails.block?.map(item =>
+            rpFormatter.format(item.min_price.price),
+          )}
+        />
+        <View style={styles.line} />
+        <Gap height={15} />
+        <Title title="Deskipsi" />
+        <Gap height={12} />
+        <Desc desc={hotelDesc.description} />
+        <Gap height={12} />
+        <Title title="Fasilitas" />
+        <Gap height={15} />
+        <Fasilitas
+          apartment="Apartment"
+          bathrooms="1"
+          kitchen="Kitchen"
+          bedrooms="2"
+        />
+        <Gap height={12} />
 
         <View style={styles.wrapperReview}>
           <Title title="Ulasan" />

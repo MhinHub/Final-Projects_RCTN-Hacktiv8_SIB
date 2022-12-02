@@ -1,7 +1,7 @@
 [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FMhinHub%2Fsib_react_005_fp2&count_bg=%23050505&title_bg=%23555555&icon=&icon_color=%23B4B4B4&title=hits&edge_flat=true)](https://hits.seeyoufarm.com)
 
 <div align="center">
-<img src="public/icon-512x512.png" alt="logo" width="200" height="auto" />
+<img src="./README-ASSET/image/logo-hotelio.png" alt="logo" width="200" height="auto" />
   <h1>Hotelio</h1>
   <p><b>Final project 3 - Kelompok 1</b></p>
   <p>Aplikasi yang dibuat pada Final project ini adalah sebuah aplikasi mobile dengan menggunakan framework React Native. Aplikasi ini menggunakan API dari Rapaidapi dengan menerapkan sistem database  Local Storage.
@@ -22,6 +22,7 @@ Halaman Splashcreen akan muncul pertama kali kita buka Aplikasi Hotelio
 ![](./README-ASSET/page/splashcreen.png)
 
 ### 2. Intro Aplikasi
+
 ![](./README-ASSET/page/appintro1.png)
 ![](./README-ASSET/page/appintro2.png)
 ![](./README-ASSET/page/appintro3.png)
@@ -33,10 +34,10 @@ Halaman Splashcreen akan muncul pertama kali kita buka Aplikasi Hotelio
 ### 4. Sign Up
 
 ![](./README-ASSET/page/signup.png)
+
 ### 3. Halaman Utama (Home) 🏠
 
 Halaman ini bisa diakses
-
 
 ### 4. Halaman Favorit
 
