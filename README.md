@@ -13,6 +13,10 @@
 
 ## Panduan Aplikasi dari Sisi Pengguna (User Guide) 📒
 
+Perlu diketahui sebelumnya bahwa di aplikasi Hotelio ini pengguna harus ;
+1. Login terlebih dahulu menggunakan email dan password
+2. Singup memasukan full name, email address, password, dan repeat password
+
 ---
 
 ### 1. Splashscreen
