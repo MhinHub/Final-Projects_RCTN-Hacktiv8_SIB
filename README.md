@@ -59,16 +59,16 @@ Secara default halaman ini dibuat untuk menandai atau menambahkan hotel kedalam 
 
 Halaman pemesanan ini berisi daftar produk yang telah dipesan. dihalaman ini user dapat membatalkan pesanan, lihat tiket dan detail pesanan.
 
-![sc pemesanan](./README-ASSET/page/detailhotel.png.png)
-![sc pemesanan](./README-ASSET/page/pesanan.png)
-![sc detail pesanan](./README-ASSET/page/detailpesanan.png)
+![](./README-ASSET/page/detailhotel.png)
+![](./README-ASSET/page/pesanan.png)
+![](./README-ASSET/page/detailpesanan.png)
 
 ### 8. Halaman Profile
 
 Halaman profil ini berisi informasi mengenai edit akun atau profil, developer, kontak bantuan dan tentang aplikasi.
 
 ![sc profile](./README-ASSET/page/profile.png)
-![sc team](./README-ASSET/page/team.png.png)
+![sc team](./README-ASSET/page/team.png)
 ![sc helpcenter](./README-ASSET/page/helpcenter.png)
 
 - Note: _Kedepannya akan dilakukan pengembangan lebih lanjut terkait project web app ini. Terima kasih._
